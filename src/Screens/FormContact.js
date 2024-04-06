@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../estilos/form.css'
 import Swal from 'sweetalert2'
+import Banner from '../Resources/Banner.svg'
 
 export default function HomePage() {
 
@@ -67,9 +68,10 @@ export default function HomePage() {
 
   return (
     <div className='container-formulario'>
-      <div className='Containder-logo'>
-
+      <div class='Containder-logo'>
+        <img src={Banner} alt='Logo' />
       </div>
+
 
       <div className='formulario'>
 
