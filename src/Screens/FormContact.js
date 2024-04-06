@@ -15,31 +15,25 @@ export default function HomePage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (true) {
-      console.log({
-        nombreCompleto,
-        direccion,
-        correoElectronico,
-        telefono,
-        tipoCaja,
-        paisDestino,
-        infoAdicional
-      });
-
-      alertaOk()
-
+  
+    if (!nombreCompleto.trim() || !direccion.trim() || !correoElectronico.trim() || !telefono.trim() || tipoCaja === 'value2' || paisDestino === 'value2') {
+      alertaFalse();
+      return; 
     }
-    else {
-      alertaFalse()
-
-    }
-
-
-
-
-
+  
+    console.log({
+      nombreCompleto,
+      direccion,
+      correoElectronico,
+      telefono,
+      tipoCaja,
+      paisDestino,
+      infoAdicional 
+    });
+  
+    alertaOk();
   };
+  
 
   function alertaOk() {
 
@@ -68,9 +62,9 @@ export default function HomePage() {
 
   return (
     <div className='container-formulario'>
-      <div class='Containder-logo'>
-        <img src={Banner} alt='Logo' />
-      </div>
+
+        <img class='Containder-logo' src={Banner} alt='Logo' />
+
 
 
       <div className='formulario'>
@@ -82,6 +76,7 @@ export default function HomePage() {
             <div >
               <p>Nombre completo *</p>
               <input className='input-texto'
+              placeholder='John Doe Smith Gonzalez'
                 type='text'
                 value={nombreCompleto}
                 onChange={(e) => setNombreCompleto(e.target.value)}
@@ -92,6 +87,7 @@ export default function HomePage() {
             <div>
               <p>Direccion *</p>
               <input className='input-texto'
+                placeholder='234 Maple Street'
                 type='text'
                 value={direccion}
                 onChange={(e) => setDireccion(e.target.value)}
@@ -102,6 +98,7 @@ export default function HomePage() {
               <div>
                 <p>Correo electronico *</p>
                 <input className='input-texto-esencial'
+                  placeholder='johndoe@example.com'
                   value={correoElectronico}
                   onChange={(e) => setCorreoElectronico(e.target.value)}
                   type='text'
@@ -111,6 +108,7 @@ export default function HomePage() {
               <div>
                 <p>Telefono *</p>
                 <input className='input-texto-esencial'
+                placeholder='(555) 123-4567'
                   type='text'
                   value={telefono}
                   onChange={(e) => setTelefono(e.target.value)}
@@ -131,9 +129,10 @@ export default function HomePage() {
                     value={tipoCaja}
                     onChange={(e) => setTipoCaja(e.target.value)}
                   >
-                    <option value="value1">Value 1</option>
-                    <option value="value2" selected>Value 2</option>
-                    <option value="value3">Value 3</option>
+                    <option value="value1" selected>Elija una opcion</option>
+                    <option value="value2">20x20x20x20</option>
+                    <option value="value3">36x36x36x6</option>
+                    <option value="value4">60x60x60x60</option>
                   </select>
                 </div>
 
@@ -146,9 +145,10 @@ export default function HomePage() {
                     value={paisDestino}
                     onChange={(e) => setPaisDestino(e.target.value)}
                     className='input-texto-esencial-select'>
-                    <option value="value1">Value 1</option>
-                    <option value="value2" selected>Value 2</option>
-                    <option value="value3">Value 3</option>
+                    <option value="value1" selected>Elija una opcion</option>
+                    <option value="value2">Colombia</option>
+                    <option value="value3" >El Salvador</option>
+                    <option value="value4">Nicaragua</option>
                   </select>
                 </div>
 
@@ -161,11 +161,10 @@ export default function HomePage() {
             <h3>Información adicional</h3>
 
             <textarea 
+            placeholder='¿Algún requerimiento especial?'
               value={infoAdicional}
               onChange={(e) => setInfoAdicional(e.target.value)}
               className='input-adicional' />
-
-
             <div className='container-person'>
               <input type="submit" value="Enviar" className='btn-enviar-form' />
             </div>

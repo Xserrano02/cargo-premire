@@ -26,7 +26,7 @@
 
 .input-texto{
     width: 100%;
-    border: 2px solid #07c8fe;
+    border: 3px solid #07c8fe;
     padding: 10px 0 10px 10px;
     border-radius: 10px;
 }
@@ -38,7 +38,7 @@
 
 .input-texto-esencial{
     width: 100%;
-    border: 2px solid #07c8fe;
+    border: 3px solid #07c8fe;
     padding: 10px 0 10px 10px;
     border-radius: 10px;
     margin-right: 0px;
@@ -46,7 +46,7 @@
 
 .input-texto-esencial-select{
     width: 100%;
-    border: 2px solid #07c8fe;
+    border: 3px solid #07c8fe;
     padding: 10px 0;
     border-radius: 10px;
 }
@@ -54,8 +54,8 @@
 .input-adicional{
     width: 100%;
     height: 20vh;
-    border: 2px solid #07c8fe;
-    padding-top: 10;
+    border: 3px solid #07c8fe;
+    padding-top: 10px;
     padding-left: 10px;
     border-radius: 10px;
 }
@@ -68,6 +68,7 @@
     padding: 10px 60px;
     border-radius: 10px;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 /* Teléfonos en modo retrato */
