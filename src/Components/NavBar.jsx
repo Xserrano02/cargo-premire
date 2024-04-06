@@ -3,7 +3,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-primary" style={{ fontFamily: 'Roboto, sans-serif'}}>
+    <nav
+      className="navbar navbar-expand-lg bg-body-primary"
+      style={{
+        fontFamily: "Roboto, sans-serif",
+        fontWeight: "Bold",
+        fontSize: "Larger",
+      }}
+    >
       <div className="container-fluid mx-auto mt-4 mb-4">
         <button
           className="navbar-toggler"
@@ -19,22 +26,38 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <a className="nav-link active h1 mx-5" aria-current="page" href="#">
+              <a
+                className="nav-link  h1 mx-5"
+                aria-current="page"
+                href="/"
+              >
                 SERVICIOS
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active h1 mx-5" aria-current="page" href="#">
+              <a
+                className="nav-link  h1 mx-5"
+                aria-current="page"
+                href="/"
+              >
                 RASTREO
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active h1 mx-5" aria-current="page" href="#">
+              <a
+                className="nav-link  h1 mx-5"
+                aria-current="page"
+                href="/"
+              >
                 QUIENES SOMOS
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active h1 mx-5" aria-current="page" href="#">
+              <a
+                className="nav-link h1 mx-5"
+                aria-current="page"
+                href="/"
+              >
                 CONTACTO
               </a>
             </li>
@@ -46,4 +69,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
