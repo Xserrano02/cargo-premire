@@ -17,7 +17,7 @@ export default function HomePage() {
     e.preventDefault();
   
     if (!nombreCompleto.trim() || !direccion.trim() || !correoElectronico.trim() || !telefono.trim() || tipoCaja === 'value2' || paisDestino === 'value2') {
-      alertaFalse();
+      alertaOk();
       return; 
     }
   
