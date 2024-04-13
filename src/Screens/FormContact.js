@@ -1,39 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import '../estilos/form.css'
 import Swal from 'sweetalert2'
 import Banner from '../Resources/Banner.svg'
+import emailjs from '@emailjs/browser';
 
-export default function HomePage() {
 
+export default function HomePage(e) {
+  const form = useRef();
   const [nombreCompleto, setNombreCompleto] = useState('');
   const [direccion, setDireccion] = useState('');
   const [correoElectronico, setCorreoElectronico] = useState('');
   const [telefono, setTelefono] = useState('');
-  const [tipoCaja, setTipoCaja] = useState('value2');
-  const [paisDestino, setPaisDestino] = useState('value2');
+  const [tipoCaja, setTipoCaja] = useState('');
+  const [paisDestino, setPaisDestino] = useState('');
   const [infoAdicional, setInfoAdicional] = useState('');
 
-  const handleSubmit = (e) => {
+  function sendEmail(e) {
     e.preventDefault();
-  
-    if (!nombreCompleto.trim() || !direccion.trim() || !correoElectronico.trim() || !telefono.trim() || tipoCaja === 'value2' || paisDestino === 'value2') {
-      alertaOk();
-      return; 
-    }
-  
-    console.log({
-      nombreCompleto,
-      direccion,
-      correoElectronico,
-      telefono,
-      tipoCaja,
-      paisDestino,
-      infoAdicional 
-    });
-  
-    alertaOk();
-  };
-  
+    emailjs
+      .sendForm('service_c8pic8d', 'template_0244yeb', form.current, {
+        publicKey: 'Rs0ljdXLJTB5tB10k',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alertaOk();
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alertaFalse()
+        },
+      );
+
+
+  }
 
   function alertaOk() {
 
@@ -69,13 +69,14 @@ export default function HomePage() {
 
       <div className='formulario'>
 
-        <form className='form-submit' onSubmit={handleSubmit}>
+        <form className='form-submit' ref={form} onSubmit={sendEmail}>
           <h3>Informacion personal</h3>
 
           <div className='container-person'>
             <div >
               <p>Nombre completo *</p>
               <input className='input-texto'
+              name='name'
               placeholder='John Doe Smith Gonzalez'
                 type='text'
                 value={nombreCompleto}
@@ -87,6 +88,7 @@ export default function HomePage() {
             <div>
               <p>Direccion *</p>
               <input className='input-texto'
+                name='address'
                 placeholder='234 Maple Street'
                 type='text'
                 value={direccion}
@@ -99,6 +101,7 @@ export default function HomePage() {
                 <p>Correo electronico *</p>
                 <input className='input-texto-esencial'
                   placeholder='johndoe@example.com'
+                  name='email'
                   value={correoElectronico}
                   onChange={(e) => setCorreoElectronico(e.target.value)}
                   type='text'
@@ -109,6 +112,7 @@ export default function HomePage() {
                 <p>Telefono *</p>
                 <input className='input-texto-esencial'
                 placeholder='(555) 123-4567'
+                  name='phone'
                   type='text'
                   value={telefono}
                   onChange={(e) => setTelefono(e.target.value)}
@@ -128,6 +132,7 @@ export default function HomePage() {
                     className='input-texto-esencial-select'
                     value={tipoCaja}
                     onChange={(e) => setTipoCaja(e.target.value)}
+                    
                   >
                     <option value="value1" selected>Elija una opcion</option>
                     <option value="value2">20x20x20x20</option>
@@ -145,8 +150,7 @@ export default function HomePage() {
                     value={paisDestino}
                     onChange={(e) => setPaisDestino(e.target.value)}
                     className='input-texto-esencial-select'>
-                    <option value="value1" selected>Elija una opcion</option>
-                    <option value="value2">Colombia</option>
+                    <option value="value2" >Colombia</option>
                     <option value="value3" >El Salvador</option>
                     <option value="value4">Nicaragua</option>
                   </select>
@@ -166,7 +170,7 @@ export default function HomePage() {
               onChange={(e) => setInfoAdicional(e.target.value)}
               className='input-adicional' />
             <div className='container-person'>
-              <input type="submit" value="Enviar" className='btn-enviar-form' />
+              <input type="submit" name='additional_info' value="Enviar" className='btn-enviar-form' />
             </div>
 
           </div>
