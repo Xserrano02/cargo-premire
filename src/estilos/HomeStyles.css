@@ -1,0 +1,38 @@
+.img-container {
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .img-container:hover {
+    transform: scale(1.2);
+  }
+.textoBanner{
+    margin-right: 40px;
+}
+.imagenBanner{
+    margin-left: 40px;
+}
+
+  
+  @media (max-width: 768px) {
+    .img-container {
+      transition: transform 0.3s;
+    }
+  
+    .imagen{
+        width: 100px;
+    }
+    .img-container:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .textoBanner{
+        margin-right: 0px;
+    }
+    .imagenBanner{
+        margin-left: 0px;
+    }
+    
+  }
+  
