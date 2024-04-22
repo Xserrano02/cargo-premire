@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../../estilos/Footer.css'
-import logoFooter from '../../Resources/Footer/LogoNew.svg';
+import logoFooter from '../../Resources/Banner.svg';
 
 
 const Footer = () => {
