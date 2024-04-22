@@ -5,7 +5,7 @@ import Footer from './helpers/Footer'
 export default function HomePage() {
   return (
     <div>
-      <Footer></Footer>
+      <h2>Homepage</h2>
     </div>
   )
 }

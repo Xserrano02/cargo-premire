@@ -8,6 +8,7 @@ import HomePage from "./Screens/HomePage";
 import FormContact from "./Screens/FormContact";
 import Detalles from "./Screens/Detalles";
 
+
 export default function App() {
   return (
 
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/detalles" element={<Detalles />} />
         <Route path="*" element={<h2>Pagina no encontrada</h2>} />
       </Routes>
+
     </Router>
   );
 }
