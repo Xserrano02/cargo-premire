@@ -1,0 +1,102 @@
+.text-white.me-4 {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+footer .fab {
+    font-size: 40px; /* Tamaño más grande para los iconos */
+    margin: 0 10px; /* Espacio entre los iconos */
+    color: #8BE5FE;
+}
+
+#social-icons {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding-left: 300px;
+}
+
+footer #LogoFoo img {
+    max-width: 100%; /* Hace que la imagen sea responsive */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que la imagen se centre correctamente */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-height: 500px; /* Establece una altura máxima para la imagen */
+    margin-left: 200px;
+}
+
+
+
+#hrDiv{
+    border-color: #13103A; /* Cambia el color del borde del hr a azul */
+    height: 2px; /* Establece la altura del hr */
+    width: 90%; /* Establece el ancho del hr al 50% del contenedor */
+    margin: 20px auto;
+    border-width: 3px;
+}
+
+.Servi {
+    margin-bottom: 0px; /* Establece el margen inferior de los párrafos a 5px */
+    color: #8BE5FE;
+}
+
+footer{
+    width: 100%;
+    padding: 50px 0px;
+    background-image: url('../Resources/Footer/background-footer.svg');
+    background-size: cover;
+
+}
+
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin: auto;
+    margin-top: 100px;
+    background: #443CAD
+}
+
+
+#TextoFoo{
+    color: aliceblue;
+}
+
+
+@media (max-width: 900px) {
+    footer #LogoFoo img {
+        margin-left: 40%; /* Cambia el margen izquierdo si el ancho de la pantalla es menor a 1070px */
+    } 
+
+    footer .fab{
+        margin-top: 40px;
+    }
+
+    #social-icons{
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 650px){
+    footer #LogoFoo img {
+        margin-left: 0%; /* Cambia el margen izquierdo si el ancho de la pantalla es menor a 1070px */
+    }
+
+    #social-icons{
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+}
+
+
+#Titulos{
+    font-weight: bold;
+    font-size: 30px;
+    color: #8BE5FE;
+}
+
+#FooterT2{
+    font-weight: bold;
+    font-size: 30px;
+    color: #8BE5FE;
+}
