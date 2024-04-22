@@ -16,23 +16,37 @@ export default function HomePage(e) {
   const [infoAdicional, setInfoAdicional] = useState('');
 
   function sendEmail(e) {
+
     e.preventDefault();
     emailjs
       .sendForm('service_c8pic8d', 'template_0244yeb', form.current, {
         publicKey: 'Rs0ljdXLJTB5tB10k',
+        box_type: "sdf",
+        destination_country: "sdf",
+        additional_info: "sdf",
       })
       .then(
         () => {
           console.log('SUCCESS!');
           alertaOk();
+          resetForm()
         },
         (error) => {
           console.log('FAILED...', error.text);
           alertaFalse()
+          resetForm()
         },
       );
+  }
 
-
+  function resetForm() {
+    setNombreCompleto('');
+    setDireccion('');
+    setCorreoElectronico('');
+    setTelefono('');
+    setTipoCaja('');
+    setPaisDestino('');
+    setInfoAdicional('');
   }
 
   function alertaOk() {
@@ -63,7 +77,7 @@ export default function HomePage(e) {
   return (
     <div className='container-formulario'>
 
-        <img class='Containder-logo' src={Banner} alt='Logo' />
+      <img class='Containder-logo' src={Banner} alt='Logo' />
 
 
 
@@ -76,8 +90,8 @@ export default function HomePage(e) {
             <div >
               <p>Nombre completo *</p>
               <input className='input-texto'
-              name='name'
-              placeholder='John Doe Smith Gonzalez'
+                name='name'
+                placeholder='John Doe Smith Gonzalez'
                 type='text'
                 value={nombreCompleto}
                 onChange={(e) => setNombreCompleto(e.target.value)}
@@ -111,7 +125,7 @@ export default function HomePage(e) {
               <div>
                 <p>Telefono *</p>
                 <input className='input-texto-esencial'
-                placeholder='(555) 123-4567'
+                  placeholder='(555) 123-4567'
                   name='phone'
                   type='text'
                   value={telefono}
@@ -127,50 +141,29 @@ export default function HomePage(e) {
 
               <div>
                 <p>Tipo caja *</p>
-                <div className='select-box'>
-                  <select name="select"
-                    className='input-texto-esencial-select'
-                    value={tipoCaja}
-                    onChange={(e) => setTipoCaja(e.target.value)}
-                    
-                  >
-                    <option value="value1" selected>Elija una opcion</option>
-                    <option value="value2">20x20x20x20</option>
-                    <option value="value3">36x36x36x6</option>
-                    <option value="value4">60x60x60x60</option>
-                  </select>
-                </div>
-
+                <select name="box_type" className='input-texto-esencial-select' value={tipoCaja} onChange={(e) => setTipoCaja(e.target.value)}>
+                  <option value="">Elija una opcion</option>
+                  <option value="20x20x20x20">20x20x20x20</option>
+                  <option value="36x36x36x6">36x36x36x6</option>
+                  <option value="60x60x60x60">60x60x60x60</option>
+                </select>
               </div>
 
               <div>
-                <div>
-                  <p>Pais destino *</p>
-                  <select name="select"
-                    value={paisDestino}
-                    onChange={(e) => setPaisDestino(e.target.value)}
-                    className='input-texto-esencial-select'>
-                    <option value="value2" >Colombia</option>
-                    <option value="value3" >El Salvador</option>
-                    <option value="value4">Nicaragua</option>
-                  </select>
-                </div>
-
-
-
-              </div>
-
+            <p>Pais destino *</p>
+            <select name="destination_country" className='input-texto-esencial-select' value={paisDestino} onChange={(e) => setPaisDestino(e.target.value)}>
+              <option value="">Colombia</option>
+              <option value="Colombia">Colombia</option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="Nicaragua">Nicaragua</option>
+            </select>
+          </div>
 
             </div>
             <h3>Información adicional</h3>
-
-            <textarea 
-            placeholder='¿Algún requerimiento especial?'
-              value={infoAdicional}
-              onChange={(e) => setInfoAdicional(e.target.value)}
-              className='input-adicional' />
+            <textarea name="additional_info" placeholder='¿Algún requerimiento especial?' value={infoAdicional} onChange={(e) => setInfoAdicional(e.target.value)} className='input-adicional' />
             <div className='container-person'>
-              <input type="submit" name='additional_info' value="Enviar" className='btn-enviar-form' />
+              <input type="submit" value="Enviar" className='btn-enviar-form' />
             </div>
 
           </div>
