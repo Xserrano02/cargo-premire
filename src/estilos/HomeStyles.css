@@ -1,0 +1,69 @@
+.img-container {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.img-container:hover {
+  transform: scale(1.2);
+}
+
+.textoBanner {
+  margin-right: 40px;
+}
+
+.imagenBanner {
+  margin-left: 40px;
+}
+
+.infoElSalvador {
+  width: 100%;
+  height: 100%;
+  background-image: url('../Resources/AvionSV.svg');
+}
+
+.circulo {
+  background-color: white;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  margin: 20px;
+}
+.country{
+  padding-left: 30%;
+  width: 70%;
+}
+
+@media (max-width: 768px) {
+  .img-container {
+    transition: transform 0.3s;
+  }
+
+  .imagen {
+    width: 100px;
+  }
+
+  .img-container:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .textoBanner {
+    margin-right: 0px;
+  }
+
+  .imagenBanner {
+    margin-left: 0px;
+  }
+  .circulo {
+    background-color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+  }
+  .country{
+    padding-left: 30%;
+    width: 70%;
+  }
+
+}
