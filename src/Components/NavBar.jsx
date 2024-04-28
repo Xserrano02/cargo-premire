@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const NavBar = () => {
+const NavBar = ({backgroundColor = "white"}) => {
   return (
     <nav
       className="navbar navbar-expand-lg bg-body-primary"
@@ -9,6 +9,7 @@ const NavBar = () => {
         fontFamily: "Roboto, sans-serif",
         fontWeight: "Bold",
         fontSize: "Larger",
+        backgroundColor: backgroundColor,
       }}
     >
       <div className="container-fluid mx-auto mt-4 mb-4">
