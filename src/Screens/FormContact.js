@@ -17,6 +17,8 @@ export default function HomePage(e) {
   const [tamanoSeleccionado, setTamanoSeleccionado] = useState('');
   const [infoAdicional, setInfoAdicional] = useState('');
 
+  console.log(tamanoSeleccionado)
+
   const handleCountryChange = (e) => {
     const paisSeleccionado = e.target.value;
     setPaisDestino(paisSeleccionado);
@@ -26,15 +28,14 @@ export default function HomePage(e) {
     } else {
       setTamanosDisponibles([]);
     }
-    setTamanoSeleccionado('');  // Reset tamaño al cambiar país
+    setTamanoSeleccionado('');
   };
-  function sendEmail(e) {
 
+  function sendEmail(e) {
     e.preventDefault();
     emailjs
       .sendForm('service_c8pic8d', 'template_0244yeb', form.current, {
         publicKey: 'Rs0ljdXLJTB5tB10k',
-        box_type: "sdf",
         destination_country: "sdf",
         additional_info: "sdf",
       })
@@ -160,16 +161,24 @@ export default function HomePage(e) {
                 </select>
               </div>
 
-              <div>
-                <p>Tamaño *</p>
-                <select name="box_size" className='input-texto-esencial-select' value={tamanoSeleccionado} onChange={(e) => setTamanoSeleccionado(e.target.value)}>
-                  <option value="">Seleccione un tamaño</option>
-                  {tamanosDisponibles.map(([key, value]) => (
-                    <option key={key} value={value}>{value}</option>
-                  ))}
-                </select>
+<div>
+  <p>Tamaño *</p>
+  <select
+    name="box_type"
+    className='input-texto-esencial-select'
+    value={tamanoSeleccionado}
+    onChange={(e) => {
+      console.log("Valor seleccionado:", e.target.value);  // Esto imprimirá el valor en la consola
+      setTamanoSeleccionado(e.target.value);
+    }}
+  >
+    <option value="">Seleccione un tamaño</option>
+    {tamanosDisponibles.map(([key, value]) => (
+      <option key={key} value={value}>{value}</option>
+    ))}
+  </select>
+</div>
 
-              </div>
 
             </div>
             <h3>Información adicional</h3>
