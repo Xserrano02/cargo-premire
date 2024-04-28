@@ -224,8 +224,8 @@ export default function Detalles() {
             zIndex: -1,
             opacity: opacity,
             transition: "opacity 0.5s ease-in-out",
-            backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
           }}
         >
           <div
@@ -254,6 +254,135 @@ export default function Detalles() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="d-flex justify-content-center align-items-center">
+        <h1
+          style={{
+            fontSize: "3em",
+            fontWeight: "bold",
+            textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
+            letterSpacing: "0.2em",
+            marginTop: "0.2em",
+          }}
+        >
+          {paisSeleccionado.nombre.toUpperCase() === "EL SALVADOR" ? (
+            <>
+              <span style={{ color: "#0047AB" }}>
+                {paisSeleccionado.nombre.slice(0, 3).toUpperCase()}
+              </span>
+              <span style={{ color: "white" }}>
+                {paisSeleccionado.nombre.slice(3, 7).toUpperCase()}
+              </span>
+              <span style={{ color: "#0047AB" }}>
+                {paisSeleccionado.nombre.slice(7).toUpperCase()}
+              </span>
+            </>
+          ) : paisSeleccionado.nombre.toUpperCase() === "MEXICO" ? (
+            <>
+              <span style={{ color: "#006847" }}>
+                {paisSeleccionado.nombre.slice(0, 2).toUpperCase()}
+              </span>
+              <span style={{ color: "white" }}>
+                {paisSeleccionado.nombre.slice(2, 4).toUpperCase()}
+              </span>
+              <span style={{ color: "#CE1126" }}>
+                {paisSeleccionado.nombre.slice(4).toUpperCase()}
+              </span>
+            </>
+          ) : paisSeleccionado.nombre.toUpperCase() === "GUATEMALA" ? (
+            <>
+              <span style={{ color: "#4997D0" }}>
+                {paisSeleccionado.nombre.slice(0, 3).toUpperCase()}
+              </span>
+              <span style={{ color: "white" }}>
+                {paisSeleccionado.nombre.slice(3, 6).toUpperCase()}
+              </span>
+              <span style={{ color: "#4997D0" }}>
+                {paisSeleccionado.nombre.slice(6).toUpperCase()}
+              </span>
+            </>
+          ) : paisSeleccionado.nombre.toUpperCase() === "HONDURAS" ? (
+            <>
+              <span style={{ color: "#00BCE4" }}>
+                {paisSeleccionado.nombre.slice(0, 3).toUpperCase()}
+              </span>
+              <span style={{ color: "white" }}>
+                {paisSeleccionado.nombre.slice(3, 5).toUpperCase()}
+              </span>
+              <span style={{ color: "#00BCE4" }}>
+                {paisSeleccionado.nombre.slice(5).toUpperCase()}
+              </span>
+            </>
+          ) : paisSeleccionado.nombre.toUpperCase() === "NICARAGUA" ? (
+            <>
+              <span style={{ color: "#0067C6" }}>
+                {paisSeleccionado.nombre.slice(0, 3).toUpperCase()}
+              </span>
+              <span style={{ color: "white" }}>
+                {paisSeleccionado.nombre.slice(3, 6).toUpperCase()}
+              </span>
+              <span style={{ color: "#0067C6" }}>
+                {paisSeleccionado.nombre.slice(6).toUpperCase()}
+              </span>
+            </>
+          ) : paisSeleccionado.nombre.toUpperCase() === "COSTA RICA" ? (
+            <>
+              <span style={{ color: "#001489" }}>
+                {paisSeleccionado.nombre.slice(0, 1).toUpperCase()}
+              </span>
+              <span style={{ color: "white" }}>
+                {paisSeleccionado.nombre.slice(1, 2).toUpperCase()}
+              </span>
+              <span style={{ color: "#DA291C" }}>
+                {paisSeleccionado.nombre.slice(2, 8).toUpperCase()}
+              </span>
+              <span style={{ color: "white" }}>
+                {paisSeleccionado.nombre.slice(8, 9).toUpperCase()}
+              </span>
+              <span style={{ color: "#001489" }}>
+                {paisSeleccionado.nombre.slice(9).toUpperCase()}
+              </span>
+            </>
+          ) : paisSeleccionado.nombre.toUpperCase() === "COLOMBIA" ? (
+            <>
+              <span style={{ color: "#FFCD00" }}>
+                {paisSeleccionado.nombre.slice(0, 4).toUpperCase()}
+              </span>
+              <span style={{ color: "#003087" }}>
+                {paisSeleccionado.nombre.slice(4, 7).toUpperCase()}
+              </span>
+              <span style={{ color: "#C8102E" }}>
+                {paisSeleccionado.nombre.slice(7).toUpperCase()}
+              </span>
+            </>
+          ) : paisSeleccionado.nombre.toUpperCase() === "REPUBLICA DOMINICANA" ? (
+<>
+  <span style={{ color: "#CE1126" }}>
+    {paisSeleccionado.nombre.slice(0, 3).toUpperCase()}
+  </span>
+  <span style={{ color: "white" }}>
+    {paisSeleccionado.nombre.slice(3, 6).toUpperCase()}
+  </span>
+  <span style={{ color: "#002D62" }}>
+    {paisSeleccionado.nombre.slice(6, 9).toUpperCase()}
+  </span>
+  <span style={{ color: "#CE1126" }}>
+    {paisSeleccionado.nombre.slice(9, 12).toUpperCase()}
+  </span>
+  <span style={{ color: "white" }}>
+    {paisSeleccionado.nombre.slice(12, 16).toUpperCase()}
+  </span>
+  <span style={{ color: "#002D62" }}>
+    {paisSeleccionado.nombre.slice(16).toUpperCase()}
+  </span>
+</>
+) : (
+<span style={{ color: "white" }}>
+  {paisSeleccionado.nombre.toUpperCase()}
+</span>
+          )}
+        </h1>
       </div>
 
       <div className="row">
