@@ -5,6 +5,10 @@
     height: 100vh;
 }
 
+.txt-tittle{
+    padding: 12px 0;
+}
+
 .Containder-logo{
     background-color: #07c8fe;
     width: 50%;

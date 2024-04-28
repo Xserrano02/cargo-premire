@@ -138,7 +138,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="col position-relative text-center">
-            <button type="button" class="fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle">Cotizar tamaños <img className="ms-3" src={RowIcon}/></button>
+            <a href="/detalles" type="button" class="fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle">Cotizar tamaños <img className="ms-3" src={RowIcon}/></a>
           </div>
         </div>
       </div>

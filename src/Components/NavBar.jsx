@@ -60,20 +60,11 @@ const NavBar = ({ backgroundColor = "white" }) => {
                 QUIENES SOMOS
               </Link>
             </li>
-
-            <li className="nav-item">
-              <Link
-                className="nav-link  h1 mx-5"
-                to={handleLinkClick("Quienes-somos")}
-              >
-                SOBRE NOSOTROS
-              </Link>
-            </li>
             <li className="nav-item">
               <a
                 className="nav-link h1 mx-5"
                 aria-current="page"
-                href="/detalles"
+                href="/contacto"
               >
                 CONTACTO
               </a>
