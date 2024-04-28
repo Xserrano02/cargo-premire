@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import {
   BrowserRouter as Router,
   Route,
   Routes,
 } from "react-router-dom";
 import './App.css';
+=======
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+>>>>>>> origin/Ede
 import HomePage from "./Screens/HomePage";
 import FormContact from "./Screens/FormContact";
 import Detalles from "./Screens/Detalles";
@@ -11,7 +16,6 @@ import Detalles from "./Screens/Detalles";
 
 export default function App() {
   return (
-
     /* Aqui agregegan las rutas de cada uno de las vistas */
     <Router>
       <Routes>

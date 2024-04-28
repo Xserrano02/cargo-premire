@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 import React, { useState } from 'react'
 import '../estilos/form.css'
 import Swal from 'sweetalert2'
 import Banner from '../Resources/Banner.svg'
+=======
+import React from "react";
+>>>>>>> origin/Ede
 
 export default function HomePage() {
 
@@ -174,5 +178,5 @@ export default function HomePage() {
 
       </div>
     </div>
-  )
+  );
 }
