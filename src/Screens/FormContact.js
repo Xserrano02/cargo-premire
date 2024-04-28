@@ -3,6 +3,7 @@ import '../estilos/form.css'
 import Swal from 'sweetalert2'
 import Banner from '../Resources/Banner.svg'
 import emailjs from '@emailjs/browser';
+import { Paises } from '../db/Paises.js'
 
 
 export default function HomePage(e) {
@@ -11,10 +12,22 @@ export default function HomePage(e) {
   const [direccion, setDireccion] = useState('');
   const [correoElectronico, setCorreoElectronico] = useState('');
   const [telefono, setTelefono] = useState('');
-  const [tipoCaja, setTipoCaja] = useState('');
   const [paisDestino, setPaisDestino] = useState('');
+  const [tamanosDisponibles, setTamanosDisponibles] = useState([]);
+  const [tamanoSeleccionado, setTamanoSeleccionado] = useState('');
   const [infoAdicional, setInfoAdicional] = useState('');
 
+  const handleCountryChange = (e) => {
+    const paisSeleccionado = e.target.value;
+    setPaisDestino(paisSeleccionado);
+    const pais = Paises.find(pais => pais.nombre === paisSeleccionado);
+    if (pais) {
+      setTamanosDisponibles(Object.entries(pais.tamanos));
+    } else {
+      setTamanosDisponibles([]);
+    }
+    setTamanoSeleccionado('');  // Reset tamaño al cambiar país
+  };
   function sendEmail(e) {
 
     e.preventDefault();
@@ -29,7 +42,7 @@ export default function HomePage(e) {
         () => {
           console.log('SUCCESS!');
           alertaOk();
-          resetForm()
+ //         resetForm()
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -44,7 +57,6 @@ export default function HomePage(e) {
     setDireccion('');
     setCorreoElectronico('');
     setTelefono('');
-    setTipoCaja('');
     setPaisDestino('');
     setInfoAdicional('');
   }
@@ -138,26 +150,26 @@ export default function HomePage(e) {
             <h3>Información de la caja</h3>
 
             <div className='container-mail-phone'>
-
               <div>
-                <p>Tipo caja *</p>
-                <select name="box_type" className='input-texto-esencial-select' value={tipoCaja} onChange={(e) => setTipoCaja(e.target.value)}>
-                  <option value="">Elija una opcion</option>
-                  <option value="20x20x20x20">20x20x20x20</option>
-                  <option value="36x36x36x6">36x36x36x6</option>
-                  <option value="60x60x60x60">60x60x60x60</option>
+                <p>Pais destino *</p>
+                <select name="destination_country" className='input-texto-esencial-select' value={paisDestino} onChange={handleCountryChange}>
+                  <option value="">Seleccione un país</option>
+                  {Paises.map((pais, key) => (
+                    <option key={key} value={pais.nombre}>{pais.nombre}</option>
+                  ))}
                 </select>
               </div>
 
               <div>
-            <p>Pais destino *</p>
-            <select name="destination_country" className='input-texto-esencial-select' value={paisDestino} onChange={(e) => setPaisDestino(e.target.value)}>
-              <option value="">Colombia</option>
-              <option value="Colombia">Colombia</option>
-              <option value="El Salvador">El Salvador</option>
-              <option value="Nicaragua">Nicaragua</option>
-            </select>
-          </div>
+                <p>Tamaño *</p>
+                <select name="box_size" className='input-texto-esencial-select' value={tamanoSeleccionado} onChange={(e) => setTamanoSeleccionado(e.target.value)}>
+                  <option value="">Seleccione un tamaño</option>
+                  {tamanosDisponibles.map(([key, value]) => (
+                    <option key={key} value={value}>{value}</option>
+                  ))}
+                </select>
+
+              </div>
 
             </div>
             <h3>Información adicional</h3>
