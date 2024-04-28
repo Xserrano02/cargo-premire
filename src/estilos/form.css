@@ -1,3 +1,4 @@
+
 .container-formulario{
     display:flex;
     width: 100%;
@@ -69,6 +70,7 @@
     border-radius: 10px;
     margin-top: 30px;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 /* Teléfonos en modo retrato */

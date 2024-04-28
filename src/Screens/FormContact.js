@@ -1,40 +1,66 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import '../estilos/form.css'
 import Swal from 'sweetalert2'
 import Banner from '../Resources/Banner.svg'
+import emailjs from '@emailjs/browser';
+import { Paises } from '../db/Paises.js'
 
 
-export default function HomePage() {
-
+export default function HomePage(e) {
+  const form = useRef();
   const [nombreCompleto, setNombreCompleto] = useState('');
   const [direccion, setDireccion] = useState('');
   const [correoElectronico, setCorreoElectronico] = useState('');
   const [telefono, setTelefono] = useState('');
-  const [tipoCaja, setTipoCaja] = useState('value2');
-  const [paisDestino, setPaisDestino] = useState('value2');
+  const [paisDestino, setPaisDestino] = useState('');
+  const [tamanosDisponibles, setTamanosDisponibles] = useState([]);
+  const [tamanoSeleccionado, setTamanoSeleccionado] = useState('');
   const [infoAdicional, setInfoAdicional] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  
-    if (!nombreCompleto.trim() || !direccion.trim() || !correoElectronico.trim() || !telefono.trim() || tipoCaja === 'value2' || paisDestino === 'value2') {
-      alertaOk();
-      return; 
+  console.log(tamanoSeleccionado)
+
+  const handleCountryChange = (e) => {
+    const paisSeleccionado = e.target.value;
+    setPaisDestino(paisSeleccionado);
+    const pais = Paises.find(pais => pais.nombre === paisSeleccionado);
+    if (pais) {
+      setTamanosDisponibles(Object.entries(pais.tamanos));
+    } else {
+      setTamanosDisponibles([]);
     }
-  
-    console.log({
-      nombreCompleto,
-      direccion,
-      correoElectronico,
-      telefono,
-      tipoCaja,
-      paisDestino,
-      infoAdicional 
-    });
-  
-    alertaOk();
+    setTamanoSeleccionado('');
   };
-  
+
+  function sendEmail(e) {
+    e.preventDefault();
+    emailjs
+      .sendForm('service_c8pic8d', 'template_0244yeb', form.current, {
+        publicKey: 'Rs0ljdXLJTB5tB10k',
+        destination_country: "sdf",
+        additional_info: "sdf",
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alertaOk();
+          resetForm()
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alertaFalse()
+          resetForm()
+        },
+      );
+  }
+
+  function resetForm() {
+    setNombreCompleto('');
+    setDireccion('');
+    setCorreoElectronico('');
+    setTelefono('');
+    setPaisDestino('');
+    setInfoAdicional('');
+  }
 
   function alertaOk() {
 
@@ -64,20 +90,21 @@ export default function HomePage() {
   return (
     <div className='container-formulario'>
 
-        <img class='Containder-logo' src={Banner} alt='Logo' />
+      <img class='Containder-logo' src={Banner} alt='Logo' />
 
 
 
       <div className='formulario'>
 
-        <form className='form-submit' onSubmit={handleSubmit}>
+        <form className='form-submit' ref={form} onSubmit={sendEmail}>
           <h3>Informacion personal</h3>
 
           <div className='container-person'>
             <div >
               <p>Nombre completo *</p>
               <input className='input-texto'
-              placeholder='John Doe Smith Gonzalez'
+                name='name'
+                placeholder='John Doe Smith Gonzalez'
                 type='text'
                 value={nombreCompleto}
                 onChange={(e) => setNombreCompleto(e.target.value)}
@@ -88,6 +115,7 @@ export default function HomePage() {
             <div>
               <p>Direccion *</p>
               <input className='input-texto'
+                name='address'
                 placeholder='234 Maple Street'
                 type='text'
                 value={direccion}
@@ -100,6 +128,7 @@ export default function HomePage() {
                 <p>Correo electronico *</p>
                 <input className='input-texto-esencial'
                   placeholder='johndoe@example.com'
+                  name='email'
                   value={correoElectronico}
                   onChange={(e) => setCorreoElectronico(e.target.value)}
                   type='text'
@@ -109,7 +138,8 @@ export default function HomePage() {
               <div>
                 <p>Telefono *</p>
                 <input className='input-texto-esencial'
-                placeholder='(555) 123-4567'
+                  placeholder='(555) 123-4567'
+                  name='phone'
                   type='text'
                   value={telefono}
                   onChange={(e) => setTelefono(e.target.value)}
@@ -121,51 +151,38 @@ export default function HomePage() {
             <h3>Información de la caja</h3>
 
             <div className='container-mail-phone'>
-
               <div>
-                <p>Tipo caja *</p>
-                <div className='select-box'>
-                  <select name="select"
-                    className='input-texto-esencial-select'
-                    value={tipoCaja}
-                    onChange={(e) => setTipoCaja(e.target.value)}
-                  >
-                    <option value="value1" selected>Elija una opcion</option>
-                    <option value="value2">20x20x20x20</option>
-                    <option value="value3">36x36x36x6</option>
-                    <option value="value4">60x60x60x60</option>
-                  </select>
-                </div>
-
+                <p>Pais destino *</p>
+                <select name="destination_country" className='input-texto-esencial-select' value={paisDestino} onChange={handleCountryChange}>
+                  <option value="">Seleccione un país</option>
+                  {Paises.map((pais, key) => (
+                    <option key={key} value={pais.nombre}>{pais.nombre}</option>
+                  ))}
+                </select>
               </div>
 
-              <div>
-                <div>
-                  <p>Pais destino *</p>
-                  <select name="select"
-                    value={paisDestino}
-                    onChange={(e) => setPaisDestino(e.target.value)}
-                    className='input-texto-esencial-select'>
-                    <option value="value1" selected>Elija una opcion</option>
-                    <option value="value2">Colombia</option>
-                    <option value="value3" >El Salvador</option>
-                    <option value="value4">Nicaragua</option>
-                  </select>
-                </div>
-
-
-
-              </div>
+<div>
+  <p>Tamaño *</p>
+  <select
+    name="box_type"
+    className='input-texto-esencial-select'
+    value={tamanoSeleccionado}
+    onChange={(e) => {
+      console.log("Valor seleccionado:", e.target.value);  // Esto imprimirá el valor en la consola
+      setTamanoSeleccionado(e.target.value);
+    }}
+  >
+    <option value="">Seleccione un tamaño</option>
+    {tamanosDisponibles.map(([key, value]) => (
+      <option key={key} value={value}>{value}</option>
+    ))}
+  </select>
+</div>
 
 
             </div>
             <h3>Información adicional</h3>
-
-            <textarea 
-            placeholder='¿Algún requerimiento especial?'
-              value={infoAdicional}
-              onChange={(e) => setInfoAdicional(e.target.value)}
-              className='input-adicional' />
+            <textarea name="additional_info" placeholder='¿Algún requerimiento especial?' value={infoAdicional} onChange={(e) => setInfoAdicional(e.target.value)} className='input-adicional' />
             <div className='container-person'>
               <input type="submit" value="Enviar" className='btn-enviar-form' />
             </div>
@@ -176,5 +193,6 @@ export default function HomePage() {
       </div>
 
     </div>
-  );
+  )
+
 }
