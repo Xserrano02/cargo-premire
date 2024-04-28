@@ -52,12 +52,12 @@ const Footer = () => {
             <div className="row mt-3">
               <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
                 <h6 className="fw-bold" id="Titulos">Nuestros Servicios</h6><br />
-                <p className="Servi"> > Envíos Aéreos </p>
-                <p className="Servi"> > Envíos Marítimo </p>
-                <p className="Servi"> > Envíos De Sobres </p>
-                <p className="Servi"> > Casillero Postal </p>
-                <p className="Servi"> > Envíos Aéreos </p>
-                <p className="Servi"> > Envíos Marítimo</p>
+                <p className="Servi">  Envíos Aéreos </p>
+                <p className="Servi">  Envíos Marítimo </p>
+                <p className="Servi">  Envíos De Sobres </p>
+                <p className="Servi">  Casillero Postal </p>
+                <p className="Servi">  Envíos Aéreos </p>
+                <p className="Servi">  Envíos Marítimo</p>
               </div>
               <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4" >
                 <h6 className="fw-bold" id="Titulos">Contacto</h6><br />

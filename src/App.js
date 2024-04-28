@@ -1,14 +1,5 @@
-<<<<<<< HEAD
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
-import './App.css';
-=======
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
->>>>>>> origin/Ede
 import HomePage from "./Screens/HomePage";
 import FormContact from "./Screens/FormContact";
 import Detalles from "./Screens/Detalles";
@@ -23,8 +14,8 @@ export default function App() {
         <Route path="/contacto" element={<FormContact />} />
         <Route path="/detalles" element={<Detalles />} />
         <Route path="*" element={<h2>Pagina no encontrada</h2>} />
+        
       </Routes>
-
     </Router>
   );
 }
