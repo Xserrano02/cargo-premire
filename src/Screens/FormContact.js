@@ -43,7 +43,7 @@ export default function HomePage(e) {
         () => {
           console.log('SUCCESS!');
           alertaOk();
- //         resetForm()
+          resetForm()
         },
         (error) => {
           console.log('FAILED...', error.text);
