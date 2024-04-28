@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import NavBar from "../Components/NavBar.jsx";
 import Banner from "../Resources/Banner.svg";
 import Mexico from "../Resources/Mexico.svg";
@@ -16,6 +16,9 @@ import LogoCaja from "../Resources/logo cajita 1.svg";
 import LogoVision from "../Resources/Visionsvg.svg";
 import Mision from "../Resources/Mision.svg";
 import Terrestre from "../Resources/Terrestre.svg";
+import SvCountry from "../Resources/SvCountry.svg";
+import RowIcon from "../Resources/RowIcon.svg";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import '../estilos/HomeStyles.css';
@@ -95,7 +98,36 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <img src={BannerSV} className="img-fluid w-100" alt="..." />
+
+      <div className="container-fluid infoElSalvador">
+        <div className="row  mt-5">
+          <div className="col">
+            <div className="circulo">
+              <h1
+                className="text-center fw-bolder mb-5 mt-5 pt-4"
+                style={{ color: "#13103A" }}
+              >
+                El Salvador
+              </h1>
+              <img className="country" src={SvCountry} alt="El Salvador" />
+              <p className="h4 mt-3" style={{ textAlign: "justify", padding:"0 60px" }}>
+                Paqueteria puerta a puerta en
+                toda la Republica de El Salvador
+              </p>
+              <p className="h4 fw-bold text-center" style={{ textAlign: "justify" }}>
+                Tiempo de entrega
+              </p>
+              <p className="h4 text-center">
+              3 - 4 Semanas
+              </p>
+              <p class="fw-bold mt-4 fst-italic h4 text-center">No se cobra por peso.</p>
+            </div>
+          </div>
+          <div className="col position-relative text-center">
+            <button type="button" class="fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle">Cotizar tamaños <img className="ms-3" src={RowIcon}/></button>
+          </div>
+        </div>
+      </div>
       <div className="container ">
         <h1
           className="text-center fw-bolder mb-5 mt-5"
@@ -134,7 +166,7 @@ export default function HomePage() {
         data-bs-ride="carousel"
       >
         <div className="carousel-inner">
-          <div className="carousel-item active"  data-bs-interval="3000">
+          <div className="carousel-item active" data-bs-interval="3000">
             <div className="container">
               <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
                 <div className="col">
@@ -178,7 +210,7 @@ export default function HomePage() {
                   <img
                     src={Terrestre}
                     className="img-fluid w-100 imagenBanner"
-                    alt="..."
+                    alt="Banner"
                   />
                 </div>
               </div>

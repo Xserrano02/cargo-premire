@@ -56,7 +56,7 @@ const NavBar = () => {
               <a
                 className="nav-link h1 mx-5"
                 aria-current="page"
-                href="/"
+                href="/detalles"
               >
                 CONTACTO
               </a>
