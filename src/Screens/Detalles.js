@@ -356,36 +356,37 @@ export default function Detalles() {
                 {paisSeleccionado.nombre.slice(7).toUpperCase()}
               </span>
             </>
-          ) : paisSeleccionado.nombre.toUpperCase() === "REPUBLICA DOMINICANA" ? (
-<>
-  <span style={{ color: "#CE1126" }}>
-    {paisSeleccionado.nombre.slice(0, 3).toUpperCase()}
-  </span>
-  <span style={{ color: "white" }}>
-    {paisSeleccionado.nombre.slice(3, 6).toUpperCase()}
-  </span>
-  <span style={{ color: "#002D62" }}>
-    {paisSeleccionado.nombre.slice(6, 9).toUpperCase()}
-  </span>
-  <span style={{ color: "#CE1126" }}>
-    {paisSeleccionado.nombre.slice(9, 12).toUpperCase()}
-  </span>
-  <span style={{ color: "white" }}>
-    {paisSeleccionado.nombre.slice(12, 16).toUpperCase()}
-  </span>
-  <span style={{ color: "#002D62" }}>
-    {paisSeleccionado.nombre.slice(16).toUpperCase()}
-  </span>
-</>
-) : (
-<span style={{ color: "white" }}>
-  {paisSeleccionado.nombre.toUpperCase()}
-</span>
+          ) : paisSeleccionado.nombre.toUpperCase() ===
+            "REPUBLICA DOMINICANA" ? (
+            <>
+              <span style={{ color: "#CE1126" }}>
+                {paisSeleccionado.nombre.slice(0, 3).toUpperCase()}
+              </span>
+              <span style={{ color: "white" }}>
+                {paisSeleccionado.nombre.slice(3, 6).toUpperCase()}
+              </span>
+              <span style={{ color: "#002D62" }}>
+                {paisSeleccionado.nombre.slice(6, 9).toUpperCase()}
+              </span>
+              <span style={{ color: "#CE1126" }}>
+                {paisSeleccionado.nombre.slice(9, 12).toUpperCase()}
+              </span>
+              <span style={{ color: "white" }}>
+                {paisSeleccionado.nombre.slice(12, 16).toUpperCase()}
+              </span>
+              <span style={{ color: "#002D62" }}>
+                {paisSeleccionado.nombre.slice(16).toUpperCase()}
+              </span>
+            </>
+          ) : (
+            <span style={{ color: "white" }}>
+              {paisSeleccionado.nombre.toUpperCase()}
+            </span>
           )}
         </h1>
       </div>
 
-      <div className="row">
+      <div className="row mt-5 justify-content-center">
         <div className="col text-center mt-3">
           <h2>
             <b>Tamaños</b>
@@ -488,9 +489,10 @@ export default function Detalles() {
               color: "#13103A",
               borderColor: "#13103A",
               borderRadius: "20px",
-              padding: "10px 20px",
+              padding: "20px 40px",
               borderWidth: "3px",
               fontWeight: "bold",
+              fontSize: "25px",
             }}
             onMouseOver={() => toggleHover("contact")}
             onMouseOut={() => toggleHover(null)}
@@ -499,21 +501,21 @@ export default function Detalles() {
           </Link>
         </div>
       </div>
-      <div className="row mt-5">
-        <div className="col-md-6 d-flex flex-column justify-content-center align-items-center">
-          <h2>
-            <b>Salidas Fijas</b>
-          </h2>
-          <ul>
-            <li>Todos los jueves</li>
-            <li>El Jueves 23 de Agosto</li>
-            <li>Martes 18 de Septiembre</li>
-          </ul>
-        </div>
-        <div className="col-md-6 d-flex justify-content-center align-items-center">
-          <img src={logoCajita1} alt="Logo" />
-        </div>
-      </div>
+      <div className="row mt-5 justify-content-center">
+  <div className="col-md-5 d-flex flex-column justify-content-center align-items-center">
+    <h2>
+      <b>Salidas Fijas</b>
+    </h2>
+    <ul>
+      <li>Todos los jueves</li>
+      <li>El Jueves 23 de Agosto</li>
+      <li>Martes 18 de Septiembre</li>
+    </ul>
+  </div>
+  <div className="col-md-5 d-flex justify-content-center align-items-center">
+    <img src={logoCajita1} alt="Logo" />
+  </div>
+</div>
     </div>
   );
 }
