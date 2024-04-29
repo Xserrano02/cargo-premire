@@ -10,7 +10,7 @@ import CostaRica from "../Resources/CostaRica.png";
 import Colombia from "../Resources/Colombia.png";
 import Venezuela from "../Resources/Venezuela.png";
 import Republic from "../Resources/RepublicaDom.png";
-import BannerSV from "../Resources/BannerSV.svg";
+//import BannerSV from "../Resources/BannerSV.svg";
 import Aereo from "../Resources/Areo.svg";
 import LogoCaja from "../Resources/logo cajita 1.svg";
 import LogoVision from "../Resources/Visionsvg.svg";
@@ -138,7 +138,9 @@ export default function HomePage() {
             </div>
           </div>
           <div className="col position-relative text-center">
-            <a href="/detalles" type="button" class="fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle">Cotizar tamaños <img className="ms-3" src={RowIcon}/></a>
+          <a href="/detalles" type="button" class="fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle">
+    Cotizar tamaños <img className="ms-3" src={RowIcon} alt="Icono de fila"/>
+</a>
           </div>
         </div>
       </div>
