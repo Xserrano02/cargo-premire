@@ -38,7 +38,7 @@ const NavBar = () => {
               <a
                 className="nav-link  h1 mx-5"
                 aria-current="page"
-                href="/"
+                href="https://cbone.controlbox.net/cargopremier/cbone/app/rastreo/"
               >
                 RASTREO
               </a>
