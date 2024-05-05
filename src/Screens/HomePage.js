@@ -10,7 +10,6 @@ import CostaRica from "../Resources/CostaRica.png";
 import Colombia from "../Resources/Colombia.png";
 import Venezuela from "../Resources/Venezuela.png";
 import Republic from "../Resources/RepublicaDom.png";
-import BannerSV from "../Resources/BannerSV.svg";
 import Aereo from "../Resources/Areo.svg";
 import LogoCaja from "../Resources/logo cajita 1.svg";
 import LogoVision from "../Resources/Visionsvg.svg";
@@ -100,7 +99,7 @@ export default function HomePage() {
       </div>
 
       <div className="container-fluid infoElSalvador">
-        <div className="row  mt-5">
+        <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
           <div className="col">
             <div className="circulo">
               <h1
@@ -124,7 +123,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="col position-relative text-center">
-            <button type="button" class="fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle">Cotizar tamaños <img className="ms-3" src={RowIcon}/></button>
+            <button type="button" class="buttonSizes fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle">Cotizar tamaños <img className="ms-3" alt="icono" src={RowIcon}/></button>
           </div>
         </div>
       </div>
@@ -236,27 +235,24 @@ export default function HomePage() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-
-      <div>
-        <div style={{ height: "150px", overflow: "hidden" }}>
-          <svg
-            viewBox="0 0 500 150"
+      <svg
+            viewBox="0 0 500 80"
             preserveAspectRatio="none"
-            style={{ height: "100%", width: "100%" }}
+            style={{ height: "10%", width: "100%" }}
           >
             <path
               d="M-1.41,20.23 C144.74,88.33 349.03,-3.44 503.67,27.14 L500.00,150.00 L-3.10,154.45 Z"
               style={{ stroke: "none", fill: "#6BDFFF" }}
             ></path>
           </svg>
-        </div>
+      <div className="container-fluid">
         <div
           className="row text-center pb-5"
           style={{ backgroundColor: "#6BDFFF" }}
         >
-          <div className="col-6 container">
+          <div className="col-12 col-sm-6 container">
             <h1
-              className="text-start fw-bolder p-2"
+              className="text-center text-lg-start fw-bolder p-2 txt-Vision"
               style={{ color: "#13103A" }}
             >
               Visión
@@ -275,19 +271,19 @@ export default function HomePage() {
               dolor do amet sint. Velit officia consequat duis enim velit
             </p>
           </div>
-          <div className="col-3 text-start container">
-            <img src={LogoVision} className="img-fluid w-80" alt="..." />
+          <div className="col-12 col-sm-3 text-start container">
+            <img src={LogoVision} className="img-fluid w-80 logoVision" alt="..." />
           </div>
         </div>
         <div
           className="row text-center pt-5 pb-5 "
           style={{ backgroundColor: "#85FFC8" }}
         >
-          <div className="col-3 text-end container">
-            <img src={Mision} className="img-fluid w-80" alt="..." />
+          <div className="col-12 col-sm-3 text-end container">
+            <img src={Mision} className="img-fluid w-80 logoMision" alt="..." />
           </div>
-          <div className="col-6 container">
-            <h1 className="text-end fw-bolder p-2" style={{ color: "#13103A" }}>
+          <div className="col-12 col-sm-6 container">
+            <h1 className="text-center text-lg-end fw-bolder p-2 txt-Mision" style={{ color: "#13103A" }}>
               Misión
             </h1>
             <p
@@ -305,19 +301,17 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-        <div style={{ height: "150px", overflow: "hidden" }}>
-          <svg
-            viewBox="0 0 500 150"
+      </div>
+      <svg
+            viewBox="0 40 500 100"
             preserveAspectRatio="none"
-            style={{ height: "100%", width: "100%" }}
+            style={{ height: "10%", width: "100%" }}
           >
             <path
               d="M0.00,49.98 C156.04,122.88 283.01,9.39 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
               style={{ stroke: "none", fill: "#85FFC8" }}
             ></path>
           </svg>
-        </div>
-      </div>
     </>
   );
 }
