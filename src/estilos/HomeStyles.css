@@ -34,7 +34,8 @@
   width: 70%;
 }
 .textoRep{
-  font-size: 23px;
+  font-size: 25px;
+  padding-top: 40px;
 }
 
 @media (max-width: 844px) {
