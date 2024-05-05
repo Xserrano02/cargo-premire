@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../Components/NavBar.jsx";
 import Banner from "../Resources/Banner.svg";
 import Mexico from "../Resources/Mexico.svg";
@@ -20,11 +20,66 @@ import RowIcon from "../Resources/RowIcon.svg";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import '../estilos/HomeStyles.css';
-
+import "../estilos/HomeStyles.css";
 
 export default function HomePage() {
+  const [paisSeleccionado, setPaisSeleccionado] = useState({
+    nombre: "El Salvador",
+    imagen: SvCountry,
+    descripcion: "Paquetería puerta a puerta en toda la República de El Salvador.",
+  });
 
+  const paises = [
+    { nombre: "Mexico", imagen: Mexico, descripcion: "Paqueteria puerta a puerta en toda la Republica de Mexico" },
+    {
+      nombre: "Guatemala",
+      imagen: Guatemala,
+      descripcion: "Paqueteria puerta a puerta en toda la Republica de Guatemala",
+    },
+    {
+      nombre: "El Salvador",
+      imagen: ElSalvador,
+      descripcion: "Paqueteria puerta a puerta en toda la Republica de El Salvador",
+    },
+    {
+      nombre: "Honduras",
+      imagen: Honduras,
+      descripcion: "Paqueteria puerta a puerta en toda la Republica de Honduras",
+    },
+    {
+      nombre: "Nicaragua",
+      imagen: Nicaragua,
+      descripcion: "Paqueteria puerta a puerta en toda la Republica de Nicaragua",
+    },
+    {
+      nombre: "Costa rica",
+      imagen: CostaRica,
+      descripcion: "Paqueteria puerta a puerta en toda la Republica de Costa Rica",
+    },
+  ];
+
+  //Estos paises son los de la segunda linea que van centrados
+  const paises2 = [
+    {
+      nombre: "Colombia",
+      imagen: Colombia,
+      descripcion: "Paqueteria puerta a puerta en toda la Republica de Colombia",
+    },
+    {
+      nombre: "Venezuela",
+      imagen: Venezuela,
+      descripcion: "Paqueteria puerta a puerta en toda la Republica de Venezuela",
+    },
+    {
+      nombre: "Republica Dominicana",
+      imagen: Republic,
+      descripcion: "Paqueteria puerta a puerta en toda Republica Dominicana",
+    },
+  ];
+
+  const handleClickPais = (pais) => {
+    setPaisSeleccionado(pais);
+  };
 
   return (
     <>
@@ -56,74 +111,64 @@ export default function HomePage() {
             Paises Destino
           </h1>
           <div className="row row-cols-3 row-cols-lg-6 g-2 g-lg-3">
-            <div className="col text-center img-container">
-              <img className="imagen" src={Mexico} alt="Mexico" />
-              <div className="p-3 fw-bolder">Mexico</div>
-            </div>
-            <div className="col text-center img-container">
-              <img className="imagen" src={Guatemala} alt="Guatemala" />
-              <div className="p-3 fw-bolder">Guatemala</div>
-            </div>
-            <div className="col text-center img-container">
-              <img className="imagen" src={ElSalvador} alt="El Salvador" />
-              <div className="pt-3 fw-bolder">El Salvador</div>
-            </div>
-            <div className="col text-center img-container">
-              <img className="imagen" src={Honduras} alt="Honduras" />
-              <div className="p-3 fw-bolder">Honduras</div>
-            </div>
-            <div className="col text-center img-container">
-              <img className="imagen" src={Nicaragua} alt="Nicaragua" />
-              <div className="p-3 fw-bolder">Nicaragua</div>
-            </div>
-            <div className="col text-center img-container">
-              <img className="imagen" src={CostaRica} alt="Costa Rica" />
-              <div className="pt-3 fw-bolder">Costa Rica</div>
-            </div>
+            {paises.map((pais, index) => (
+              <div
+                key={index}
+                className="col text-center img-container"
+                onClick={() => handleClickPais(pais)}
+              >
+                <img className="imagen" src={pais.imagen} alt={pais.nombre} />
+                <div className="pt-3 pb-3 fw-bolder">{pais.nombre}</div>
+              </div>
+            ))}
           </div>
           <div className="row row-cols-3 row-cols-lg-6 g-2 g-lg-3 justify-content-center container">
-            <div className="col text-center img-container">
-              <img className="imagen" src={Colombia} alt="Colombia" />
-              <div className="p-3 fw-bolder">Colombia</div>
+            {paises2.map((pais, index) => (
+            <div key={index} className="col text-center img-container" onClick={() => handleClickPais(pais)}>
+              <img className="imagen" src={pais.imagen} alt="Colombia" />
+              <div className="pt-3 pb-3 fw-bolder">{pais.nombre}</div>
             </div>
-            <div className="col text-center img-container">
-              <img className="imagen" src={Venezuela} alt="Venezuela" />
-              <div className="p-3 fw-bolder">Venezuela</div>
-            </div>
-            <div className="col text-center img-container">
-              <img className="imagen" src={Republic} alt="Republica Dominicana" />
-              <div className="pt-3 pb-3 fw-bolder">Republica Dominicana</div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      <div className="container-fluid infoElSalvador">
+      <div className="container-fluid infoCountries">
         <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
           <div className="col">
             <div className="circulo">
               <h1
-                className="text-center fw-bolder mb-1 mb-lg-5 mt-5 pt-4"
+                className={`text-center fw-bolder mb-1 mb-lg-5 mt-5 ${paisSeleccionado.nombre === 'Republica Dominicana' ? 'textoRep' : 'pt-4'}`}
                 style={{ color: "#13103A" }}
               >
-                El Salvador
+                {paisSeleccionado ? paisSeleccionado.nombre : ''}
               </h1>
-              <img className="country" src={SvCountry} alt="El Salvador" />
-              <p className="h4 mt-3 descript" style={{ textAlign: "justify", padding:"0 60px" }}>
-                Paqueteria puerta a puerta en
-                toda la Republica de El Salvador
+              <img className="country" src={paisSeleccionado.imagen} alt="El Salvador" />
+              <p
+                className="h4 mt-3 descript"
+                style={{ textAlign: "justify", padding: "0 60px" }}
+              >
+                    {paisSeleccionado.descripcion}
               </p>
-              <p className="h4 fw-bold text-center" style={{ textAlign: "justify" }}>
+              <p
+                className="h4 fw-bold text-center"
+                style={{ textAlign: "justify" }}
+              >
                 Tiempo de entrega
               </p>
-              <p className="h4 text-center">
-              3 - 4 Semanas
+              <p className="h4 text-center">3 - 4 Semanas</p>
+              <p className="fw-bold mt-0 mt-lg-4 fst-italic h4 text-center">
+                No se cobra por peso.
               </p>
-              <p class="fw-bold mt-0 mt-lg-4 fst-italic h4 text-center">No se cobra por peso.</p>
             </div>
           </div>
           <div className="col position-relative text-center">
-            <button type="button" class="buttonSizes fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle">Cotizar tamaños <img className="ms-3" alt="icono" src={RowIcon}/></button>
+            <button
+              type="button"
+              className="buttonSizes fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle"
+            >
+              Cotizar tamaños <img className="ms-3" alt="icono" src={RowIcon} />
+            </button>
           </div>
         </div>
       </div>
@@ -175,7 +220,10 @@ export default function HomePage() {
                   >
                     Aereo
                   </h1>
-                  <p className="h3 textoBanner" style={{ textAlign: "justify" }}>
+                  <p
+                    className="h3 textoBanner"
+                    style={{ textAlign: "justify" }}
+                  >
                     Amet minim mollit non deserunt ullamco est sit aliqua dolor
                     do amet sint. Velit officia consequat duis enim velit Amet
                     minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -183,7 +231,11 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="col">
-                  <img src={Aereo} className="img-fluid w-100 imagenBanner" alt="..." />
+                  <img
+                    src={Aereo}
+                    className="img-fluid w-100 imagenBanner"
+                    alt="..."
+                  />
                 </div>
               </div>
             </div>
@@ -198,7 +250,10 @@ export default function HomePage() {
                   >
                     Terrestre
                   </h1>
-                  <p className="h3 textoBanner" style={{ textAlign: "justify" }}>
+                  <p
+                    className="h3 textoBanner"
+                    style={{ textAlign: "justify" }}
+                  >
                     Amet minim mollit non deserunt ullamco est sit aliqua dolor
                     do amet sint. Velit officia consequat duis enim velit Amet
                     minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -222,7 +277,10 @@ export default function HomePage() {
           data-bs-target="#carouselExample"
           data-bs-slide="prev"
         >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
@@ -231,20 +289,23 @@ export default function HomePage() {
           data-bs-target="#carouselExample"
           data-bs-slide="next"
         >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
           <span className="visually-hidden">Next</span>
         </button>
       </div>
       <svg
-            viewBox="0 0 500 80"
-            preserveAspectRatio="none"
-            style={{ height: "10%", width: "100%" }}
-          >
-            <path
-              d="M-1.41,20.23 C144.74,88.33 349.03,-3.44 503.67,27.14 L500.00,150.00 L-3.10,154.45 Z"
-              style={{ stroke: "none", fill: "#6BDFFF" }}
-            ></path>
-          </svg>
+        viewBox="0 0 500 80"
+        preserveAspectRatio="none"
+        style={{ height: "10%", width: "100%" }}
+      >
+        <path
+          d="M-1.41,20.23 C144.74,88.33 349.03,-3.44 503.67,27.14 L500.00,150.00 L-3.10,154.45 Z"
+          style={{ stroke: "none", fill: "#6BDFFF" }}
+        ></path>
+      </svg>
       <div className="container-fluid">
         <div
           className="row text-center pb-5"
@@ -272,7 +333,11 @@ export default function HomePage() {
             </p>
           </div>
           <div className="col-12 col-sm-3 text-start container">
-            <img src={LogoVision} className="img-fluid w-80 logoVision" alt="..." />
+            <img
+              src={LogoVision}
+              className="img-fluid w-80 logoVision"
+              alt="..."
+            />
           </div>
         </div>
         <div
@@ -283,7 +348,10 @@ export default function HomePage() {
             <img src={Mision} className="img-fluid w-80 logoMision" alt="..." />
           </div>
           <div className="col-12 col-sm-6 container">
-            <h1 className="text-center text-lg-end fw-bolder p-2 txt-Mision" style={{ color: "#13103A" }}>
+            <h1
+              className="text-center text-lg-end fw-bolder p-2 txt-Mision"
+              style={{ color: "#13103A" }}
+            >
               Misión
             </h1>
             <p
@@ -303,15 +371,15 @@ export default function HomePage() {
         </div>
       </div>
       <svg
-            viewBox="0 40 500 100"
-            preserveAspectRatio="none"
-            style={{ height: "10%", width: "100%" }}
-          >
-            <path
-              d="M0.00,49.98 C156.04,122.88 283.01,9.39 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
-              style={{ stroke: "none", fill: "#85FFC8" }}
-            ></path>
-          </svg>
+        viewBox="0 40 500 100"
+        preserveAspectRatio="none"
+        style={{ height: "10%", width: "100%" }}
+      >
+        <path
+          d="M0.00,49.98 C156.04,122.88 283.01,9.39 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
+          style={{ stroke: "none", fill: "#85FFC8" }}
+        ></path>
+      </svg>
     </>
   );
 }
