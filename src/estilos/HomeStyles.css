@@ -21,30 +21,39 @@
   background-size: cover;
 }
 .imagenMex{
+  transition: background-image 0.3s ease-in-out;
   background-image: url('../Resources/camion-mexico.svg');
 }
 .imagenGuat{
+  transition: background-image 0.3s ease-in-out;
   background-image: url('../Resources/camion-Guate.svg');
 }
 .imagenSv{
+  transition: background-image 0.3s ease-in-out;
   background-image: url('../Resources/AvionSV.svg');
 }
 .imagenHond{
+  transition: background-image 0.3s ease-in-out;
   background-image: url('../Resources/barco-Honduras.svg');
 }
 .imagenNic{
+  transition: background-image 0.3s ease-in-out;
   background-image: url('../Resources/Camion-Nicaragua.svg');
 }
 .imagenColm{
+  transition: background-image 0.3s ease-in-out;
   background-image: url('../Resources/avion-colombia.svg');
 }
 .imagenCosta{
+  transition: background-image 0.3s ease-in-out;
   background-image: url('../Resources/Avion-CostaRica.svg');
 }
 .imagenVenez{
+  transition: background-image 0.3s ease-in-out;
   background-image: url('../Resources/barco-venezuela.svg');
 }
 .imagenRep{
+  transition: background-image 0.3s ease-in-out;
   background-image: url('../Resources/Barco-RD\ 1.svg');
 }
 .circulo {
