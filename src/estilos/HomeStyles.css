@@ -19,6 +19,7 @@
   width: 100%;
   height: 100%;
   background-image: url('../Resources/AvionSV.svg');
+  background-size: cover;
 }
 
 .circulo {
@@ -57,13 +58,38 @@
   .circulo {
     background-color: white;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin: 20px;
+    width: 40vh !important;
+    height: 40vh;
   }
   .country{
     padding-left: 30%;
     width: 70%;
   }
 
+  .infoElSalvador {
+    width: 100%;
+    height: 60vh;
+    background-image: url('../Resources/AvionSV.svg');
+  }
+  .buttonSizes{
+    --bs-btn-padding-y: 0.1rem !important;
+    --bs-btn-padding-x: 0.8rem !important;
+    width: 30vh;
+    margin-top: 20px;
+  }
+  .logoMision{
+    display: none ;
+  }
+  .logoVision{
+    display: none;
+  }
+  .txt-Vision{
+    text-align: center !important;
+  }
+  .txt-Mision{
+    text-align: center !important;
+  }
+  .descript{
+    padding: 0px 10px !important;
+  }
 }
