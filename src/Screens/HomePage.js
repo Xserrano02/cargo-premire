@@ -103,13 +103,13 @@ export default function HomePage() {
           <div className="col">
             <div className="circulo">
               <h1
-                className="text-center fw-bolder mb-5 mt-5 pt-4"
+                className="text-center fw-bolder mb-1 mb-lg-5 mt-5 pt-4"
                 style={{ color: "#13103A" }}
               >
                 El Salvador
               </h1>
               <img className="country" src={SvCountry} alt="El Salvador" />
-              <p className="h4 mt-3" style={{ textAlign: "justify", padding:"0 60px" }}>
+              <p className="h4 mt-3 descript" style={{ textAlign: "justify", padding:"0 60px" }}>
                 Paqueteria puerta a puerta en
                 toda la Republica de El Salvador
               </p>
@@ -119,7 +119,7 @@ export default function HomePage() {
               <p className="h4 text-center">
               3 - 4 Semanas
               </p>
-              <p class="fw-bold mt-4 fst-italic h4 text-center">No se cobra por peso.</p>
+              <p class="fw-bold mt-0 mt-lg-4 fst-italic h4 text-center">No se cobra por peso.</p>
             </div>
           </div>
           <div className="col position-relative text-center">
