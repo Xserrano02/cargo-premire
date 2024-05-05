@@ -7,7 +7,7 @@ import Honduras from "../Resources/Honduras.png";
 import Nicaragua from "../Resources/Nicaragua.png";
 import CostaRica from "../Resources/CostaRica.png";
 import Colombia from "../Resources/Colombia.png";
-import Venezuela from "../Resources/Venezuela.png";
+//import Venezuela from "../Resources/Venezuela.png";
 import Republic from "../Resources/RepublicaDom.png";
 
 export default function Detalles() {
