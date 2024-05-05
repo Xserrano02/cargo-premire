@@ -77,6 +77,20 @@ export default function HomePage() {
     },
   ];
 
+  const countryClasses = {
+    Mexico: 'imagenMex',
+    Guatemala: 'imagenGuat',
+    'El Salvador': 'imagenSv',
+    Honduras: 'imagenHond',
+    Nicaragua: 'imagenNic',
+    'Costa rica': 'imagenCosta',
+    Colombia: 'imagenColm',
+    Venezuela: 'imagenVenez',
+    'Republica Dominicana': 'imagenRep',
+  };
+  
+  const selectedCountryClass = countryClasses[paisSeleccionado.nombre];
+
   const handleClickPais = (pais) => {
     setPaisSeleccionado(pais);
   };
@@ -133,7 +147,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="container-fluid infoCountries">
+      <div className={`container-fluid infoCountries ${selectedCountryClass}`}>
         <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
           <div className="col">
             <div className="circulo">

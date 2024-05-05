@@ -18,10 +18,35 @@
 .infoCountries {
   width: 100%;
   height: 100%;
-  background-image: url('../Resources/AvionSV.svg');
   background-size: cover;
 }
-
+.imagenMex{
+  background-image: url('../Resources/camion-mexico.svg');
+}
+.imagenGuat{
+  background-image: url('../Resources/camion-Guate.svg');
+}
+.imagenSv{
+  background-image: url('../Resources/AvionSV.svg');
+}
+.imagenHond{
+  background-image: url('../Resources/barco-Honduras.svg');
+}
+.imagenNic{
+  background-image: url('../Resources/Camion-Nicaragua.svg');
+}
+.imagenColm{
+  background-image: url('../Resources/avion-colombia.svg');
+}
+.imagenCosta{
+  background-image: url('../Resources/Avion-CostaRica.svg');
+}
+.imagenVenez{
+  background-image: url('../Resources/barco-venezuela.svg');
+}
+.imagenRep{
+  background-image: url('../Resources/Barco-RD\ 1.svg');
+}
 .circulo {
   background-color: white;
   border-radius: 50%;
@@ -73,7 +98,6 @@
   .infoCountries {
     width: 100%;
     height: 60vh;
-    background-image: url('../Resources/AvionSV.svg');
   }
   .buttonSizes{
     --bs-btn-padding-y: 0.1rem !important;
@@ -134,7 +158,6 @@
   .infoCountries {
     width: 100%;
     height: 60vh;
-    background-image: url('../Resources/AvionSV.svg');
   }
   .buttonSizes{
     --bs-btn-padding-y: 0.1rem !important;
@@ -195,7 +218,6 @@
   .infoCountries {
     width: 100%;
     height: 75vh;
-    background-image: url('../Resources/AvionSV.svg');
   }
   .buttonSizes{
     --bs-btn-padding-y: 0.1rem !important;
@@ -231,32 +253,10 @@
     .infoCountries {
       width: 100%;
       height: 65vh;
-      background-image: url('../Resources/AvionSV.svg');
     }
     .textoRep{
       padding-top: 30px;
       font-size: 20px;
 
     }
-}
-
-@media (max-width: 414px) {
-    
-  .circulo {
-    background-color: white;
-    border-radius: 50%;
-    width: 47vh !important;
-    height: 46vh;
-    margin: 0;
-  }
-  .infoCountries {
-    width: 100%;
-    height: 65vh;
-    background-image: url('../Resources/AvionSV.svg');
-  }
-  .textoRep{
-    padding-top: 30px;
-    font-size: 20px;
-
-  }
 }
