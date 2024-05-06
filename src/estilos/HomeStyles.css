@@ -255,8 +255,8 @@
     .circulo {
       background-color: white;
       border-radius: 50%;
-      width: 45vh !important;
-      height: 45vh;
+      width: 100% !important;
+      height: 50vh;
       margin: 0;
     }
     .infoCountries {
@@ -268,4 +268,24 @@
       font-size: 20px;
 
     }
+}
+
+@media (max-width: 414px) {
+    
+  .circulo {
+    background-color: white;
+    border-radius: 50%;
+    width: 100% !important;
+    height: 45vh;
+    margin: 0;
+  }
+  .infoCountries {
+    width: 100%;
+    height: 65vh;
+  }
+  .textoRep{
+    padding-top: 30px;
+    font-size: 20px;
+
+  }
 }
