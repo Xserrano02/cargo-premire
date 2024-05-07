@@ -15,13 +15,47 @@
   margin-left: 40px;
 }
 
-.infoElSalvador {
+.infoCountries {
   width: 100%;
   height: 100%;
-  background-image: url('../Resources/AvionSV.svg');
   background-size: cover;
 }
-
+.imagenMex{
+  transition: background-image 0.3s ease-in-out;
+  background-image: url('../Resources/camion-mexico.svg');
+}
+.imagenGuat{
+  transition: background-image 0.3s ease-in-out;
+  background-image: url('../Resources/camion-Guate.svg');
+}
+.imagenSv{
+  transition: background-image 0.3s ease-in-out;
+  background-image: url('../Resources/AvionSV.svg');
+}
+.imagenHond{
+  transition: background-image 0.3s ease-in-out;
+  background-image: url('../Resources/barco-Honduras.svg');
+}
+.imagenNic{
+  transition: background-image 0.3s ease-in-out;
+  background-image: url('../Resources/Camion-Nicaragua.svg');
+}
+.imagenColm{
+  transition: background-image 0.3s ease-in-out;
+  background-image: url('../Resources/avion-colombia.svg');
+}
+.imagenCosta{
+  transition: background-image 0.3s ease-in-out;
+  background-image: url('../Resources/Avion-CostaRica.svg');
+}
+.imagenVenez{
+  transition: background-image 0.3s ease-in-out;
+  background-image: url('../Resources/barco-venezuela.svg');
+}
+.imagenRep{
+  transition: background-image 0.3s ease-in-out;
+  background-image: url('../Resources/Barco-RD\ 1.svg');
+}
 .circulo {
   background-color: white;
   border-radius: 50%;
@@ -32,6 +66,10 @@
 .country{
   padding-left: 30%;
   width: 70%;
+}
+.textoRep{
+  font-size: 25px;
+  padding-top: 40px;
 }
 
 @media (max-width: 844px) {
@@ -66,10 +104,9 @@
     width: 70%;
   }
 
-  .infoElSalvador {
+  .infoCountries {
     width: 100%;
     height: 60vh;
-    background-image: url('../Resources/AvionSV.svg');
   }
   .buttonSizes{
     --bs-btn-padding-y: 0.1rem !important;
@@ -127,10 +164,9 @@
     width: 70%;
   }
 
-  .infoElSalvador {
+  .infoCountries {
     width: 100%;
     height: 60vh;
-    background-image: url('../Resources/AvionSV.svg');
   }
   .buttonSizes{
     --bs-btn-padding-y: 0.1rem !important;
@@ -188,10 +224,9 @@
     width: 70%;
   }
 
-  .infoElSalvador {
+  .infoCountries {
     width: 100%;
     height: 75vh;
-    background-image: url('../Resources/AvionSV.svg');
   }
   .buttonSizes{
     --bs-btn-padding-y: 0.1rem !important;
@@ -220,13 +255,37 @@
     .circulo {
       background-color: white;
       border-radius: 50%;
-      width: 47vh !important;
-      height: 47vh;
+      width: 100% !important;
+      height: 50vh;
       margin: 0;
     }
-    .infoElSalvador {
+    .infoCountries {
       width: 100%;
       height: 65vh;
-      background-image: url('../Resources/AvionSV.svg');
     }
+    .textoRep{
+      padding-top: 30px;
+      font-size: 20px;
+
+    }
+}
+
+@media (max-width: 414px) {
+    
+  .circulo {
+    background-color: white;
+    border-radius: 50%;
+    width: 100% !important;
+    height: 45vh;
+    margin: 0;
+  }
+  .infoCountries {
+    width: 100%;
+    height: 65vh;
+  }
+  .textoRep{
+    padding-top: 30px;
+    font-size: 20px;
+
+  }
 }
