@@ -179,7 +179,7 @@ export default function Detalles() {
   }, [paisSeleccionado]);
   const [previousPais, setPreviousPais] = useState(paises[0]);
 
-  const [isChanging, setIsChanging] = useState(false);
+  const [, setIsChanging] = useState(false);
 
   useEffect(() => {
     if (paisSeleccionado !== previousPais) {
