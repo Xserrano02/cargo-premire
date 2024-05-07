@@ -8,7 +8,6 @@ import Honduras from "../Resources/Honduras.png";
 import Nicaragua from "../Resources/Nicaragua.png";
 import CostaRica from "../Resources/CostaRica.png";
 import Colombia from "../Resources/Colombia.png";
-//import Venezuela from "../Resources/Venezuela.png";
 import Republic from "../Resources/RepublicaDom.png";
 import imagenCaja1 from "../Resources/imagenCaja1.png";
 import logoCajita1 from "../Resources/logo cajita 1.svg";
@@ -20,8 +19,9 @@ import imagenPaisajeNicaragua from "../Resources/imagenPaisajeNicaragua.jpg";
 import imagenPaisajeCostaRica from "../Resources/imagenPaisajeCostaRica.jpg";
 import imagenPaisajeColombia from "../Resources/imagenPaisajeColombia.jpg";
 import imagenPaisajeRepublicaDominicana from "../Resources/imagenPaisajeRepublicaDominicana.jpg";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import "../estilos/Detalles.css";
 
-import Footer from "./helpers/Footer.js";
 export default function Detalles() {
   const paises = [
     {
@@ -161,7 +161,10 @@ export default function Detalles() {
     },
   ];
 
-  const [opacity, setOpacity] = useState(0);
+  const ResponsiveBreak = () => {
+    return <span className="responsive-break"> </span>;
+  };
+
 
   const [tamanosSeleccionados, setTamanosSeleccionados] = useState(
     paises[0].tamanos
@@ -174,15 +177,52 @@ export default function Detalles() {
   useEffect(() => {
     setTamanoSeleccionado(paisSeleccionado.tamanos[0]);
   }, [paisSeleccionado]);
+  const [previousPais, setPreviousPais] = useState(paises[0]);
+
+  const [, setIsChanging] = useState(false);
 
   useEffect(() => {
-    setOpacity(1);
-  }, [paisSeleccionado]);
+    if (paisSeleccionado !== previousPais) {
+      setIsChanging(true);
+      const timer = setTimeout(() => {
+        setPreviousPais(paisSeleccionado);
+        setIsChanging(false);
+      }, 1000); // duración de la animación
+      return () => clearTimeout(timer);
+    }
+  }, [paisSeleccionado, previousPais]);
+  const [hoverIndex, setHoverIndex] = useState(null);
 
-  function Pais({ imagen, nombre, onClick }) {
+  const toggleHover = (index) => {
+    setHoverIndex(index);
+  };
+
+  const [hoverIndexPais, setHoverIndexPais] = useState(null);
+  const [hoverIndexTamano, setHoverIndexTamano] = useState(null);
+
+  // Funciones para cambiar el estado hoverIndexPais
+  const toggleHoverPais = (index) => {
+    setHoverIndexPais(index);
+  };
+
+  // Funciones para cambiar el estado hoverIndexTamano
+  const toggleHoverTamano = (index) => {
+    setHoverIndexTamano(index);
+  };
+
+  function Pais({ imagen, nombre, onClick, index }) {
     return (
-      <div className="col text-center">
-        <button className="btn btn-link p-0 border-0" onClick={onClick}>
+      <div className="col text-center pais-container">
+        <button
+          className="btn btn-link p-0 border-0"
+          onClick={onClick}
+          onMouseEnter={() => toggleHoverPais(index)}
+          onMouseLeave={() => toggleHoverPais(null)}
+          style={{
+            transform: hoverIndexPais === index ? "translateY(-10px)" : "none",
+            transition: "transform 0.3s",
+          }}
+        >
           <img className="" src={imagen} alt={nombre} />
         </button>
         <div
@@ -198,12 +238,6 @@ export default function Detalles() {
     );
   }
 
-  const [hoverIndex, setHoverIndex] = useState(null);
-
-  const toggleHover = (index) => {
-    setHoverIndex(index);
-  };
-
   return (
     <div style={{ width: "100vw", padding: 0, margin: 0 }}>
       <NavBar backgroundColor="#05C8FE" />
@@ -214,37 +248,37 @@ export default function Detalles() {
           backgroundSize: "cover",
         }}
       >
-        <div
-          style={{
-            backgroundImage: `url(${paisSeleccionado.imagenPaisaje})`,
-            filter: "blur(2px)",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: -1,
-            opacity: opacity,
-            transition: "opacity 0.5s ease-in-out",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "rgba(0, 0, 0, 0.2)",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-            }}
-          />
-        </div>
+        <TransitionGroup>
+          <CSSTransition
+            key={paisSeleccionado.nombre}
+            timeout={500}
+            classNames="fade"
+          >
+            <div
+              style={{
+                background: `
+          linear-gradient(
+            rgba(0, 0, 0, 0.3), 
+            rgba(0, 0, 0, 0.3)
+          ), 
+          url(${paisSeleccionado.imagenPaisaje})`,
+                filter: "blur(2px)",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                zIndex: -1,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            />
+          </CSSTransition>
+        </TransitionGroup>
 
         <div className="d-flex justify-content-center align-items-center">
           <div className="row row-cols-3 row-cols-lg-6 g-2 g-lg-3 justify-content-center container mt-3 mb-1">
-            {paises.map((pais) => (
+            {paises.map((pais, index) => (
               <Pais
                 imagen={pais.imagen}
                 nombre={pais.nombre}
@@ -252,6 +286,7 @@ export default function Detalles() {
                   setTamanosSeleccionados(pais.tamanos);
                   setPaisSeleccionado(pais);
                 }}
+                index={index}
               />
             ))}
           </div>
@@ -259,15 +294,7 @@ export default function Detalles() {
       </div>
 
       <div className="d-flex justify-content-center align-items-center">
-        <h1
-          style={{
-            fontSize: "3em",
-            fontWeight: "bold",
-            textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
-            letterSpacing: "0.2em",
-            marginTop: "0.2em",
-          }}
-        >
+        <h1 className="pais-titulo">
           {paisSeleccionado.nombre.toUpperCase() === "EL SALVADOR" ? (
             <>
               <span style={{ color: "#0047AB" }}>
@@ -370,6 +397,7 @@ export default function Detalles() {
               <span style={{ color: "#002D62" }}>
                 {paisSeleccionado.nombre.slice(6, 9).toUpperCase()}
               </span>
+              <ResponsiveBreak />
               <span style={{ color: "#CE1126" }}>
                 {paisSeleccionado.nombre.slice(9, 12).toUpperCase()}
               </span>
@@ -389,7 +417,7 @@ export default function Detalles() {
       </div>
 
       <div className="row mt-5 justify-content-center">
-        <div className="col text-center mt-3">
+        <div className="col-12 col-md-6 text-center mt-3 order-1 order-md-1">
           <h2>
             <b>Tamaños</b>
           </h2>
@@ -402,7 +430,7 @@ export default function Detalles() {
                   backgroundColor:
                     tamano === tamanoSeleccionado
                       ? "#05C8FE"
-                      : hoverIndex === index
+                      : hoverIndexTamano === index
                         ? "#95E1F6"
                         : "white",
                   color: "#13103A",
@@ -411,9 +439,10 @@ export default function Detalles() {
                   padding: "10px 20px",
                   borderWidth: "3px",
                   fontWeight: "bold",
+                  fontSize: window.innerWidth < 768 ? "small" : "medium",
                 }}
-                onMouseOver={() => toggleHover(index)}
-                onMouseOut={() => toggleHover(null)}
+                onMouseEnter={() => toggleHoverTamano(index)}
+                onMouseLeave={() => toggleHoverTamano(null)}
               >
                 {tamano}
               </button>
@@ -421,13 +450,13 @@ export default function Detalles() {
             </React.Fragment>
           ))}
         </div>
-        <div className="col text-center mt-3">
+        <div className="col-12 col-md-6 text-center mt-3 order-2 order-md-2">
           <h2>
             <b>Información</b>
           </h2>
           {tamanoSeleccionado && (
-            <div className="row">
-              <div className="col-6">
+            <div className="row p-0">
+              <div className="col-5 p-0">
                 <img
                   src={imagenCaja1}
                   alt="Imagen de la caja"
@@ -437,24 +466,24 @@ export default function Detalles() {
                   <b>Caja</b>
                 </h4>
               </div>
-              <div className="col-6 d-flex flex-column justify-content-center">
-                <div className="row">
-                  <div className="col-4 d-flex align-items-center">
-                    <p className="mb-5 h5">
+              <div className="col-6 d-flex flex-column justify-content-center p-0">
+                <div className="row info-row">
+                  <div className="col-4 d-flex align-items-center info-col">
+                    <p className="mb-2 mb-lg-5 h5">
                       <b>Tamaño:</b>
                     </p>
                   </div>
-                  <div className="col-8 d-flex align-items-center">
-                    <p className="mb-5 h5">{tamanoSeleccionado}</p>
+                  <div className="col-8 d-flex align-items-center info-col">
+                    <p className="mb-2 mb-lg-5 h5">{tamanoSeleccionado}</p>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-4 d-flex align-items-center">
+                <div className="row info-row">
+                  <div className="col-4 d-flex align-items-center info-col">
                     <p className="h5">
                       <b>Peso:</b>
                     </p>
                   </div>
-                  <div className="col-8 d-flex align-items-center">
+                  <div className="col-8 d-flex align-items-center info-col">
                     <p className="h5">Sin limite de peso</p>
                   </div>
                 </div>
@@ -504,22 +533,20 @@ export default function Detalles() {
         </div>
       </div>
       <div className="row mt-5 justify-content-center">
-  <div className="col-md-5 d-flex flex-column justify-content-center align-items-center">
-    <h2>
-      <b>Salidas Fijas</b>
-    </h2>
-    <ul>
-      <li>Todos los jueves</li>
-      <li>El Jueves 23 de Agosto</li>
-      <li>Martes 18 de Septiembre</li>
-    </ul>
-  </div>
-  <div className="col-md-5 d-flex justify-content-center align-items-center">
-    <img src={logoCajita1} alt="Logo" />
-  </div>
-</div>
-
-<Footer/>
+        <div className="col-md-5 d-flex flex-column justify-content-center align-items-center">
+          <h2>
+            <b>Salidas Fijas</b>
+          </h2>
+          <ul>
+            <li>Todos los jueves</li>
+            <li>El Jueves 23 de Agosto</li>
+            <li>Martes 18 de Septiembre</li>
+          </ul>
+        </div>
+        <div className="col-md-5 d-flex justify-content-center align-items-center">
+          <img src={logoCajita1} alt="Logo" />
+        </div>
+      </div>
     </div>
   );
 }

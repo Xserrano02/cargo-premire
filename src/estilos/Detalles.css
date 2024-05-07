@@ -1,0 +1,119 @@
+.fade-enter {
+    opacity: 0;
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+
+/* Estilos de titulo de paises */
+.pais-titulo {
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  letter-spacing: 0.2em;
+  margin-top: 0.2em;
+  text-align: center;
+}
+
+.responsive-break {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .responsive-break {
+    display: block;
+  }
+}
+
+/* Responsive */
+
+/* Div contenedor de paises */
+.pais-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pais-container img {
+  height: auto;
+}
+
+.pais-container .fw-bolder {
+  font-size: larger;
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .pais-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pais-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .pais-container .fw-bolder {
+    font-size: medium; 
+  }
+}
+
+@media (max-width: 600px) {
+  .pais-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .pais-container img {
+    width: 70%;
+    height: auto;
+  }
+
+  .pais-container .fw-bolder {
+    font-size: small; 
+  }
+}
+
+/* Div contenedor de titulo de pais */
+@media (max-width: 600px) {
+  .pais-titulo {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 400px) {
+  .pais-titulo {
+    font-size: 2em;
+  }
+}
+
+
+.info-row {
+  flex-direction: row;
+}
+
+.info-col {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .info-row {
+    flex-direction: column;
+    margin-bottom: 10px; /* Ajusta este valor para cambiar el espacio entre cada elemento */
+  }
+
+  .info-col {
+    text-align: center; /* Centra el contenido */
+  }
+}
