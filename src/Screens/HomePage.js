@@ -394,6 +394,7 @@ export default function HomePage() {
           style={{ stroke: "none", fill: "#85FFC8" }}
         ></path>
       </svg>
+      <Footer/>
     </>
     
   );
