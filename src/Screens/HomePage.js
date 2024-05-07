@@ -21,6 +21,7 @@ import Footer from "./helpers/Footer.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../estilos/HomeStyles.css";
+import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   const [paisSeleccionado, setPaisSeleccionado] = useState({
@@ -177,12 +178,14 @@ export default function HomePage() {
             </div>
           </div>
           <div className="col position-relative text-center">
+          <Link to="/detalles">
             <button
               type="button"
               className="buttonSizes fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle"
             >
               Cotizar tamaños <img className="ms-3" alt="icono" src={RowIcon} />
             </button>
+          </Link>
           </div>
         </div>
       </div>

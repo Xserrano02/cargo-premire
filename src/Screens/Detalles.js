@@ -21,6 +21,7 @@ import imagenPaisajeColombia from "../Resources/imagenPaisajeColombia.jpg";
 import imagenPaisajeRepublicaDominicana from "../Resources/imagenPaisajeRepublicaDominicana.jpg";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "../estilos/Detalles.css";
+import Footer from "./helpers/Footer.js";
 
 export default function Detalles() {
   const paises = [
@@ -547,6 +548,7 @@ export default function Detalles() {
           <img src={logoCajita1} alt="Logo" />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

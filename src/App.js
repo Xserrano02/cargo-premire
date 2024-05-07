@@ -7,6 +7,7 @@ import './App.css';
 import HomePage from "./Screens/HomePage";
 import FormContact from "./Screens/FormContact";
 import Detalles from "./Screens/Detalles";
+import Rastreo from "./Screens/Rastreo";
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/contacto" element={<FormContact />} />
         <Route path="/detalles" element={<Detalles />} />
+        <Route path="/rastreo" element={<Rastreo />} />
         <Route path="*" element={<h2>Pagina no encontrada</h2>} />
         
       </Routes>

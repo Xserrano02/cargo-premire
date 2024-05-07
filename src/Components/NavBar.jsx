@@ -39,16 +39,16 @@ const NavBar = ({ backgroundColor = "white" }) => {
             <li className="nav-item">
               <Link
                 className="nav-link  h1 mx-5"
-                to={handleLinkClick("carouselExample")}
+                to="/"
               >
-                SERVICIOS
+                  INICIO
               </Link>
             </li>
             <li className="nav-item">
               <Link
                 className="nav-link  h1 mx-5"
                 aria-current="page"
-                href="https://cbone.controlbox.net/cargopremier/cbone/app/rastreo/"
+                to="/rastreo"
               >
                 RASTREO
               </Link>
