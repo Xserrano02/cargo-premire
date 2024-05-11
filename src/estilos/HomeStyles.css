@@ -22,11 +22,11 @@
 }
 .imagenMex{
   transition: background-image 0.3s ease-in-out;
-  background-image: url('../Resources/camion-mexico.svg');
+  background-image: url('../Resources/camion-mexico.jpg');
 }
 .imagenGuat{
   transition: background-image 0.3s ease-in-out;
-  background-image: url('../Resources/camion-Guate.svg');
+  background-image: url('../Resources/camion-Guate.jpg');
 }
 .imagenSv{
   transition: background-image 0.3s ease-in-out;
@@ -34,27 +34,27 @@
 }
 .imagenHond{
   transition: background-image 0.3s ease-in-out;
-  background-image: url('../Resources/barco-Honduras.svg');
+  background-image: url('../Resources/barco-Honduras.jpg');
 }
 .imagenNic{
   transition: background-image 0.3s ease-in-out;
-  background-image: url('../Resources/Camion-Nicaragua.svg');
+  background-image: url('../Resources/Camion-Nicaragua.jpg');
 }
 .imagenColm{
   transition: background-image 0.3s ease-in-out;
-  background-image: url('../Resources/avion-colombia.svg');
+  background-image: url('../Resources/avion-colombia.jpg');
 }
 .imagenCosta{
   transition: background-image 0.3s ease-in-out;
-  background-image: url('../Resources/Avion-CostaRica.svg');
+  background-image: url('../Resources/Avion-CostaRica.jpg');
 }
 .imagenVenez{
   transition: background-image 0.3s ease-in-out;
-  background-image: url('../Resources/barco-venezuela.svg');
+  background-image: url('../Resources/barco-venezuela.jpg');
 }
 .imagenRep{
   transition: background-image 0.3s ease-in-out;
-  background-image: url('../Resources/Barco-RD\ 1.svg');
+  background-image: url('../Resources/Barco-RD.jpg');
 }
 .circulo {
   background-color: white;
