@@ -33,6 +33,12 @@ export default function HomePage() {
   });
 
   const [preloadedImages, setPreloadedImages] = useState({});
+  const [animationPlayed, setAnimationPlayed] = useState({
+    top: false,
+    middle: false,
+    bottom: false
+  });
+  console.log(animationPlayed)
 
   const paises = [
     { nombre: "Mexico", imagen: Mexico, descripcion: "Paqueteria puerta a puerta en toda la Republica de Mexico" },
@@ -141,7 +147,8 @@ export default function HomePage() {
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
+          onAnimationComplete={() => setAnimationPlayed((prev) => ({ ...prev, top: true }))}
         >
           <div className="col-lg-8">
             <div
@@ -167,7 +174,8 @@ export default function HomePage() {
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
+            onAnimationComplete={() => setAnimationPlayed((prev) => ({ ...prev, middle: true }))}
           >
             Paises Destino
           </motion.h1>
@@ -180,7 +188,8 @@ export default function HomePage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
+                onAnimationComplete={() => setAnimationPlayed((prev) => ({ ...prev, middle: true }))}
               >
                 <img className="imagen" src={preloadedImages[pais.imagen]?.src || pais.imagen} alt={pais.nombre} />
                 <div className="pt-3 pb-3 fw-bolder">{pais.nombre}</div>
@@ -196,7 +205,8 @@ export default function HomePage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
+                onAnimationComplete={() => setAnimationPlayed((prev) => ({ ...prev, middle: true }))}
               >
                 <img className="imagen" src={preloadedImages[pais.imagen]?.src || pais.imagen} alt={pais.nombre} />
                 <div className="pt-3 pb-3 fw-bolder">{pais.nombre}</div>
@@ -211,7 +221,8 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.5 }}
+        onAnimationComplete={() => setAnimationPlayed((prev) => ({ ...prev, bottom: true }))}
       >
         <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
           <div className="col">
@@ -254,20 +265,20 @@ export default function HomePage() {
         </div>
       </motion.div>
       
-      <motion.div className="container" id="Quienes-somos" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: false, amount: 0.5 }}>
+      <motion.div className="container" id="Quienes-somos" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: true, amount: 0.5 }}>
         <h1 className="text-center fw-bolder mb-5 mt-5" style={{ color: "#13103A", fontSize: "60px" }}>
           Quienes Somos
         </h1>
         <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
-          <motion.div className="col" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }}>
+          <motion.div className="col" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
             <img src={preloadedImages[LogoCaja]?.src || LogoCaja} className="img-fluid w-100" alt="..." />
           </motion.div>
-          <motion.div className="col" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }}>
+          <motion.div className="col" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
             <p className="h3 p-2" style={{ textAlign: "justify" }}>
               <span className="span-text">En Cargo Premier,</span> somos una empresa familiar con <span className="span-text2">15 años de experiencia </span>en paquetería aérea, terrestre y maritima, ofreciendo envíos rápidos, seguros y eficientes. Conectamos personas y negocios mediante un servicio de transporte confiable y puntual. Nuestro equipo de profesionales brinda un servicio personalizado, asegurando que cada paquete llegue en perfectas condiciones.</p>
           </motion.div>
         </div>
-        <motion.h1 className="text-center fw-bolder mb-5 mt-5" style={{ color: "#13103A", fontSize: "60px" }} initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }}>
+        <motion.h1 className="text-center fw-bolder mb-5 mt-5" style={{ color: "#13103A", fontSize: "60px" }} initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
           Paqueteria
         </motion.h1>
       </motion.div>
@@ -279,9 +290,8 @@ export default function HomePage() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.5 }}
       >
-        {/*------------------------Agrega maritimo-------------------*/}
         <div className="carousel-inner">
           <div className="carousel-item active" data-bs-interval="3000">
             <div className="container">
@@ -293,7 +303,7 @@ export default function HomePage() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1 }}
-                    viewport={{ once: false, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
                   >
                     Aereo
                   </motion.h1>
@@ -312,7 +322,7 @@ export default function HomePage() {
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
                   />
                 </div>
               </div>
@@ -328,7 +338,7 @@ export default function HomePage() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1 }}
-                    viewport={{ once: false, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
                   >
                     Terrestre
                   </motion.h1>
@@ -348,7 +358,7 @@ export default function HomePage() {
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: false, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
                   />
                 </div>
               </div>
@@ -397,7 +407,7 @@ export default function HomePage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           <div className="col-12 col-sm-6 container">
             <h1
@@ -427,7 +437,7 @@ export default function HomePage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           <div className="col-12 col-sm-3 text-end container">
             <img src={preloadedImages[Mision]?.src || Mision} className="img-fluid w-80 logoMision" alt="..." />
