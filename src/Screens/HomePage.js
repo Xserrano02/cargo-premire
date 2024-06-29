@@ -30,6 +30,8 @@ export default function HomePage() {
     descripcion: "Paquetería puerta a puerta en toda la República de El Salvador.",
   });
 
+  const [preloadedImages, setPreloadedImages] = useState({});
+
   const paises = [
     { nombre: "Mexico", imagen: Mexico, descripcion: "Paqueteria puerta a puerta en toda la Republica de Mexico" },
     {
@@ -89,44 +91,45 @@ export default function HomePage() {
     Venezuela: 'imagenVenez',
     'Republica Dominicana': 'imagenRep',
   };
-  
+
   const selectedCountryClass = countryClasses[paisSeleccionado.nombre];
 
   const handleClickPais = (pais) => {
     setPaisSeleccionado(pais);
   };
 
+  const preloadImages = (imageArray) => {
+    const images = {};
+    imageArray.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+      images[image] = img;
+    });
+    return images;
+  };
 
-    // Función para precargar imágenes
-    const preloadImages = (imageArray) => {
-      imageArray.forEach((image) => {
-        const img = new Image();
-        img.src = image;
-      });
-    };
-  
-    useEffect(() => {
-      const allImages = [
-        Banner,
-        Mexico,
-        Guatemala,
-        ElSalvador,
-        Honduras,
-        Nicaragua,
-        CostaRica,
-        Colombia,
-        Venezuela,
-        Republic,
-        Aereo,
-        LogoCaja,
-        LogoVision,
-        Mision,
-        Terrestre,
-        SvCountry,
-        RowIcon
-      ];
-      preloadImages(allImages);
-    }, []);
+  useEffect(() => {
+    const allImages = [
+      Banner,
+      Mexico,
+      Guatemala,
+      ElSalvador,
+      Honduras,
+      Nicaragua,
+      CostaRica,
+      Colombia,
+      Venezuela,
+      Republic,
+      Aereo,
+      LogoCaja,
+      LogoVision,
+      Mision,
+      Terrestre,
+      SvCountry,
+      RowIcon
+    ];
+    setPreloadedImages(preloadImages(allImages));
+  }, []);
 
   return (
     <>
@@ -139,9 +142,9 @@ export default function HomePage() {
               className="carousel slide"
               data-bs-ride="carousel"
             >
-              <div className="carousel-inner" i>
+              <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img src={Banner} className="d-block w-100" alt="Banner" />
+                  <img src={preloadedImages[Banner]?.src || Banner} className="d-block w-100" alt="Banner" />
                   <h3 className="text-center" style={{ color: "#13103A" }}>
                     ¡Paqueteria puerta a puerta!
                   </h3>
@@ -164,17 +167,17 @@ export default function HomePage() {
                 className="col text-center img-container"
                 onClick={() => handleClickPais(pais)}
               >
-                <img className="imagen" src={pais.imagen} alt={pais.nombre} />
+                <img className="imagen" src={preloadedImages[pais.imagen]?.src || pais.imagen} alt={pais.nombre} />
                 <div className="pt-3 pb-3 fw-bolder">{pais.nombre}</div>
               </div>
             ))}
           </div>
           <div className="row row-cols-3 row-cols-lg-6 g-2 g-lg-3 justify-content-center container">
             {paises2.map((pais, index) => (
-            <div key={index} className="col text-center img-container" onClick={() => handleClickPais(pais)}>
-              <img className="imagen" src={pais.imagen} alt="Colombia" />
-              <div className="pt-3 pb-3 fw-bolder">{pais.nombre}</div>
-            </div>
+              <div key={index} className="col text-center img-container" onClick={() => handleClickPais(pais)}>
+                <img className="imagen" src={preloadedImages[pais.imagen]?.src || pais.imagen} alt="Colombia" />
+                <div className="pt-3 pb-3 fw-bolder">{pais.nombre}</div>
+              </div>
             ))}
           </div>
         </div>
@@ -190,12 +193,12 @@ export default function HomePage() {
               >
                 {paisSeleccionado ? paisSeleccionado.nombre : ''}
               </h1>
-              <img className="country" src={paisSeleccionado.imagen} alt="El Salvador" />
+              <img className="country" src={preloadedImages[paisSeleccionado.imagen]?.src || paisSeleccionado.imagen} alt={paisSeleccionado.nombre} />
               <p
                 className="h4 mt-3 descript"
                 style={{ textAlign: "justify", padding: "0 60px" }}
               >
-                    {paisSeleccionado.descripcion}
+                {paisSeleccionado.descripcion}
               </p>
               <p
                 className="h4 fw-bold text-center"
@@ -210,18 +213,18 @@ export default function HomePage() {
             </div>
           </div>
           <div className="col position-relative text-center">
-          <Link to="/detalles">
-            <button
-              type="button"
-              className="buttonSizes fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle"
-            >
-              Cotizar tamaños <img className="ms-3" alt="icono" src={RowIcon} />
-            </button>
-          </Link>
+            <Link to="/detalles">
+              <button
+                type="button"
+                className="buttonSizes fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle"
+              >
+                Cotizar tamaños <img className="ms-3" alt="icono" src={preloadedImages[RowIcon]?.src || RowIcon} />
+              </button>
+            </Link>
           </div>
         </div>
       </div>
-      <div className="container " id="Quienes-somos">
+      <div className="container" id="Quienes-somos">
         <h1
           className="text-center fw-bolder mb-5 mt-5"
           style={{ color: "#13103A", fontSize: "60px" }}
@@ -230,18 +233,11 @@ export default function HomePage() {
         </h1>
         <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
           <div className="col">
-            <img src={LogoCaja} className="img-fluid w-100" alt="..." />
+            <img src={preloadedImages[LogoCaja]?.src || LogoCaja} className="img-fluid w-100" alt="..." />
           </div>
           <div className="col">
             <p className="h3 p-2" style={{ textAlign: "justify" }}>
-              La Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velitLa
-              Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velitLa
-              Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velitLa
-              Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velit
+              La Visión es Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velitLa Visión es Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velitLa Visión es Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velitLa Visión es Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit
             </p>
           </div>
         </div>
@@ -273,15 +269,12 @@ export default function HomePage() {
                     className="h3 textoBanner"
                     style={{ textAlign: "justify" }}
                   >
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
-                    do amet sint. Velit officia consequat duis enim velit Amet
-                    minim mollit non deserunt ullamco est sit aliqua dolor do
-                    amet sint. Velit officia consequat duis enim velit
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit
                   </p>
                 </div>
                 <div className="col">
                   <img
-                    src={Aereo}
+                    src={preloadedImages[Aereo]?.src || Aereo}
                     className="img-fluid w-100 imagenBanner"
                     alt="..."
                   />
@@ -303,15 +296,12 @@ export default function HomePage() {
                     className="h3 textoBanner"
                     style={{ textAlign: "justify" }}
                   >
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
-                    do amet sint. Velit officia consequat duis enim velit Amet
-                    minim mollit non deserunt ullamco est sit aliqua dolor do
-                    amet sint. Velit officia consequat duis enim velit
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit
                   </p>
                 </div>
                 <div className="col">
                   <img
-                    src={Terrestre}
+                    src={preloadedImages[Terrestre]?.src || Terrestre}
                     className="img-fluid w-100 imagenBanner"
                     alt="Banner"
                   />
@@ -376,7 +366,7 @@ export default function HomePage() {
           </div>
           <div className="col-12 col-sm-3 text-start container">
             <img
-              src={LogoVision}
+              src={preloadedImages[LogoVision]?.src || LogoVision}
               className="img-fluid w-80 logoVision"
               alt="..."
             />
@@ -387,7 +377,7 @@ export default function HomePage() {
           style={{ backgroundColor: "#85FFC8" }}
         >
           <div className="col-12 col-sm-3 text-end container">
-            <img src={Mision} className="img-fluid w-80 logoMision" alt="..." />
+            <img src={preloadedImages[Mision]?.src || Mision} className="img-fluid w-80 logoMision" alt="..." />
           </div>
           <div className="col-12 col-sm-6 container">
             <h1
@@ -415,8 +405,7 @@ export default function HomePage() {
           style={{ stroke: "none", fill: "#85FFC8" }}
         ></path>
       </svg>
-      <Footer/>
+      <Footer />
     </>
-    
   );
 }
