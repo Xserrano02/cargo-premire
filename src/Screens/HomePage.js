@@ -22,6 +22,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../estilos/HomeStyles.css";
 import { Link } from 'react-router-dom';
+import Carousel from "../Components/Carousel.js";
+
+
+/*NOTAS:
+
+--- Mejora el responsive en algunos telefonos se ve raro.
+--- Que tenga el mismo tipo y tamaño de letra en unos tienen tamaño diferente.
+---
+
+
+*/
 
 export default function HomePage() {
   const [paisSeleccionado, setPaisSeleccionado] = useState({
@@ -237,8 +248,7 @@ export default function HomePage() {
           </div>
           <div className="col">
             <p className="h3 p-2" style={{ textAlign: "justify" }}>
-              La Visión es Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velitLa Visión es Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velitLa Visión es Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velitLa Visión es Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit
-            </p>
+              <span className="span-text">En Cargo Premier,</span> somos una empresa familiar con <span className="span-text2">15 años de experiencia </span>en paquetería aérea, terrestre y maritima, ofreciendo envíos rápidos, seguros y eficientes. Conectamos personas y negocios mediante un servicio de transporte confiable y puntual. Nuestro equipo de profesionales brinda un servicio personalizado, asegurando que cada paquete llegue en perfectas condiciones.</p>
           </div>
         </div>
         <h1
@@ -254,6 +264,7 @@ export default function HomePage() {
         className="carousel carousel-dark slide"
         data-bs-ride="carousel"
       >
+        {/*------------------------Agrega maritimo-------------------*/}
         <div className="carousel-inner">
           <div className="carousel-item active" data-bs-interval="3000">
             <div className="container">
@@ -269,7 +280,7 @@ export default function HomePage() {
                     className="h3 textoBanner"
                     style={{ textAlign: "justify" }}
                   >
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit
+                    <span className="span-text">En Cargo Premier,</span>  nos especializamos en paquetería aérea, garantizando envíos rápidos y seguros para tus cajas y paquetes. Nuestro servicio puerta a puerta ofrece la flexibilidad y velocidad que necesitas, ideal para entregas urgentes. Con una red global, llegamos a destinos internacionales y locales, asegurando que tus mercancías lleguen a tiempo y en perfectas condiciones. Confía en Cargo Premier para un transporte aéreo eficiente y confiable.
                   </p>
                 </div>
                 <div className="col">
@@ -294,9 +305,10 @@ export default function HomePage() {
                   </h1>
                   <p
                     className="h3 textoBanner"
-                    style={{ textAlign: "justify" }}
+                    style={{ textAlign: "" }}
                   >
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit
+                    <span className="span-text">En Cargo Premier,</span>  nos especializamos en paquetería terrestre, ofreciendo envíos rápidos y seguros para tus cajas y paquetes. Nuestro servicio puerta a puerta es flexible y asequible, adaptándose a tus necesidades específicas. Con una red extensa, llegamos a áreas remotas y urbanas, garantizando entregas eficientes y responsables con el medio ambiente. Confía en Cargo Premier para mover tus mercancías de manera confiable y puntual.
+
                   </p>
                 </div>
                 <div className="col">
@@ -405,6 +417,9 @@ export default function HomePage() {
           style={{ stroke: "none", fill: "#85FFC8" }}
         ></path>
       </svg>
+
+      <Carousel/>
+
       <Footer />
     </>
   );

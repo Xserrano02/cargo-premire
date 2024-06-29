@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="0 0 3840 2160">
   <style>
     .cls-1 {
-      fill: #443CAD; /* Establece el color de relleno como #443CAD */
+      fill: #08c8fe; /* Cambia el color de relleno a #08c8fe */
       fill-rule: evenodd;
     }
   </style>

@@ -6,7 +6,7 @@
 }
 
 .txt-tittle{
-    padding: 12px 0;
+    padding-top: 50px;
 }
 
 .Containder-logo{
@@ -15,10 +15,24 @@
 
 }
 
+.input-error {
+    color: red;
+  }
+  
+
 .formulario{
    width: 50%;
    text-align: center;
 }
+
+.input-error {
+    color: red;
+  }
+  
+  .input-error + input::placeholder {
+    color: red;
+  }
+  
 
 .container-person{
     width: 90%;
@@ -27,6 +41,12 @@
 
 .container-person p{
     text-align: left;
+}
+
+.container-person P {
+    margin-top: 10px;
+    margin-bottom: -1px;
+    font-weight: bolder;
 }
 
 .input-texto{

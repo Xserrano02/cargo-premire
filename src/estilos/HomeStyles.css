@@ -8,8 +8,17 @@
 }
 
 .textoBanner {
-  margin-right: 40px;
+  margin-right: 0%;
+  justify-content:start;
+
 }
+
+.span-text{
+  font-weight: bolder;
+  color: #e5943a;
+  
+}
+
 
 .imagenBanner {
   margin-left: 40px;
