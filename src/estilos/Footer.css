@@ -27,7 +27,7 @@ footer #LogoFoo img {
 
 
 #hrDiv{
-    border-color: #08c8fe; /* Cambia el color del borde del hr a azul */
+    border-color: black; /* Cambia el color del borde del hr a azul */
     height: 2px; /* Establece la altura del hr */
     width: 90%; /* Establece el ancho del hr al 50% del contenedor */
     margin: 20px auto;
