@@ -100,10 +100,10 @@ export default function HomePage() {
     if (Object.keys(formErrors).length === 0) {
       emailjs
         .sendForm(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID,
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+          'service_c8pic8d',
+          'template_0244yeb',
           form.current,
-          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+          'Rs0ljdXLJTB5tB10k'
         )
         .then(
           () => {

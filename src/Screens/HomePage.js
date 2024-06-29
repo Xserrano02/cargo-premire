@@ -23,16 +23,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../estilos/HomeStyles.css";
 import { Link } from 'react-router-dom';
 import Carousel from "../Components/Carousel.js";
-
-
-/*NOTAS:
-
---- Mejora el responsive en algunos telefonos se ve raro.
---- Que tenga el mismo tipo y tamaño de letra en unos tienen tamaño diferente.
----
-
-
-*/
+import { motion } from "framer-motion";
 
 export default function HomePage() {
   const [paisSeleccionado, setPaisSeleccionado] = useState({
@@ -72,7 +63,6 @@ export default function HomePage() {
     },
   ];
 
-  //Estos paises son los de la segunda linea que van centrados
   const paises2 = [
     {
       nombre: "Colombia",
@@ -146,7 +136,13 @@ export default function HomePage() {
     <>
       <div className="container">
         <NavBar />
-        <div className="row justify-content-center align-items-center mb-5">
+        <motion.div
+          className="row justify-content-center align-items-center mb-5"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
           <div className="col-lg-8">
             <div
               id="carouselExampleSlidesOnly"
@@ -163,38 +159,60 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className="container mt-5">
-          <h1
+          <motion.h1
             className="text-center fw-bolder mb-5"
             style={{ color: "#13103A", fontSize: "60px" }}
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: false, amount: 0.5 }}
           >
             Paises Destino
-          </h1>
+          </motion.h1>
           <div className="row row-cols-3 row-cols-lg-6 g-2 g-lg-3">
             {paises.map((pais, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="col text-center img-container"
                 onClick={() => handleClickPais(pais)}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                viewport={{ once: false, amount: 0.5 }}
               >
                 <img className="imagen" src={preloadedImages[pais.imagen]?.src || pais.imagen} alt={pais.nombre} />
                 <div className="pt-3 pb-3 fw-bolder">{pais.nombre}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
           <div className="row row-cols-3 row-cols-lg-6 g-2 g-lg-3 justify-content-center container">
             {paises2.map((pais, index) => (
-              <div key={index} className="col text-center img-container" onClick={() => handleClickPais(pais)}>
-                <img className="imagen" src={preloadedImages[pais.imagen]?.src || pais.imagen} alt="Colombia" />
+              <motion.div
+                key={index}
+                className="col text-center img-container"
+                onClick={() => handleClickPais(pais)}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                viewport={{ once: false, amount: 0.5 }}
+              >
+                <img className="imagen" src={preloadedImages[pais.imagen]?.src || pais.imagen} alt={pais.nombre} />
                 <div className="pt-3 pb-3 fw-bolder">{pais.nombre}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className={`container-fluid infoCountries ${selectedCountryClass}`}>
+      <motion.div
+        className={`container-fluid infoCountries ${selectedCountryClass}`}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
+      >
         <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
           <div className="col">
             <div className="circulo">
@@ -234,35 +252,34 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="container" id="Quienes-somos">
-        <h1
-          className="text-center fw-bolder mb-5 mt-5"
-          style={{ color: "#13103A", fontSize: "60px" }}
-        >
+      </motion.div>
+      
+      <motion.div className="container" id="Quienes-somos" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: false, amount: 0.5 }}>
+        <h1 className="text-center fw-bolder mb-5 mt-5" style={{ color: "#13103A", fontSize: "60px" }}>
           Quienes Somos
         </h1>
         <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
-          <div className="col">
+          <motion.div className="col" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }}>
             <img src={preloadedImages[LogoCaja]?.src || LogoCaja} className="img-fluid w-100" alt="..." />
-          </div>
-          <div className="col">
+          </motion.div>
+          <motion.div className="col" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }}>
             <p className="h3 p-2" style={{ textAlign: "justify" }}>
               <span className="span-text">En Cargo Premier,</span> somos una empresa familiar con <span className="span-text2">15 años de experiencia </span>en paquetería aérea, terrestre y maritima, ofreciendo envíos rápidos, seguros y eficientes. Conectamos personas y negocios mediante un servicio de transporte confiable y puntual. Nuestro equipo de profesionales brinda un servicio personalizado, asegurando que cada paquete llegue en perfectas condiciones.</p>
-          </div>
+          </motion.div>
         </div>
-        <h1
-          className="text-center fw-bolder mb-5 mt-5"
-          style={{ color: "#13103A", fontSize: "60px" }}
-        >
+        <motion.h1 className="text-center fw-bolder mb-5 mt-5" style={{ color: "#13103A", fontSize: "60px" }} initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: false, amount: 0.5 }}>
           Paqueteria
-        </h1>
-      </div>
+        </motion.h1>
+      </motion.div>
 
-      <div
+      <motion.div
         id="carouselExample"
         className="carousel carousel-dark slide"
         data-bs-ride="carousel"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: false, amount: 0.5 }}
       >
         {/*------------------------Agrega maritimo-------------------*/}
         <div className="carousel-inner">
@@ -270,12 +287,16 @@ export default function HomePage() {
             <div className="container">
               <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
                 <div className="col">
-                  <h1
+                  <motion.h1
                     className="text-center fw-bolder mb-5 mt-5"
                     style={{ color: "#13103A" }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: false, amount: 0.5 }}
                   >
                     Aereo
-                  </h1>
+                  </motion.h1>
                   <p
                     className="h3 textoBanner"
                     style={{ textAlign: "justify" }}
@@ -284,10 +305,14 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="col">
-                  <img
+                  <motion.img
                     src={preloadedImages[Aereo]?.src || Aereo}
                     className="img-fluid w-100 imagenBanner"
                     alt="..."
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: false, amount: 0.5 }}
                   />
                 </div>
               </div>
@@ -297,12 +322,16 @@ export default function HomePage() {
             <div className="container">
               <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
                 <div className="col">
-                  <h1
+                  <motion.h1
                     className="text-center fw-bolder mb-5 mt-5"
                     style={{ color: "#13103A" }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: false, amount: 0.5 }}
                   >
                     Terrestre
-                  </h1>
+                  </motion.h1>
                   <p
                     className="h3 textoBanner"
                     style={{ textAlign: "" }}
@@ -312,10 +341,14 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="col">
-                  <img
+                  <motion.img
                     src={preloadedImages[Terrestre]?.src || Terrestre}
                     className="img-fluid w-100 imagenBanner"
                     alt="Banner"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: false, amount: 0.5 }}
                   />
                 </div>
               </div>
@@ -346,7 +379,7 @@ export default function HomePage() {
           ></span>
           <span className="visually-hidden">Next</span>
         </button>
-      </div>
+      </motion.div>
       <svg
         viewBox="0 0 500 80"
         preserveAspectRatio="none"
@@ -358,9 +391,13 @@ export default function HomePage() {
         ></path>
       </svg>
       <div className="container-fluid">
-        <div
+        <motion.div
           className="row text-center pb-5"
           style={{ backgroundColor: "#6BDFFF" }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false, amount: 0.5 }}
         >
           <div className="col-12 col-sm-6 container">
             <h1
@@ -383,10 +420,14 @@ export default function HomePage() {
               alt="..."
             />
           </div>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className="row text-center pt-5 pb-5 "
           style={{ backgroundColor: "#85FFC8" }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false, amount: 0.5 }}
         >
           <div className="col-12 col-sm-3 text-end container">
             <img src={preloadedImages[Mision]?.src || Mision} className="img-fluid w-80 logoMision" alt="..." />
@@ -405,7 +446,7 @@ export default function HomePage() {
               Proveer servicios de envío de paquetería seguros, eficientes y accesibles a Centroamérica, superando las expectativas de nuestros clientes mediante tecnología avanzada, procesos optimizados y un servicio al cliente excepcional. Nos dedicamos a construir puentes entre comunidades, fomentando el crecimiento económico y el intercambio cultural en la región. Estas declaraciones reflejan un compromiso con la excelencia operativa, la innovación y el impacto positivo en las comunidades servidas, estableciendo una base sólida para el crecimiento y el éxito sostenible de la compañía.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
       <svg
         viewBox="0 40 500 100"

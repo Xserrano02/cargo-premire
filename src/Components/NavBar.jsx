@@ -1,16 +1,8 @@
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const NavBar = ({ backgroundColor = "white" }) => {
-  const location = useLocation();
-
-  const handleLinkClick = (section) => {
-    if (location.pathname !== '/') {
-      return `/#${section}`;
-    }
-    return `#${section}`;
-  };
 
   return (
     <nav
@@ -51,14 +43,6 @@ const NavBar = ({ backgroundColor = "white" }) => {
                 to="/rastreo"
               >
                 RASTREO
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link  h1 mx-5"
-                to={handleLinkClick("Quienes-somos")}
-              >
-                QUIENES SOMOS
               </Link>
             </li>
             <li className="nav-item">

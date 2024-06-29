@@ -1,7 +1,8 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../estilos/Carousel.css'
+import '../estilos/Carousel.css';
+import { motion } from 'framer-motion';
 
 const imageUrls = [
   "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew1.png?alt=media&token=7522a213-043e-4708-9c80-295acfa31d2f",
@@ -21,24 +22,37 @@ function CustomCarousel() {
   }, []);
 
   return (
-    <div className="container mt-5 container-resena">
-      <h2 className="text-center mb-4 container-resena" style={{fontWeight:"bolder"}}>Reseñas</h2>
+    <motion.div
+      className="container mt-5 container-resena"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: false, amount: 0.5 }}
+    >
+      <h2 className="text-center mb-4 container-resena" style={{ fontWeight: "bolder" }}>Reseñas</h2>
       <Carousel>
         {pairs.map((pair, index) => (
           <Carousel.Item key={index} interval={3000}>
             <div className="container">
               <div className="row justify-content-center">
                 {pair.map((imageUrl, subIndex) => (
-                  <div key={subIndex} className="col-6 d-flex justify-content-center">
+                  <motion.div
+                    key={subIndex}
+                    className="col-12 col-md-6 d-flex justify-content-center"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: subIndex * 0.2 }}
+                    viewport={{ once: false, amount: 0.5 }}
+                  >
                     <img src={imageUrl} className="img-fluid imagenBanner" alt={`Slide ${index * 2 + subIndex + 1}`} />
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </Carousel.Item>
         ))}
       </Carousel>
-    </div>
+    </motion.div>
   );
 }
 
