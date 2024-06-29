@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../Components/NavBar.jsx";
 import Banner from "../Resources/Banner.svg";
 import Mexico from "../Resources/Mexico.svg";
@@ -95,6 +95,38 @@ export default function HomePage() {
   const handleClickPais = (pais) => {
     setPaisSeleccionado(pais);
   };
+
+
+    // Función para precargar imágenes
+    const preloadImages = (imageArray) => {
+      imageArray.forEach((image) => {
+        const img = new Image();
+        img.src = image;
+      });
+    };
+  
+    useEffect(() => {
+      const allImages = [
+        Banner,
+        Mexico,
+        Guatemala,
+        ElSalvador,
+        Honduras,
+        Nicaragua,
+        CostaRica,
+        Colombia,
+        Venezuela,
+        Republic,
+        Aereo,
+        LogoCaja,
+        LogoVision,
+        Mision,
+        Terrestre,
+        SvCountry,
+        RowIcon
+      ];
+      preloadImages(allImages);
+    }, []);
 
   return (
     <>
@@ -339,14 +371,7 @@ export default function HomePage() {
               className="container h5"
               style={{ textAlign: "justify", color: "#414141" }}
             >
-              La Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velitLa
-              Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velitLa
-              Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velitLa
-              Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velit
+              Ser la compañía líder en servicios de envío de paquetería a Centroamérica, reconocida por nuestra confiabilidad, rapidez y compromiso con la satisfacción del cliente, facilitando la conexión entre personas y negocios a través de soluciones logísticas innovadoras y sostenibles.
             </p>
           </div>
           <div className="col-12 col-sm-3 text-start container">
@@ -375,14 +400,7 @@ export default function HomePage() {
               className="container h5"
               style={{ textAlign: "justify", color: "#414141" }}
             >
-              La Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velitLa
-              Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velitLa
-              Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velitLa
-              Visión es Amet minim mollit non deserunt ullamco est sit aliqua
-              dolor do amet sint. Velit officia consequat duis enim velit
+              Proveer servicios de envío de paquetería seguros, eficientes y accesibles a Centroamérica, superando las expectativas de nuestros clientes mediante tecnología avanzada, procesos optimizados y un servicio al cliente excepcional. Nos dedicamos a construir puentes entre comunidades, fomentando el crecimiento económico y el intercambio cultural en la región. Estas declaraciones reflejan un compromiso con la excelencia operativa, la innovación y el impacto positivo en las comunidades servidas, estableciendo una base sólida para el crecimiento y el éxito sostenible de la compañía.
             </p>
           </div>
         </div>
