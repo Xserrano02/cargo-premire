@@ -51,7 +51,7 @@ const Footer = () => {
                 <h6 className="fw-bold" id="Titulos">Contacto</h6><br />
                 <p className="Servi">4797 NW 72nd Ave. Miami, FL 33166</p><br />
                 <p className="Servi">Teléfono: +1 (305) 735-8577 / (407) 728 - 1902</p>
-                <p className="Servi">E-mail: scargopremier@yahoo.com</p>
+                <p className="Servi">E-mail: cargopremier@yahoo.com</p>
               </div>
               <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
                 <iframe
