@@ -48,7 +48,7 @@ export default function HomePage() {
       return;
     }
     emailjs
-      .sendForm('service_c8pic8d', 'template_0244yeb', form.current, 'Rs0ljdXLJTB5tB10k')
+      .sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
       .then(
         () => {
           console.log('SUCCESS!');
