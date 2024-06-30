@@ -105,7 +105,7 @@ export default function HomePage() {
         <img className='Containder-logo' src={Banner} alt='Logo' />
         <div className='formulario'>
           <form className='form-submit' ref={form} onSubmit={sendEmail}>
-            <h5 className='txt-tittle'>Contactanos</h5>
+            <h5 className='txt-tittle' style={{fontWeight:'bolder'}}>Contactanos</h5>
             <div className='container-person'>
               <div>
                 <p className={getErrorClass('nombreCompleto')}>Nombre completo *</p>
