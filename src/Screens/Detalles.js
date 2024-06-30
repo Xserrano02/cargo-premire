@@ -9,7 +9,15 @@ import Nicaragua from "../Resources/Nicaragua.png";
 import CostaRica from "../Resources/CostaRica.png";
 import Colombia from "../Resources/Colombia.png";
 import Republic from "../Resources/RepublicaDom.png";
+// Importa las imágenes de las cajas
 import imagenCaja1 from "../Resources/imagenCaja1.png";
+import imagenCaja18x18x18 from "../Resources/18x18x18.jpeg";
+import imagenCaja22x22x22 from "../Resources/22x22x22.jpeg";
+import imagenCaja24x24x24 from "../Resources/24x24x24.jpeg";
+import imagenCaja36x22x22 from "../Resources/36x22x22.jpeg";
+import imagenCaja36x24x24 from "../Resources/36x24x24.jpeg";
+import imagenCaja42x29x25 from "../Resources/42x29x25.jpeg";
+
 import logoCajita1 from "../Resources/logo cajita 1.svg";
 import imagenPaisajeMexico from "../Resources/imagenPaisajeMexico.jpg";
 import imagenPaisajeGuatemala from "../Resources/imagenPaisajeGuatemala.jpg";
@@ -24,6 +32,15 @@ import "../estilos/Detalles.css";
 import Footer from "./helpers/Footer.js";
 
 export default function Detalles() {
+  const imagenesPorTamano = {
+    "18x18x18": imagenCaja18x18x18,
+    "22x22x22": imagenCaja22x22x22,
+    "24x24x24": imagenCaja24x24x24,
+    "36x22x22": imagenCaja36x22x22,
+    "36x24x24": imagenCaja36x24x24,
+    "42x29x25": imagenCaja42x29x25,
+  };
+  const [imagenActual, setImagenActual] = useState(imagenCaja1); // Estado para almacenar la imagen actual
   const paises = [
     {
       imagen: Mexico,
@@ -177,6 +194,7 @@ export default function Detalles() {
 
   useEffect(() => {
     setTamanoSeleccionado(paisSeleccionado.tamanos[0]);
+    cambiarImagenPorTamano(paisSeleccionado.tamanos[0]);
   }, [paisSeleccionado]);
   const [previousPais, setPreviousPais] = useState(paises[0]);
 
@@ -209,6 +227,16 @@ export default function Detalles() {
   // Funciones para cambiar el estado hoverIndexTamano
   const toggleHoverTamano = (index) => {
     setHoverIndexTamano(index);
+  };
+  
+  const cambiarImagenPorTamano = (tamano) => {
+    const imagenSeleccionada = imagenesPorTamano[tamano] || imagenCaja1;
+    if (imagenSeleccionada) {
+      setImagenActual(imagenSeleccionada);
+    } else {
+      console.log("No se encontró una imagen para el tamaño seleccionado.");
+      
+    }
   };
 
   function Pais({ imagen, nombre, onClick, index }) {
@@ -426,7 +454,7 @@ export default function Detalles() {
             <React.Fragment key={index}>
               <button
                 className="btn m-2"
-                onClick={() => setTamanoSeleccionado(tamano)}
+                onClick={() => {setTamanoSeleccionado(tamano);cambiarImagenPorTamano(tamano);}}
                 style={{
                   backgroundColor:
                     tamano === tamanoSeleccionado
@@ -459,7 +487,7 @@ export default function Detalles() {
             <div className="row p-0">
               <div className="col-5 p-0">
                 <img
-                  src={imagenCaja1}
+                  src={imagenActual}
                   alt="Imagen de la caja"
                   className="mt-3 mb-3 img-fluid w-50"
                 />
