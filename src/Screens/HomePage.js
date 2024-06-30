@@ -11,6 +11,7 @@ import Colombia from "../Resources/Colombia.svg";
 import Venezuela from "../Resources/Venezuela.svg";
 import Republic from "../Resources/RepDom.svg";
 import Aereo from "../Resources/Areo.svg";
+import Maritimo from "../Resources/maritimo 1.jpg";
 import LogoCaja from "../Resources/logo cajita 1.svg";
 import LogoVision from "../Resources/Visionsvg.svg";
 import Mision from "../Resources/Mision.svg";
@@ -22,7 +23,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../estilos/HomeStyles.css";
 import { Link } from 'react-router-dom';
-import Carousel from "../Components/Carousel.js";
 import { motion } from "framer-motion";
 
 export default function HomePage() {
@@ -98,6 +98,15 @@ export default function HomePage() {
     Venezuela: 'imagenVenez',
     'Republica Dominicana': 'imagenRep',
   };
+
+  const imageUrls = [
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew1.png?alt=media&token=7522a213-043e-4708-9c80-295acfa31d2f",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew2.png?alt=media&token=1449fb00-cfff-44c1-90b7-437ec5fe3b04",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew3.png?alt=media&token=903cb674-9650-4fa0-b5cb-e4e2d5f0441a",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew4.png?alt=media&token=8694134f-1493-4473-b774-45d01802a008",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew5.png?alt=media&token=4f539cb5-a83c-42c2-ab7d-a6534168cefa",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew6.png?alt=media&token=426eff55-7c75-42cd-9742-74bf2906edc5"
+  ];
 
   const selectedCountryClass = countryClasses[paisSeleccionado.nombre];
 
@@ -187,6 +196,7 @@ export default function HomePage() {
                 onClick={() => handleClickPais(pais)}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.2}}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 viewport={{ once: true, amount: 0.5 }}
                 onAnimationComplete={() => setAnimationPlayed((prev) => ({ ...prev, middle: true }))}
@@ -204,6 +214,7 @@ export default function HomePage() {
                 onClick={() => handleClickPais(pais)}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.2}}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 viewport={{ once: true, amount: 0.5 }}
                 onAnimationComplete={() => setAnimationPlayed((prev) => ({ ...prev, middle: true }))}
@@ -335,10 +346,6 @@ export default function HomePage() {
                   <motion.h1
                     className="text-center fw-bolder mb-5 mt-5"
                     style={{ color: "#13103A" }}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
-                    viewport={{ once: true, amount: 0.5 }}
                   >
                     Terrestre
                   </motion.h1>
@@ -355,10 +362,34 @@ export default function HomePage() {
                     src={preloadedImages[Terrestre]?.src || Terrestre}
                     className="img-fluid w-100 imagenBanner"
                     alt="Banner"
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true, amount: 0.5 }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <div className="container">
+              <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
+                <div className="col">
+                  <motion.h1
+                    className="text-center fw-bolder mb-5 mt-5"
+                    style={{ color: "#13103A" }}
+                  >
+                    Maritimo
+                  </motion.h1>
+                  <p
+                    className="h3 textoBanner"
+                    style={{ textAlign: "" }}
+                  >
+                    <span className="span-text">En Cargo Premier,</span>  nos especializamos en paquetería terrestre, ofreciendo envíos rápidos y seguros para tus cajas y paquetes. Nuestro servicio puerta a puerta es flexible y asequible, adaptándose a tus necesidades específicas. Con una red extensa, llegamos a áreas remotas y urbanas, garantizando entregas eficientes y responsables con el medio ambiente. Confía en Cargo Premier para mover tus mercancías de manera confiable y puntual.
+
+                  </p>
+                </div>
+                <div className="col">
+                  <motion.img
+                    src={preloadedImages[Maritimo]?.src || Maritimo}
+                    className="img-fluid w-100 imagenBanner"
+                    alt="Banner"
                   />
                 </div>
               </div>
@@ -461,7 +492,8 @@ export default function HomePage() {
       <svg
         viewBox="0 40 500 100"
         preserveAspectRatio="none"
-        style={{ height: "10%", width: "100%" }}
+        style={{ height: "10%", width: "100%"}}
+        className="margenSVG"
       >
         <path
           d="M0.00,49.98 C156.04,122.88 283.01,9.39 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
@@ -469,7 +501,106 @@ export default function HomePage() {
         ></path>
       </svg>
 
-      <Carousel/>
+      <motion.h1 className="text-center fw-bolder mb-5 mt-5" 
+      style={{ color: "#13103A", fontSize: "60px", marginTop: "0px"}} 
+      initial={{ opacity: 0, y: -50 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      transition={{ duration: 0.5 }} 
+      viewport={{ once: true, amount: 0.5 }}>
+          Reseñas
+        </motion.h1>
+      <motion.div
+        id="carouselExample2"
+        className="carousel carousel-dark slide"
+        data-bs-ride="carousel"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+      >
+        <div className="carousel-inner">
+          <div className="carousel-item active" data-bs-interval="3000">
+            <div className="container">
+              <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
+                <div className="col">
+                <motion.img
+                    src={preloadedImages[imageUrls[0]]?.src || imageUrls[0]}
+                    className="img-fluid w-100 imagenBanner"
+                    alt="..."
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                  />
+                </div>
+                <div className="col">
+                  <motion.img
+                    src={preloadedImages[imageUrls[1]]?.src || imageUrls[1]}
+                    className="img-fluid w-100 imagenBanner"
+                    alt="..."
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="carousel-item" data-bs-interval="3000">
+            <div className="container">
+              <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
+                <div className="col">
+                <motion.img
+                    src={preloadedImages[imageUrls[2]]?.src || imageUrls[2]}
+                    className="img-fluid w-100 imagenBanner"
+                    alt="..."
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                  />
+                </div>
+                <div className="col">
+                  <motion.img
+                    src={preloadedImages[imageUrls[3]]?.src || imageUrls[3]}
+                    className="img-fluid w-100 imagenBanner"
+                    alt="..."
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample2"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample2"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </motion.div>
 
       <Footer />
     </>
