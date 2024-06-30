@@ -16,9 +16,7 @@ export default function HomePage() {
   const [tamanosDisponibles, setTamanosDisponibles] = useState([]);
   const [tamanoSeleccionado, setTamanoSeleccionado] = useState('');
   const [infoAdicional, setInfoAdicional] = useState('');
-
   const [errors, setErrors] = useState({});
-  const [touched, setTouched] = useState({});
 
   const handleCountryChange = (e) => {
     const paisSeleccionado = e.target.value;
@@ -32,87 +30,37 @@ export default function HomePage() {
     setTamanoSeleccionado('');
   };
 
-  const handleBlur = (field) => {
-    setTouched({
-      ...touched,
-      [field]: true,
-    });
-    validateField(field);
-  };
-
-  const handleChange = (setter) => (e) => {
-    setter(e.target.value);
-    if (touched[e.target.name]) {
-      validateField(e.target.name);
-    }
-  };
-
-  const validateField = (field) => {
-    let formErrors = { ...errors };
-    switch (field) {
-      case 'nombreCompleto':
-        formErrors.nombreCompleto = !nombreCompleto ? 'Este campo es obligatorio' : '';
-        break;
-      case 'direccion':
-        formErrors.direccion = !direccion ? 'Este campo es obligatorio' : '';
-        break;
-      case 'correoElectronico':
-        formErrors.correoElectronico = !correoElectronico ? 'Este campo es obligatorio' : '';
-        break;
-      case 'telefono':
-        formErrors.telefono = !telefono ? 'Este campo es obligatorio' : '';
-        break;
-      case 'paisDestino':
-        formErrors.paisDestino = !paisDestino ? 'Este campo es obligatorio' : '';
-        break;
-      case 'tamanoSeleccionado':
-        formErrors.tamanoSeleccionado = !tamanoSeleccionado ? 'Este campo es obligatorio' : '';
-        break;
-      default:
-        break;
-    }
-    setErrors(formErrors);
-  };
-
   const validateForm = () => {
     let formErrors = {};
-    if (!nombreCompleto) formErrors.nombreCompleto = 'Este campo es obligatorio';
-    if (!direccion) formErrors.direccion = 'Este campo es obligatorio';
-    if (!correoElectronico) formErrors.correoElectronico = 'Este campo es obligatorio';
-    if (!telefono) formErrors.telefono = 'Este campo es obligatorio';
-    if (!paisDestino) formErrors.paisDestino = 'Este campo es obligatorio';
-    if (!tamanoSeleccionado) formErrors.tamanoSeleccionado = 'Este campo es obligatorio';
-    return formErrors;
+    if (!nombreCompleto) formErrors.nombreCompleto = 'Este campo no puede estar vacío';
+    if (!direccion) formErrors.direccion = 'Este campo no puede estar vacío';
+    if (!correoElectronico) formErrors.correoElectronico = 'Este campo no puede estar vacío';
+    if (!telefono) formErrors.telefono = 'Este campo no puede estar vacío';
+    if (!paisDestino) formErrors.paisDestino = 'Este campo no puede estar vacío';
+    if (!tamanoSeleccionado) formErrors.tamanoSeleccionado = 'Este campo no puede estar vacío';
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
-    const formErrors = validateForm();
-    setErrors(formErrors);
-    setTouched({
-      nombreCompleto: true,
-      direccion: true,
-      correoElectronico: true,
-      telefono: true,
-      paisDestino: true,
-      tamanoSeleccionado: true,
-    });
-    if (Object.keys(formErrors).length === 0) {
-      emailjs
-        .sendForm('service_c8pic8d', 'template_0244yeb', form.current, 'Rs0ljdXLJTB5tB10k')
-        .then(
-          () => {
-            console.log('SUCCESS!');
-            alertaOk();
-            resetForm();
-          },
-          (error) => {
-            console.log('FAILED...', error.text);
-            alertaFalse();
-            resetForm();
-          }
-        );
+    if (!validateForm()) {
+      return;
     }
+    emailjs
+      .sendForm('service_c8pic8d', 'template_0244yeb', form.current, 'Rs0ljdXLJTB5tB10k')
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alertaOk();
+          resetForm();
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alertaFalse();
+          resetForm();
+        }
+      );
   };
 
   const resetForm = () => {
@@ -124,7 +72,6 @@ export default function HomePage() {
     setTamanoSeleccionado('');
     setInfoAdicional('');
     setErrors({});
-    setTouched({});
   };
 
   const alertaOk = () => {
@@ -149,7 +96,7 @@ export default function HomePage() {
     });
   };
 
-  const getErrorClass = (field) => errors[field] && touched[field] ? 'input-error' : '';
+  const getErrorClass = (field) => errors[field] ? 'input-error' : '';
 
   return (
     <>
@@ -158,132 +105,82 @@ export default function HomePage() {
         <img className='Containder-logo' src={Banner} alt='Logo' />
         <div className='formulario'>
           <form className='form-submit' ref={form} onSubmit={sendEmail}>
-            <h4 className='txt-tittle' style={{fontWeight:'bolder'}}>Contactanos</h4>
+            <h5 className='txt-tittle'>Informacion personal</h5>
             <div className='container-person'>
               <div>
                 <p className={getErrorClass('nombreCompleto')}>Nombre completo *</p>
-                <input
-                  className={`input-texto ${getErrorClass('nombreCompleto')}`}
-                  name='nombreCompleto'
+                <input className={`input-texto ${getErrorClass('nombreCompleto')}`}
+                  name='name'
                   placeholder='John Doe Smith Gonzalez'
                   type='text'
                   value={nombreCompleto}
-                  onChange={handleChange(setNombreCompleto)}
-                  onBlur={() => handleBlur('nombreCompleto')}
-                  required
-                />
-                {errors.nombreCompleto && touched.nombreCompleto && (
-                  <div className="error-message">{errors.nombreCompleto}</div>
-                )}
+                  onChange={(e) => setNombreCompleto(e.target.value)}
+                  required />
+                {errors.nombreCompleto && <div className="error-message">{errors.nombreCompleto}</div>}
               </div>
               <div>
                 <p className={getErrorClass('direccion')}>Direccion *</p>
-                <input
-                  className={`input-texto ${getErrorClass('direccion')}`}
-                  name='direccion'
+                <input className={`input-texto ${getErrorClass('direccion')}`}
+                  name='address'
                   placeholder='234 Maple Street'
                   type='text'
                   value={direccion}
-                  onChange={handleChange(setDireccion)}
-                  onBlur={() => handleBlur('direccion')}
-                  required
-                />
-                {errors.direccion && touched.direccion && (
-                  <div className="error-message">{errors.direccion}</div>
-                )}
+                  onChange={(e) => setDireccion(e.target.value)}
+                  required />
+                {errors.direccion && <div className="error-message">{errors.direccion}</div>}
               </div>
               <div className='container-mail-phone'>
                 <div>
                   <p className={getErrorClass('correoElectronico')}>Correo electronico *</p>
-                  <input
-                    className={`input-texto-esencial ${getErrorClass('correoElectronico')}`}
+                  <input className={`input-texto-esencial ${getErrorClass('correoElectronico')}`}
                     placeholder='johndoe@example.com'
-                    name='correoElectronico'
+                    name='email'
                     value={correoElectronico}
-                    onChange={handleChange(setCorreoElectronico)}
-                    onBlur={() => handleBlur('correoElectronico')}
+                    onChange={(e) => setCorreoElectronico(e.target.value)}
                     type='text'
-                    required
-                  />
-                  {errors.correoElectronico && touched.correoElectronico && (
-                    <div className="error-message">{errors.correoElectronico}</div>
-                  )}
+                    required />
+                  {errors.correoElectronico && <div className="error-message">{errors.correoElectronico}</div>}
                 </div>
                 <div>
                   <p className={getErrorClass('telefono')}>Telefono *</p>
-                  <input
-                    className={`input-texto-esencial ${getErrorClass('telefono')}`}
+                  <input className={`input-texto-esencial ${getErrorClass('telefono')}`}
                     placeholder='(555) 123-4567'
-                    name='telefono'
+                    name='phone'
                     type='text'
                     value={telefono}
-                    onChange={handleChange(setTelefono)}
-                    onBlur={() => handleBlur('telefono')}
-                    required
-                  />
-                  {errors.telefono && touched.telefono && (
-                    <div className="error-message">{errors.telefono}</div>
-                  )}
+                    onChange={(e) => setTelefono(e.target.value)}
+                    required />
+                  {errors.telefono && <div className="error-message">{errors.telefono}</div>}
                 </div>
               </div>
               <h5 className='txt-tittle'>Información de la caja</h5>
               <div className='container-mail-phone'>
                 <div>
                   <p className={getErrorClass('paisDestino')}>Pais destino *</p>
-                  <select
-                    name="paisDestino"
-                    className={`input-texto-esencial-select ${getErrorClass('paisDestino')}`}
-                    value={paisDestino}
-                    onChange={(e) => {
-                      handleChange(setPaisDestino)(e);
-                      handleCountryChange(e);
-                    }}
-                    onBlur={() => handleBlur('paisDestino')}
-                    required
-                  >
-                    <option value=''>Seleccione un país</option>
+                  <select name="destination_country" className={`input-texto-esencial-select ${getErrorClass('paisDestino')}`} value={paisDestino} onChange={handleCountryChange} required>
+                    <option value="">Seleccione un país</option>
                     {Paises.map((pais, key) => (
                       <option key={key} value={pais.nombre}>{pais.nombre}</option>
                     ))}
                   </select>
-                  {errors.paisDestino && touched.paisDestino && (
-                    <div className="error-message">{errors.paisDestino}</div>
-                  )}
+                  {errors.paisDestino && <div className="error-message">{errors.paisDestino}</div>}
                 </div>
                 <div>
                   <p className={getErrorClass('tamanoSeleccionado')}>Tamaño *</p>
-                  <select
-                    name="tamanoSeleccionado"
-                    className={`input-texto-esencial-select ${getErrorClass('tamanoSeleccionado')}`}
-                    value={tamanoSeleccionado}
-                    onChange={handleChange(setTamanoSeleccionado)}
-                    onBlur={() => handleBlur('tamanoSeleccionado')}
-                    required
-                  >
-                    <option value=''>Seleccione un tamaño</option>
+                  <select name="box_type" className={`input-texto-esencial-select ${getErrorClass('tamanoSeleccionado')}`} value={tamanoSeleccionado} onChange={(e) => setTamanoSeleccionado(e.target.value)} required>
+                    <option value="">Seleccione un tamaño</option>
                     {tamanosDisponibles.map(([key, value]) => (
                       <option key={key} value={value}>{value}</option>
                     ))}
                   </select>
-                  {errors.tamanoSeleccionado && touched.tamanoSeleccionado && (
-                    <div className="error-message">{errors.tamanoSeleccionado}</div>
-                  )}
+                  {errors.tamanoSeleccionado && <div className="error-message">{errors.tamanoSeleccionado}</div>}
                 </div>
               </div>
               <h5 className='txt-tittle'>Información adicional</h5>
-              <textarea
-                name="infoAdicional"
-                placeholder='¿Algún requerimiento especial?'
-                value={infoAdicional}
-                onChange={handleChange(setInfoAdicional)}
-                onBlur={() => handleBlur('infoAdicional')}
-                className={`input-adicional ${getErrorClass('infoAdicional')}`}
-              />
-              {errors.infoAdicional && touched.infoAdicional && (
-                <div className="error-message">{errors.infoAdicional}</div>
-              )}
+              <textarea name="additional_info" placeholder='¿Algún requerimiento especial?' value={infoAdicional} onChange={(e) => setInfoAdicional(e.target.value)} className={`input-adicional ${getErrorClass('infoAdicional')}`} />
+              {errors.infoAdicional && <div className="error-message">{errors.infoAdicional}</div>}
               <div className='container-person'>
-                <input type='submit' value='Enviar' className='btn-enviar-form' />
+                <input type="submit" value="Enviar" className='btn-enviar-form' />
               </div>
             </div>
           </form>

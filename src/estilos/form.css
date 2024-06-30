@@ -16,25 +16,21 @@
 
 }
 
-.error-message {
-    color: red;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-  }
-  
 .formulario{
    width: 50%;
    text-align: center;
 }
 
 .input-error {
-    color: red;
+    border: 2px solid red;
   }
   
-  .input-error + input::placeholder {
+  .error-message {
     color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
   }
-  
+   
 
 .container-person{
     width: 90%;
