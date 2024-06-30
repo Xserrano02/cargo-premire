@@ -99,12 +99,7 @@ export default function HomePage() {
     });
     if (Object.keys(formErrors).length === 0) {
       emailjs
-        .sendForm(
-          'service_c8pic8d',
-          'template_0244yeb',
-          form.current,
-          'Rs0ljdXLJTB5tB10k'
-        )
+        .sendForm('service_c8pic8d', 'template_0244yeb', form.current, 'Rs0ljdXLJTB5tB10k')
         .then(
           () => {
             console.log('SUCCESS!');
@@ -126,6 +121,7 @@ export default function HomePage() {
     setCorreoElectronico('');
     setTelefono('');
     setPaisDestino('');
+    setTamanoSeleccionado('');
     setInfoAdicional('');
     setErrors({});
     setTouched({});
@@ -162,7 +158,7 @@ export default function HomePage() {
         <img className='Containder-logo' src={Banner} alt='Logo' />
         <div className='formulario'>
           <form className='form-submit' ref={form} onSubmit={sendEmail}>
-            <h4 className='txt-tittle' style={{fontWeight:'bolder'}}>Informacion personal</h4>
+            <h4 className='txt-tittle' style={{fontWeight:'bolder'}}>Contactanos</h4>
             <div className='container-person'>
               <div>
                 <p className={getErrorClass('nombreCompleto')}>Nombre completo *</p>
@@ -176,6 +172,9 @@ export default function HomePage() {
                   onBlur={() => handleBlur('nombreCompleto')}
                   required
                 />
+                {errors.nombreCompleto && touched.nombreCompleto && (
+                  <div className="error-message">{errors.nombreCompleto}</div>
+                )}
               </div>
               <div>
                 <p className={getErrorClass('direccion')}>Direccion *</p>
@@ -189,6 +188,9 @@ export default function HomePage() {
                   onBlur={() => handleBlur('direccion')}
                   required
                 />
+                {errors.direccion && touched.direccion && (
+                  <div className="error-message">{errors.direccion}</div>
+                )}
               </div>
               <div className='container-mail-phone'>
                 <div>
@@ -203,6 +205,9 @@ export default function HomePage() {
                     type='text'
                     required
                   />
+                  {errors.correoElectronico && touched.correoElectronico && (
+                    <div className="error-message">{errors.correoElectronico}</div>
+                  )}
                 </div>
                 <div>
                   <p className={getErrorClass('telefono')}>Telefono *</p>
@@ -210,12 +215,15 @@ export default function HomePage() {
                     className={`input-texto-esencial ${getErrorClass('telefono')}`}
                     placeholder='(555) 123-4567'
                     name='telefono'
+                    type='text'
                     value={telefono}
                     onChange={handleChange(setTelefono)}
                     onBlur={() => handleBlur('telefono')}
-                    type='text'
                     required
                   />
+                  {errors.telefono && touched.telefono && (
+                    <div className="error-message">{errors.telefono}</div>
+                  )}
                 </div>
               </div>
               <h5 className='txt-tittle'>Información de la caja</h5>
@@ -223,7 +231,7 @@ export default function HomePage() {
                 <div>
                   <p className={getErrorClass('paisDestino')}>Pais destino *</p>
                   <select
-                    name='paisDestino'
+                    name="paisDestino"
                     className={`input-texto-esencial-select ${getErrorClass('paisDestino')}`}
                     value={paisDestino}
                     onChange={(e) => {
@@ -231,38 +239,49 @@ export default function HomePage() {
                       handleCountryChange(e);
                     }}
                     onBlur={() => handleBlur('paisDestino')}
+                    required
                   >
                     <option value=''>Seleccione un país</option>
                     {Paises.map((pais, key) => (
                       <option key={key} value={pais.nombre}>{pais.nombre}</option>
                     ))}
                   </select>
+                  {errors.paisDestino && touched.paisDestino && (
+                    <div className="error-message">{errors.paisDestino}</div>
+                  )}
                 </div>
                 <div>
                   <p className={getErrorClass('tamanoSeleccionado')}>Tamaño *</p>
                   <select
-                    name='tamanoSeleccionado'
+                    name="tamanoSeleccionado"
                     className={`input-texto-esencial-select ${getErrorClass('tamanoSeleccionado')}`}
                     value={tamanoSeleccionado}
                     onChange={handleChange(setTamanoSeleccionado)}
                     onBlur={() => handleBlur('tamanoSeleccionado')}
+                    required
                   >
                     <option value=''>Seleccione un tamaño</option>
                     {tamanosDisponibles.map(([key, value]) => (
                       <option key={key} value={value}>{value}</option>
                     ))}
                   </select>
+                  {errors.tamanoSeleccionado && touched.tamanoSeleccionado && (
+                    <div className="error-message">{errors.tamanoSeleccionado}</div>
+                  )}
                 </div>
               </div>
               <h5 className='txt-tittle'>Información adicional</h5>
               <textarea
-                name='infoAdicional'
+                name="infoAdicional"
                 placeholder='¿Algún requerimiento especial?'
                 value={infoAdicional}
                 onChange={handleChange(setInfoAdicional)}
                 onBlur={() => handleBlur('infoAdicional')}
                 className={`input-adicional ${getErrorClass('infoAdicional')}`}
               />
+              {errors.infoAdicional && touched.infoAdicional && (
+                <div className="error-message">{errors.infoAdicional}</div>
+              )}
               <div className='container-person'>
                 <input type='submit' value='Enviar' className='btn-enviar-form' />
               </div>
