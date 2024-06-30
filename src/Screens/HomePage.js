@@ -30,6 +30,7 @@ export default function HomePage() {
     nombre: "El Salvador",
     imagen: SvCountry,
     descripcion: "Paquetería puerta a puerta en toda la República de El Salvador.",
+    TipoTransporte: "Aereo"
   });
 
   const [preloadedImages, setPreloadedImages] = useState({});
@@ -41,31 +42,36 @@ export default function HomePage() {
   console.log(animationPlayed)
 
   const paises = [
-    { nombre: "Mexico", imagen: Mexico, descripcion: "Paqueteria puerta a puerta en toda la Republica de Mexico" },
+    { nombre: "Mexico", imagen: Mexico, descripcion: "Paqueteria puerta a puerta en toda la Republica de Mexico", TipoTransporte:"Terrestre" },
     {
       nombre: "Guatemala",
       imagen: Guatemala,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Guatemala",
+      TipoTransporte: "Maritimo"
     },
     {
       nombre: "El Salvador",
       imagen: ElSalvador,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de El Salvador",
+      TipoTransporte: "Aereo"
     },
     {
       nombre: "Honduras",
       imagen: Honduras,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Honduras",
+      TipoTransporte: "Maritimo"
     },
     {
       nombre: "Nicaragua",
       imagen: Nicaragua,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Nicaragua",
+      TipoTransporte: "Maritimo"
     },
     {
       nombre: "Costa rica",
       imagen: CostaRica,
-      descripcion: "Paqueteria puerta a puerta en toda la Republica de Costa Rica",
+      descripcion: "Paqueteria puerta a puerta en toda la Republica de Costa Rica",      TipoTransporte: "Maritimo"
+
     },
   ];
 
@@ -74,16 +80,19 @@ export default function HomePage() {
       nombre: "Colombia",
       imagen: Colombia,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Colombia",
+      TipoTransporte: "Maritimo"
     },
     {
       nombre: "Venezuela",
       imagen: Venezuela,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Venezuela",
+      TipoTransporte: "Maritimo"
     },
     {
       nombre: "Republica Dominicana",
       imagen: Republic,
       descripcion: "Paqueteria puerta a puerta en toda Republica Dominicana",
+      TipoTransporte: "Maritimo"
     },
   ];
 
@@ -246,7 +255,7 @@ export default function HomePage() {
               </h1>
               <img className="country" src={preloadedImages[paisSeleccionado.imagen]?.src || paisSeleccionado.imagen} alt={paisSeleccionado.nombre} />
               <p
-                className="h4 mt-3 descript"
+                className="h4 mt-3 descript textoMovil"
                 style={{ textAlign: "justify", padding: "0 60px" }}
               >
                 {paisSeleccionado.descripcion}
@@ -257,8 +266,9 @@ export default function HomePage() {
               >
                 Tiempo de entrega
               </p>
-              <p className="h4 text-center">3 - 4 Semanas</p>
-              <p className="fw-bold mt-0 mt-lg-4 fst-italic h4 text-center">
+              <p className="h4 text-center textoMovil">3 - 4 Semanas</p>
+              <p className="h4 text-center textoMovil">Trasporte: {paisSeleccionado.TipoTransporte}</p>
+              <p className="fw-bold mt-0 fst-italic h4 text-center CobroPeso textoMovil">
                 No se cobra por peso.
               </p>
             </div>
@@ -551,25 +561,17 @@ export default function HomePage() {
             <div className="container">
               <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
                 <div className="col">
-                <motion.img
+                <img
                     src={preloadedImages[imageUrls[2]]?.src || imageUrls[2]}
                     className="img-fluid w-100 imagenBanner"
                     alt="..."
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true, amount: 0.5 }}
                   />
                 </div>
                 <div className="col">
-                  <motion.img
+                  <img
                     src={preloadedImages[imageUrls[3]]?.src || imageUrls[3]}
                     className="img-fluid w-100 imagenBanner"
                     alt="..."
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true, amount: 0.5 }}
                   />
                 </div>
               </div>

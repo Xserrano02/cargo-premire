@@ -83,6 +83,7 @@
   padding-top: 40px;
 }
 
+
 @media (max-width: 844px) {
   .img-container {
     transition: transform 0.3s;
@@ -142,6 +143,9 @@
   } 
   .margenSVG{
     margin-bottom: 0rem;
+  }
+  .textoMovil{
+    font-size: calc(1.275rem + -1vw) !important
   }
 }
 
@@ -206,6 +210,9 @@
   .margenSVG{
     margin-bottom: 0rem;
   }
+  .textoMovil{
+    font-size: calc(1.275rem + -1vw) !important
+  }
 }
 
 @media (max-width: 667px) {
@@ -269,6 +276,9 @@
   .margenSVG{
     margin-bottom: 0rem;
   }
+  .textoMovil{
+    font-size: calc(1.275rem + -1vw) !important
+  }
 }
   @media (max-width: 428px) and (max-height: 926px) {
     
@@ -290,6 +300,9 @@
     }
     .margenSVG{
       margin-bottom: 0rem;
+    }
+    .textoMovil{
+      font-size: calc(1.275rem + -1vw) !important
     }
 }
 
@@ -313,5 +326,8 @@
   }
   .margenSVG{
     margin-bottom: 0rem;
+  }
+  .textoMovil{
+    font-size: calc(1.275rem + -1vw) !important
   }
 }
