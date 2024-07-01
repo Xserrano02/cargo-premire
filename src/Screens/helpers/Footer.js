@@ -36,9 +36,6 @@ const Footer = () => {
           <div className="me-lg-auto mb-3 mb-lg-0 mx-auto text-center" id="LogoFoo">
             <img src={logoFooter} alt="" className="img-fluid" style={{ width: '400px', height: 'auto' }} />
           </div>
-          <div id="social-icons">
-            <h4 style={{color:'black', fontWeight: 'bolder'}}>Paquetería a tu puerta!</h4>
-          </div>
         </section>
         <hr id="hrDiv" />
         <section className="container">
