@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useCallback,useMemo  } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../Components/NavBar.jsx";
 import Mexico from "../Resources/Mexico.svg";
@@ -32,14 +32,14 @@ import "../estilos/Detalles.css";
 import Footer from "./helpers/Footer.js";
 
 export default function Detalles() {
-  const imagenesPorTamano = {
+  const imagenesPorTamano = useMemo(() => ({
     "18x18x18": imagenCaja18x18x18,
     "22x22x22": imagenCaja22x22x22,
     "24x24x24": imagenCaja24x24x24,
     "36x22x22": imagenCaja36x22x22,
     "36x24x24": imagenCaja36x24x24,
     "42x29x25": imagenCaja42x29x25,
-  };
+  }), []);
   const [imagenActual, setImagenActual] = useState(imagenCaja1); // Estado para almacenar la imagen actual
   const paises = [
     {
@@ -192,10 +192,14 @@ export default function Detalles() {
   );
   const [paisSeleccionado, setPaisSeleccionado] = useState(paises[0]);
 
+  const cambiarImagenPorTamano = useCallback((tamano) => {
+    setImagenActual(imagenesPorTamano[tamano] || imagenCaja1);
+  }, [imagenesPorTamano]);
+  
   useEffect(() => {
     setTamanoSeleccionado(paisSeleccionado.tamanos[0]);
     cambiarImagenPorTamano(paisSeleccionado.tamanos[0]);
-  }, []);
+  }, [paisSeleccionado, paisSeleccionado.tamanos, cambiarImagenPorTamano]);
   const [previousPais, setPreviousPais] = useState(paises[0]);
 
   const [, setIsChanging] = useState(false);
@@ -229,15 +233,7 @@ export default function Detalles() {
     setHoverIndexTamano(index);
   };
   
-  const cambiarImagenPorTamano = (tamano) => {
-    const imagenSeleccionada = imagenesPorTamano[tamano] || imagenCaja1;
-    if (imagenSeleccionada) {
-      setImagenActual(imagenSeleccionada);
-    } else {
-      console.log("No se encontró una imagen para el tamaño seleccionado.");
-      
-    }
-  };
+  
 
   function Pais({ imagen, nombre, onClick, index }) {
     return (
