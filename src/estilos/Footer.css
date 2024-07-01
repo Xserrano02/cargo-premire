@@ -21,7 +21,7 @@ footer #LogoFoo img {
     display: block; /* Asegura que la imagen se centre correctamente */
     margin: 0 auto; /* Centra la imagen horizontalmente */
     max-height: 500px; /* Establece una altura máxima para la imagen */
-    margin-left: 115%;
+    margin-left: 200px;
 }
 
 
