@@ -267,7 +267,7 @@ export default function HomePage() {
                 Tiempo de entrega
               </p>
               <p className="h4 text-center textoMovil">3 - 4 Semanas</p>
-              <p className="h4 text-center textoMovil">Trasporte: {paisSeleccionado.TipoTransporte}</p>
+              <p className="h4 text-center textoMovil"><span className="fw-bold">Trasporte:</span> {paisSeleccionado.TipoTransporte}</p>
               <p className="fw-bold mt-0 fst-italic h4 text-center CobroPeso textoMovil">
                 No se cobra por peso.
               </p>
@@ -329,10 +329,10 @@ export default function HomePage() {
                     Aereo
                   </motion.h1>
                   <p
-                    className="h3 textoBanner"
+                    className="h3 textoBanner container"
                     style={{ textAlign: "justify" }}
                   >
-                    <span className="span-text">En Cargo Premier,</span>  nos especializamos en paquetería aérea, garantizando envíos rápidos y seguros para tus cajas y paquetes. Nuestro servicio puerta a puerta ofrece la flexibilidad y velocidad que necesitas, ideal para entregas urgentes. Con una red global, llegamos a destinos internacionales y locales, asegurando que tus mercancías lleguen a tiempo y en perfectas condiciones. Confía en Cargo Premier para un transporte aéreo eficiente y confiable.
+                    <span className="span-text">En Cargo Premier,</span>  ofrecemos envíos aéreos rápidos y seguros para tus paquetes. Nuestro servicio puerta a puerta es flexible y veloz, ideal para entregas urgentes. Con una red global, llegamos a destinos internacionales y locales, asegurando que tus mercancías lleguen a tiempo y en perfectas condiciones. Confía en Cargo Premier para un transporte aéreo eficiente y confiable.
                   </p>
                 </div>
                 <div className="col">
@@ -360,10 +360,10 @@ export default function HomePage() {
                     Terrestre
                   </motion.h1>
                   <p
-                    className="h3 textoBanner"
-                    style={{ textAlign: "" }}
+                    className="h3 textoBanner container"
+                    style={{ textAlign: "justify" }}
                   >
-                    <span className="span-text">En Cargo Premier,</span>  nos especializamos en paquetería terrestre, ofreciendo envíos rápidos y seguros para tus cajas y paquetes. Nuestro servicio puerta a puerta es flexible y asequible, adaptándose a tus necesidades específicas. Con una red extensa, llegamos a áreas remotas y urbanas, garantizando entregas eficientes y responsables con el medio ambiente. Confía en Cargo Premier para mover tus mercancías de manera confiable y puntual.
+                    <span className="span-text">En Cargo Premier,</span>  ofrecemos envíos terrestres rápidos y seguros para tus paquetes. Nuestro servicio puerta a puerta es flexible y asequible. Llegamos a áreas remotas y urbanas, garantizando entregas eficientes y sostenibles. Confía en Cargo Premier para un transporte confiable y puntual.
 
                   </p>
                 </div>
@@ -388,10 +388,10 @@ export default function HomePage() {
                     Maritimo
                   </motion.h1>
                   <p
-                    className="h3 textoBanner"
-                    style={{ textAlign: "" }}
+                    className="h3 textoBanner container"
+                    style={{ textAlign: "justify" }}
                   >
-                    <span className="span-text">En Cargo Premier,</span>  nos especializamos en paquetería terrestre, ofreciendo envíos rápidos y seguros para tus cajas y paquetes. Nuestro servicio puerta a puerta es flexible y asequible, adaptándose a tus necesidades específicas. Con una red extensa, llegamos a áreas remotas y urbanas, garantizando entregas eficientes y responsables con el medio ambiente. Confía en Cargo Premier para mover tus mercancías de manera confiable y puntual.
+                    <span className="span-text">En Cargo Premier,</span>  ofrecemos transporte marítimo seguro y eficiente para tus envíos internacionales. Nuestro servicio puerto a puerto se adapta a tus necesidades con una flota moderna y expertos en logística. Garantizamos entregas puntuales y sostenibles. Confía en Cargo Premier para un transporte confiable y eficiente por mar.
 
                   </p>
                 </div>
