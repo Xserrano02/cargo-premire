@@ -32,9 +32,12 @@ const Footer = () => {
   return (
     <footer>
       <div className="container__footer">
-        <section className="d-flex justify-content-between flex-column flex-lg-row p-4 text-white container-footer">
+      <section className="d-flex justify-content-between flex-column flex-lg-row p-4 text-white" >
           <div className="me-lg-auto mb-3 mb-lg-0 mx-auto text-center" id="LogoFoo">
-            <img src={logoFooter} alt="" className="img-fluid" style={{ width: '400px', height: 'auto'}} />
+            <img src={logoFooter} alt="" className="img-fluid" style={{ width: '400px', height: 'auto' }} />
+          </div>
+          <div id="social-icons">
+            <h4>paquetería a tu puerta!</h4>
           </div>
         </section>
         <hr id="hrDiv" />
