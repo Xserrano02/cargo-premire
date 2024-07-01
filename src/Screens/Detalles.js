@@ -195,7 +195,7 @@ export default function Detalles() {
   useEffect(() => {
     setTamanoSeleccionado(paisSeleccionado.tamanos[0]);
     cambiarImagenPorTamano(paisSeleccionado.tamanos[0]);
-  }, [paisSeleccionado]);
+  }, []);
   const [previousPais, setPreviousPais] = useState(paises[0]);
 
   const [, setIsChanging] = useState(false);
