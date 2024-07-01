@@ -64,10 +64,20 @@ const Footer = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Cargo premier"
                 ></iframe>
+
               </div>
             </div>
           </div>
         </section>
+
+        <hr id="hrDiv" />
+
+        <section className="container">
+          <div>
+            <center> <h5>Powered by <strong> <a href="mailto:geektech2306@gmail.com"> GeekTech </a> </strong> 2024 ©</h5> </center>
+          </div>
+        </section>
+
       </div>
     </footer>
   );

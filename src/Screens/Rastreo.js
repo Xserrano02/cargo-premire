@@ -14,6 +14,7 @@ export default function Rastreo() {
                     style={{ border: 'none' }}
                 />
             </header>
+
         </div>
     )
 }
