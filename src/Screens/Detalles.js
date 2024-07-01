@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useCallback,useMemo  } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../Components/NavBar.jsx";
 import Mexico from "../Resources/Mexico.svg";
@@ -18,7 +18,6 @@ import imagenCaja36x22x22 from "../Resources/36x22x22.jpeg";
 import imagenCaja36x24x24 from "../Resources/36x24x24.jpeg";
 import imagenCaja42x29x25 from "../Resources/42x29x25.png";
 
-
 import logoCajita1 from "../Resources/logo cajita 1.svg";
 import imagenPaisajeMexico from "../Resources/imagenPaisajeMexico.jpg";
 import imagenPaisajeGuatemala from "../Resources/imagenPaisajeGuatemala.jpg";
@@ -33,14 +32,17 @@ import "../estilos/Detalles.css";
 import Footer from "./helpers/Footer.js";
 
 export default function Detalles() {
-  const imagenesPorTamano = useMemo(() => ({
-    "18x18x18": imagenCaja18x18x18,
-    "22x22x22": imagenCaja22x22x22,
-    "24x24x24": imagenCaja24x24x24,
-    "36x22x22": imagenCaja36x22x22,
-    "36x24x24": imagenCaja36x24x24,
-    "42x29x25": imagenCaja42x29x25,
-  }), []);
+  const imagenesPorTamano = useMemo(
+    () => ({
+      "18x18x18": imagenCaja18x18x18,
+      "22x22x22": imagenCaja22x22x22,
+      "24x24x24": imagenCaja24x24x24,
+      "36x22x22": imagenCaja36x22x22,
+      "36x24x24": imagenCaja36x24x24,
+      "42x29x25": imagenCaja42x29x25,
+    }),
+    []
+  );
   const [imagenActual, setImagenActual] = useState(imagenCaja1); // Estado para almacenar la imagen actual
   const paises = [
     {
@@ -184,7 +186,6 @@ export default function Detalles() {
     return <span className="responsive-break"> </span>;
   };
 
-
   const [tamanosSeleccionados, setTamanosSeleccionados] = useState(
     paises[0].tamanos
   );
@@ -193,10 +194,13 @@ export default function Detalles() {
   );
   const [paisSeleccionado, setPaisSeleccionado] = useState(paises[0]);
 
-  const cambiarImagenPorTamano = useCallback((tamano) => {
-    setImagenActual(imagenesPorTamano[tamano] || imagenCaja1);
-  }, [imagenesPorTamano]);
-  
+  const cambiarImagenPorTamano = useCallback(
+    (tamano) => {
+      setImagenActual(imagenesPorTamano[tamano] || imagenCaja1);
+    },
+    [imagenesPorTamano]
+  );
+
   useEffect(() => {
     setTamanoSeleccionado(paisSeleccionado.tamanos[0]);
     cambiarImagenPorTamano(paisSeleccionado.tamanos[0]);
@@ -234,8 +238,6 @@ export default function Detalles() {
   const toggleHoverTamano = (index) => {
     setHoverIndexTamano(index);
   };
-  
-  
 
   function Pais({ imagen, nombre, onClick, index }) {
     return (
@@ -443,7 +445,7 @@ export default function Detalles() {
         </h1>
       </div>
 
-      <div className="row mt-5 justify-content-center">
+      <div className="row mt-5 justify-content-center ms-5 me-5">
         <div className="col-12 col-md-6 text-center mt-3 order-1 order-md-1">
           <h2>
             <b>Tamaños</b>
@@ -452,7 +454,10 @@ export default function Detalles() {
             <React.Fragment key={index}>
               <button
                 className="btn m-2"
-                onClick={() => {setTamanoSeleccionado(tamano);cambiarImagenPorTamano(tamano);}}
+                onClick={() => {
+                  setTamanoSeleccionado(tamano);
+                  cambiarImagenPorTamano(tamano);
+                }}
                 style={{
                   backgroundColor:
                     tamano === tamanoSeleccionado
@@ -478,41 +483,40 @@ export default function Detalles() {
           ))}
         </div>
         <div className="col-12 col-md-6 text-center mt-3 order-2 order-md-2">
-          <h2>
+          <h2 className="mb-2">
             <b>Información</b>
           </h2>
           {tamanoSeleccionado && (
-            <div className="row p-0">
-              <div className="col-5 p-0 ms-3">
-                <img
-                  src={imagenActual}
-                  alt="Imagen de la caja"
-                  className="mt-3 mb-3 img-fluid imagenCaja"
-                  style={{ borderRadius: "10px" }}
-                />
-                <h4 className="text-center">
-                  <b>Caja</b>
-                </h4>
-              </div>
-              <div className="col-6 d-flex flex-column justify-content-center p-0">
-                <div className="row info-row d-flex align-items-center">
-                  <div className="col-4 d-flex align-items-center info-col">
-                    <p className="mb-2 mb-lg-5 h5">
-                      <b>Tamaño:</b>
-                    </p>
-                  </div>
-                  <div className="col-4 d-flex align-items-center info-col">
-                    <p className="mb-2 mb-lg-5 h5">{tamanoSeleccionado}</p>
-                  </div>
+            <div className="container">
+              <div className="row justify-content-center mt-3 mb-3">
+                <div className="col-12 col-md-5 text-center">
+                  <img
+                    src={imagenActual}
+                    alt="Imagen de la caja"
+                    className="img-fluid"
+                    style={{ borderRadius: "10px" }}
+                  />
                 </div>
-                <div className="row info-row d-flex align-items-center">
-                  <div className="col-4 d-flex align-items-center info-col">
-                    <p className="info-label mb-2 mb-lg-5 h5">
-                      <b>Peso:</b>
-                    </p>
+                <div className="col-12 col-md-6 m-5">
+                  <div className="row align-items-center mb-5">
+                    <div className="col-12 col-md-4">
+                      <p className="h5">
+                        <b>Tamaño:</b>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-8">
+                      <p className="h5">{tamanoSeleccionado}</p>
+                    </div>
                   </div>
-                  <div className="col-4 p-0">
-                    <p className="info-value mb-2 mb-lg-5 h5 ">Sin limite de peso</p>
+                  <div className="row align-items-center">
+                    <div className="col-12 col-md-4">
+                      <p className="h5">
+                        <b>Peso:</b>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-8">
+                      <p className="h5">Sin limite de peso</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -522,7 +526,7 @@ export default function Detalles() {
       </div>
       <div className="row justify-content-center">
         <div className="col-12 text-center">
-          <h5 className="mt-5">
+          <h5 className="mt-0">
             <b>Tiempo de Entrega:</b>
           </h5>
           <p>
@@ -561,21 +565,12 @@ export default function Detalles() {
         </div>
       </div>
       <div className="row mt-5 justify-content-center">
-        <div className="col-md-5 d-flex flex-column justify-content-center align-items-center">
-          <h2>
-            <b>Salidas Fijas</b>
-          </h2>
-          <ul>
-            <li>Todos los jueves</li>
-            <li>El Jueves 23 de Agosto</li>
-            <li>Martes 18 de Septiembre</li>
-          </ul>
-        </div>
+        
         <div className="col-md-5 d-flex justify-content-center align-items-center">
-          <img src={logoCajita1} alt="Logo" className="logoCajita"/>
+          <img src={logoCajita1} alt="Logo" className="logoCajita" />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

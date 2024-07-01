@@ -119,12 +119,12 @@
 }
 
 .imagenCaja{
-  width: 50%;
+  width: 70%;
 }
 
 @media (max-width: 768px) {
   .imagenCaja {
-    width: 80%; 
+    width: 100%; 
   }
 }
 
@@ -163,3 +163,22 @@
     white-space: normal; /* Permite que el texto se divida en varias líneas si es necesario */
   }
 }
+
+.d-inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) { /* Ajusta este valor según el punto de ruptura que necesites */
+  .d-inline-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) { /* Bootstrap MD breakpoint */
+  .info-label, .info-value {
+    display: inline-block; /* Hace que los elementos sean en línea en pantallas más grandes */
+  }
+}
+
