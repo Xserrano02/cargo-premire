@@ -5,7 +5,6 @@ import Banner from '../Resources/Banner.svg';
 import emailjs from '@emailjs/browser';
 import { Paises } from '../db/Paises.js';
 import NavBar from "../Components/NavBar.jsx";
-import Footer from './helpers/Footer.js';
 
 export default function HomePage() {
   const form = useRef();
