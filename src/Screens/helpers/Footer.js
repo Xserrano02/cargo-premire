@@ -74,7 +74,7 @@ const Footer = () => {
 
         <section className="container">
           <div>
-            <h5>Powered by: <strong> <a href="mailto:geektech2306@gmail.com"> GeekTech </a> </strong> 2024 ©</h5>
+            <center> <h5>Powered by <strong> <a href="mailto:geektech2306@gmail.com"> GeekTech </a> </strong> 2024 ©</h5> </center>
           </div>
         </section>
 
