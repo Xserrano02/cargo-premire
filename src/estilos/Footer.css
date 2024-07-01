@@ -100,23 +100,18 @@ footer{
 
 @media (max-width: 1765px){
     footer #LogoFoo img {
-        max-width: 100%; /* Hace que la imagen sea responsive */
-        height: auto; /* Mantiene la proporción de la imagen */
-        display: block; /* Asegura que la imagen se centre correctamente */
-        margin: 0 auto; /* Centra la imagen horizontalmente */
-        max-height: 500px; /* Establece una altura máxima para la imagen */
         margin-left: 160%;
     }
 }
 
 @media (max-width: 1330px){
     footer #LogoFoo img {
-        max-width: 100%; /* Hace que la imagen sea responsive */
-        height: auto; /* Mantiene la proporción de la imagen */
-        display: block; /* Asegura que la imagen se centre correctamente */
-        margin: 0 auto; /* Centra la imagen horizontalmente */
-        max-height: 500px; /* Establece una altura máxima para la imagen */
         margin-left: 115%;
+    }
+}
+@media (max-width: 1920px){
+    footer #LogoFoo img {
+        margin-left: 190%;
     }
 }
 
