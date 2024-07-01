@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../Components/NavBar";
+import Footer from "./helpers/Footer";
 
 export default function Rastreo() {
     return (
@@ -14,6 +15,7 @@ export default function Rastreo() {
                     style={{ border: 'none' }}
                 />
             </header>
+
         </div>
     )
 }
