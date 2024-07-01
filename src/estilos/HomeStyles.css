@@ -37,7 +37,7 @@
 }
 .imagenGuat{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/camion-Guate.jpg?alt=media&token=a6ee6389-9f3e-4d33-a283-31ed9ff023ea');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_guatemala.jpg?alt=media&token=aa2977e7-8c8e-443b-8660-afa93798bf25');
 }
 .imagenSv{
   transition: background-image 0.5s ease-in-out;
@@ -49,15 +49,15 @@
 }
 .imagenNic{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Camion-Nicaragua.jpg?alt=media&token=e8b8588e-69eb-4cbb-a2d0-0dab45adde30');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_nicaragua.jpg?alt=media&token=5bf0779b-d138-4b72-ab0d-16a0ba4b135c');
 }
 .imagenColm{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/avion-colombia.jpg?alt=media&token=a87469b0-cc68-4d1b-986d-69c83ce8ed37');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_colombia.jpg?alt=media&token=2654a5e8-22bf-43b0-8819-f5d4a416063f');
 }
 .imagenCosta{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Avion-CostaRica.jpg?alt=media&token=c70f2ce8-3a1f-4c04-9a66-7ece08d83737');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_costa%20rica.jpg?alt=media&token=02f4a14d-d8f5-4ef3-a7ea-e0d9b099ee01');
 }
 .imagenVenez{
   transition: background-image 0.5s ease-in-out;
