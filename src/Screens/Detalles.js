@@ -10,13 +10,14 @@ import CostaRica from "../Resources/CostaRica.png";
 import Colombia from "../Resources/Colombia.png";
 import Republic from "../Resources/RepublicaDom.png";
 // Importa las imágenes de las cajas
-import imagenCaja1 from "../Resources/imagenCaja1.png";
+import imagenCaja1 from "../Resources/ImagenNoEncontrada.png";
 import imagenCaja18x18x18 from "../Resources/18x18x18.jpeg";
 import imagenCaja22x22x22 from "../Resources/22x22x22.jpeg";
 import imagenCaja24x24x24 from "../Resources/24x24x24.jpeg";
 import imagenCaja36x22x22 from "../Resources/36x22x22.jpeg";
 import imagenCaja36x24x24 from "../Resources/36x24x24.jpeg";
-import imagenCaja42x29x25 from "../Resources/42x29x25.jpeg";
+import imagenCaja42x29x25 from "../Resources/42x29x25.png";
+
 
 import logoCajita1 from "../Resources/logo cajita 1.svg";
 import imagenPaisajeMexico from "../Resources/imagenPaisajeMexico.jpg";
@@ -199,6 +200,7 @@ export default function Detalles() {
   useEffect(() => {
     setTamanoSeleccionado(paisSeleccionado.tamanos[0]);
     cambiarImagenPorTamano(paisSeleccionado.tamanos[0]);
+    window.scrollTo(0, 0);
   }, [paisSeleccionado, paisSeleccionado.tamanos, cambiarImagenPorTamano]);
   const [previousPais, setPreviousPais] = useState(paises[0]);
 
@@ -481,35 +483,36 @@ export default function Detalles() {
           </h2>
           {tamanoSeleccionado && (
             <div className="row p-0">
-              <div className="col-5 p-0">
+              <div className="col-5 p-0 ms-3">
                 <img
                   src={imagenActual}
                   alt="Imagen de la caja"
-                  className="mt-3 mb-3 img-fluid w-50"
+                  className="mt-3 mb-3 img-fluid imagenCaja"
+                  style={{ borderRadius: "10px" }}
                 />
                 <h4 className="text-center">
                   <b>Caja</b>
                 </h4>
               </div>
               <div className="col-6 d-flex flex-column justify-content-center p-0">
-                <div className="row info-row">
+                <div className="row info-row d-flex align-items-center">
                   <div className="col-4 d-flex align-items-center info-col">
                     <p className="mb-2 mb-lg-5 h5">
                       <b>Tamaño:</b>
                     </p>
                   </div>
-                  <div className="col-8 d-flex align-items-center info-col">
+                  <div className="col-4 d-flex align-items-center info-col">
                     <p className="mb-2 mb-lg-5 h5">{tamanoSeleccionado}</p>
                   </div>
                 </div>
-                <div className="row info-row">
+                <div className="row info-row d-flex align-items-center">
                   <div className="col-4 d-flex align-items-center info-col">
-                    <p className="h5">
+                    <p className="info-label mb-2 mb-lg-5 h5">
                       <b>Peso:</b>
                     </p>
                   </div>
-                  <div className="col-8 d-flex align-items-center info-col">
-                    <p className="h5">Sin limite de peso</p>
+                  <div className="col-4 p-0">
+                    <p className="info-value mb-2 mb-lg-5 h5 ">Sin limite de peso</p>
                   </div>
                 </div>
               </div>
@@ -569,7 +572,7 @@ export default function Detalles() {
           </ul>
         </div>
         <div className="col-md-5 d-flex justify-content-center align-items-center">
-          <img src={logoCajita1} alt="Logo" />
+          <img src={logoCajita1} alt="Logo" className="logoCajita"/>
         </div>
       </div>
       <Footer/>

@@ -117,3 +117,49 @@
     text-align: center; /* Centra el contenido */
   }
 }
+
+.imagenCaja{
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .imagenCaja {
+    width: 80%; 
+  }
+}
+
+
+.logoCajita{
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .logoCajita {
+    width: 60%; 
+  }
+}
+
+.info-row {
+  display: flex;
+  flex-wrap: nowrap; /* Impide que los elementos se envuelvan automáticamente */
+}
+
+.info-col {
+  flex: 0 0 auto; /* No crece ni encoge, usa su contenido como base */
+}
+
+.info-value {
+  flex: 1 1 auto; /* Crecerá para llenar el espacio disponible */
+  min-width: 0; /* Permite que el texto se ajuste al espacio disponible */
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas dentro de su contenedor */
+}
+
+@media (max-width: 576px) { /* Ajusta este valor según el punto de ruptura que necesites */
+  .info-row {
+    flex-wrap: wrap; /* Permite envolver los elementos cuando el espacio es limitado */
+  }
+
+  .info-value {
+    white-space: normal; /* Permite que el texto se divida en varias líneas si es necesario */
+  }
+}
