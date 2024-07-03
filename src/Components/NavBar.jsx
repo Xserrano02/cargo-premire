@@ -1,5 +1,5 @@
 import React from "react";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const NavBar = ({ backgroundColor = "white" }) => {
@@ -8,9 +8,9 @@ const NavBar = ({ backgroundColor = "white" }) => {
     <nav
       className="navbar navbar-expand-lg bg-body-primary"
       style={{
-        fontFamily: "Roboto, sans-serif",
-        fontWeight: "Bold",
-        fontSize: "Larger",
+        fontFamily: "Poppins, sans-serif",
+        fontWeight: "bold",
+        fontSize: "larger",
         backgroundColor,
       }}
     >
@@ -32,28 +32,64 @@ const NavBar = ({ backgroundColor = "white" }) => {
               <Link
                 className="nav-link  h1 mx-5"
                 to="/"
+                style={{
+                  color: "#52465e",
+                  fontsize: "15px",
+                  fontweight: "600",
+                  lineheight: 1
+                }}
               >
-                  INICIO
+                INICIO
               </Link>
             </li>
+
             <li className="nav-item">
               <Link
                 className="nav-link  h1 mx-5"
                 aria-current="page"
                 to="/rastreo"
+                style={{
+                  color: "#52465e",
+                  fontsize: "15px",
+                  fontweight: "600",
+                  lineheight: 1
+                }}
               >
                 RASTREO
               </Link>
+            </li>
+
+            <li className="nav-item">
+              <a
+                className="nav-link h1 mx-5"
+                aria-current="page"
+                href="/detalles"
+                style={{
+                  color: "#52465e",
+                  fontsize: "15px",
+                  fontweight: "600",
+                  lineheight: 1
+                }}
+              >
+                COTIZAR ENVIO
+              </a>
             </li>
             <li className="nav-item">
               <a
                 className="nav-link h1 mx-5"
                 aria-current="page"
                 href="/contacto"
+                style={{
+                  color: "#52465e",
+                  fontsize: "15px",
+                  fontweight: "600",
+                  lineheight: 1
+                }}
               >
                 CONTACTO
               </a>
             </li>
+
           </ul>
         </div>
       </div>
