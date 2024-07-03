@@ -111,7 +111,7 @@ export default function HomePage() {
                 <p className={getErrorClass('nombreCompleto')}>Nombre completo *</p>
                 <input className={`input-texto ${getErrorClass('nombreCompleto')}`}
                   name='name'
-                  placeholder='John Doe Smith Gonzalez'
+                  
                   type='text'
                   value={nombreCompleto}
                   onChange={(e) => setNombreCompleto(e.target.value)}
@@ -122,7 +122,7 @@ export default function HomePage() {
                 <p className={getErrorClass('direccion')}>Direccion *</p>
                 <input className={`input-texto ${getErrorClass('direccion')}`}
                   name='address'
-                  placeholder='234 Maple Street'
+                  
                   type='text'
                   value={direccion}
                   onChange={(e) => setDireccion(e.target.value)}
@@ -133,7 +133,7 @@ export default function HomePage() {
                 <div>
                   <p className={getErrorClass('correoElectronico')}>Correo electronico *</p>
                   <input className={`input-texto-esencial ${getErrorClass('correoElectronico')}`}
-                    placeholder='johndoe@example.com'
+                    
                     name='email'
                     value={correoElectronico}
                     onChange={(e) => setCorreoElectronico(e.target.value)}
@@ -144,7 +144,7 @@ export default function HomePage() {
                 <div>
                   <p className={getErrorClass('telefono')}>Telefono *</p>
                   <input className={`input-texto-esencial ${getErrorClass('telefono')}`}
-                    placeholder='(555) 123-4567'
+                  
                     name='phone'
                     type='text'
                     value={telefono}
@@ -177,7 +177,7 @@ export default function HomePage() {
                 </div>
               </div>
               <h5 className='txt-tittle'>Información adicional</h5>
-              <textarea name="additional_info" placeholder='¿Algún requerimiento especial?' value={infoAdicional} onChange={(e) => setInfoAdicional(e.target.value)} className={`input-adicional ${getErrorClass('infoAdicional')}`} />
+              <textarea name="additional_info"  value={infoAdicional} onChange={(e) => setInfoAdicional(e.target.value)} className={`input-adicional ${getErrorClass('infoAdicional')}`} />
               {errors.infoAdicional && <div className="error-message">{errors.infoAdicional}</div>}
               <div className='container-person'>
                 <input type="submit" value="Enviar" className='btn-enviar-form2' />
