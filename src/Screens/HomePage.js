@@ -302,7 +302,7 @@ export default function HomePage() {
             <img src={preloadedImages[LogoCaja]?.src || LogoCaja} className="img-fluid w-100" alt="..." />
           </motion.div>
           <motion.div className="col" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
-            <p className="h3 p-2" style={{ textAlign: "justify" }}>
+            <p className="h3 p-2" style={{ textAlign: "left", fontWeight:"bold", }}>
               <span className="span-text">En Cargo Premier,</span> somos una empresa familiar con <span className="span-text2">15 años de experiencia </span>en paquetería aérea, terrestre y maritima, ofreciendo envíos rápidos, seguros y eficientes. Conectamos personas y negocios mediante un servicio de transporte confiable y puntual. Nuestro equipo de profesionales brinda un servicio personalizado, asegurando que cada paquete llegue en perfectas condiciones.</p>
           </motion.div>
         </div>
@@ -337,9 +337,9 @@ export default function HomePage() {
                   </motion.h1>
                   <p
                     className="h3 textoBanner container"
-                    style={{ textAlign: "justify" }}
+                    style={{ textAlign: "left",fontWeight:"bold" }}
                   >
-                    <span className="span-text">En Cargo Premier,</span>  ofrecemos envíos aéreos rápidos y seguros para tus paquetes. Nuestro servicio puerta a puerta es flexible y veloz, ideal para entregas urgentes. Con una red global, llegamos a destinos internacionales y locales, asegurando que tus mercancías lleguen a tiempo y en perfectas condiciones. Confía en Cargo Premier para un transporte aéreo eficiente y confiable.
+                    <span className="span-text">En Cargo Premier,</span>  ofrecemos envíos aéreos rápidos y seguros para tus paquetes. Nuestro servicio puerta a puerta es flexible y veloz, ideal para entregas urgentes. Confía en Cargo Premier para un transporte aéreo eficiente y confiable.
                   </p>
                 </div>
                 <div className="col">
@@ -364,11 +364,11 @@ export default function HomePage() {
                     className="text-center fw-bolder mb-5 mt-5"
                     style={{ color: "#13103A" }}
                   >
-                    Terrestre
+                    Mudanza
                   </motion.h1>
                   <p
                     className="h3 textoBanner container"
-                    style={{ textAlign: "justify" }}
+                    style={{ textAlign: "left", fontWeight:"bold" }}
                   >
                     <span className="span-text">En Cargo Premier,</span>  ofrecemos envíos terrestres rápidos y seguros para tus paquetes. Nuestro servicio puerta a puerta es flexible y asequible. Llegamos a áreas remotas y urbanas, garantizando entregas eficientes y sostenibles. Confía en Cargo Premier para un transporte confiable y puntual.
 
@@ -392,13 +392,13 @@ export default function HomePage() {
                     className="text-center fw-bolder mb-5 mt-5"
                     style={{ color: "#13103A" }}
                   >
-                    Maritimo
+                    Envío de Vehiculos
                   </motion.h1>
                   <p
                     className="h3 textoBanner container"
-                    style={{ textAlign: "justify" }}
+                    style={{ textAlign: "left", fontWeight:"bold" }}
                   >
-                    <span className="span-text">En Cargo Premier,</span>  ofrecemos transporte marítimo seguro y eficiente para tus envíos internacionales. Nuestro servicio puerto a puerto se adapta a tus necesidades con una flota moderna y expertos en logística. Garantizamos entregas puntuales y sostenibles. Confía en Cargo Premier para un transporte confiable y eficiente por mar.
+                    <span className="span-text">Cargo Premier,</span>  es una empresa dedicada al envío de vehículos a toda Centroamérica desde Florida. Nos especializamos en ofrecer un servicio de transporte seguro y eficiente, asegurando que su vehículo llegue a su destino en perfecto estado y a tiempo. Con una amplia experiencia en logística y un compromiso con la satisfacción del cliente, Cargo Premier es su mejor opción para el envío de vehículos en la región.
 
                   </p>
                 </div>
@@ -463,7 +463,7 @@ export default function HomePage() {
             </h1>
             <p
               className="container h5"
-              style={{ textAlign: "justify", color: "#414141" }}
+              style={{ textAlign: "left", color: "#414141", fontWeight:"bold" }}
             >
               Ser la compañía líder en servicios de envío de paquetería a Centroamérica, reconocida por nuestra confiabilidad, rapidez y compromiso con la satisfacción del cliente, facilitando la conexión entre personas y negocios a través de soluciones logísticas innovadoras y sostenibles.
             </p>
@@ -492,7 +492,7 @@ export default function HomePage() {
             </h1>
             <p
               className="container h5"
-              style={{ textAlign: "justify", color: "#414141" }}
+              style={{ textAlign: "left", color: "#414141", fontWeight:"bold",}}
             >
               Proveer servicios de envío de paquetería seguros, eficientes y accesibles a Centroamérica, superando las expectativas de nuestros clientes mediante tecnología avanzada, procesos optimizados y un servicio al cliente excepcional. Nos dedicamos a construir puentes entre comunidades, fomentando el crecimiento económico y el intercambio cultural en la región. Estas declaraciones reflejan un compromiso con la excelencia operativa, la innovación y el impacto positivo en las comunidades servidas, estableciendo una base sólida para el crecimiento y el éxito sostenible de la compañía.
             </p>
