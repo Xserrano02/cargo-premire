@@ -66,9 +66,9 @@ const NavBar = ({ backgroundColor = "white" }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link h1 mx-3 d-flex align-items-center"
-                href="/detalles"
+                to="/detalles"
                 style={{
                   color: "#52465e",
                   fontSize: "15px",
@@ -79,12 +79,12 @@ const NavBar = ({ backgroundColor = "white" }) => {
               >
                 <FaCalculator className="me-2" />
                 COTIZAR ENVÍO
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link h1 mx-3 d-flex align-items-center"
-                href="/contacto"
+                to="/contacto"
                 style={{
                   color: "#52465e",
                   fontSize: "15px",
@@ -95,7 +95,7 @@ const NavBar = ({ backgroundColor = "white" }) => {
               >
                 <FaEnvelope className="me-2" />
                 CONTACTO
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
