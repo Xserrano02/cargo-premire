@@ -24,6 +24,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../estilos/HomeStyles.css";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import CarouselHome from "../Components/CarouselHome.jsx";
 
 export default function HomePage() {
   const [paisSeleccionado, setPaisSeleccionado] = useState({
@@ -42,36 +43,51 @@ export default function HomePage() {
   console.log(animationPlayed)
 
   const paises = [
-    { nombre: "Mexico", imagen: Mexico, descripcion: "Paqueteria puerta a puerta en toda la Republica de Mexico", TipoTransporte:"Terrestre" },
+    { nombre: "Mexico", 
+      imagen: Mexico,
+      descripcion: "Paqueteria en toda la Republica Mexicana", 
+      TipoTransporte:"Terrestre",
+      tiempo:"10 a 15 dias",
+    },
     {
       nombre: "Guatemala",
       imagen: Guatemala,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Guatemala",
-      TipoTransporte: "Maritimo"
+      TipoTransporte: "Maritimo",
+      tiempo:"3 a 4 semanas",
+      cobro: "No se cobra por peso"
     },
     {
       nombre: "El Salvador",
       imagen: ElSalvador,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de El Salvador",
-      TipoTransporte: "Aereo"
+      TipoTransporte: "Aereo",
+      cobro: "No se cobra por peso",
+      tiempo:"3 a 4 semanas",
     },
     {
       nombre: "Honduras",
       imagen: Honduras,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Honduras",
-      TipoTransporte: "Maritimo"
+      TipoTransporte: "Maritimo",
+      cobro: "No se cobra por peso",
+      tiempo:"3 a 4 semanas",
     },
     {
       nombre: "Nicaragua",
       imagen: Nicaragua,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Nicaragua",
-      TipoTransporte: "Maritimo"
+      TipoTransporte: "Maritimo",
+      cobro: "No se cobra por peso",
+      tiempo:"4 a 6 semanas",
     },
     {
       nombre: "Costa rica",
       imagen: CostaRica,
-      descripcion: "Paqueteria puerta a puerta en toda la Republica de Costa Rica",      TipoTransporte: "Maritimo"
-
+      descripcion: "Paqueteria puerta a puerta en toda la Republica de Costa Rica",
+      TipoTransporte: "Maritimo",
+      cobro: "No se cobra por peso",
+      tiempo:"4 a 6 semanas",
     },
   ];
 
@@ -80,19 +96,25 @@ export default function HomePage() {
       nombre: "Colombia",
       imagen: Colombia,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Colombia",
-      TipoTransporte: "Maritimo"
+      TipoTransporte: "Maritimo",
+      cobro: "No se cobra por peso",
+      tiempo:"3 a 4 semanas",
     },
     {
       nombre: "Venezuela",
       imagen: Venezuela,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Venezuela",
-      TipoTransporte: "Maritimo"
+      TipoTransporte: "Maritimo",
+      cobro: "No se cobra por peso",
+      tiempo:"3 a 4 semanas",
     },
     {
       nombre: "Republica Dominicana",
       imagen: Republic,
       descripcion: "Paqueteria puerta a puerta en toda Republica Dominicana",
-      TipoTransporte: "Maritimo"
+      TipoTransporte: "Maritimo",
+      cobro: "No se cobra por peso",
+      tiempo:"3 a 4 semanas",
     },
   ];
 
@@ -158,8 +180,8 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="container">
         <NavBar />
+        <div className="container-fluid">
         <motion.div
           className="row justify-content-center align-items-center mb-5"
           initial={{ opacity: 0, y: -50 }}
@@ -168,23 +190,10 @@ export default function HomePage() {
           viewport={{ once: true, amount: 0.5 }}
           onAnimationComplete={() => setAnimationPlayed((prev) => ({ ...prev, top: true }))}
         >
-          <div className="col-lg-8">
-            <div
-              id="carouselExampleSlidesOnly"
-              className="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <img src={preloadedImages[Banner]?.src || Banner} className="d-block w-100" alt="Banner" />
-                  <h3 className="text-center" style={{ color: "#13103A" }}>
-                    ¡Paqueteria puerta a puerta!
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
+          <CarouselHome/>
         </motion.div>
+        </div>
+      <div className="container">
         <div className="container mt-5">
           <motion.h1
             className="text-center fw-bolder mb-5"
@@ -266,11 +275,9 @@ export default function HomePage() {
               >
                 Tiempo de entrega
               </p>
-              <p className="h4 text-center textoMovil">3 - 4 Semanas</p>
+              <p className="h4 text-center textoMovil">{paisSeleccionado.tiempo}</p>
               <p className="h4 text-center textoMovil"><span className="fw-bold">Trasporte:</span> {paisSeleccionado.TipoTransporte}</p>
-              <p className="fw-bold mt-0 fst-italic h4 text-center CobroPeso textoMovil">
-                No se cobra por peso.
-              </p>
+              <p className="fw-bold mt-0 fst-italic h4 text-center CobroPeso textoMovil">{paisSeleccionado.cobro ? paisSeleccionado.cobro : '' }</p>
             </div>
           </div>
           <div className="col position-relative text-center">
@@ -295,12 +302,12 @@ export default function HomePage() {
             <img src={preloadedImages[LogoCaja]?.src || LogoCaja} className="img-fluid w-100" alt="..." />
           </motion.div>
           <motion.div className="col" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
-            <p className="h3 p-2" style={{ textAlign: "justify" }}>
+            <p className="h3 p-2" style={{ textAlign: "left", fontWeight:"bold", }}>
               <span className="span-text">En Cargo Premier,</span> somos una empresa familiar con <span className="span-text2">15 años de experiencia </span>en paquetería aérea, terrestre y maritima, ofreciendo envíos rápidos, seguros y eficientes. Conectamos personas y negocios mediante un servicio de transporte confiable y puntual. Nuestro equipo de profesionales brinda un servicio personalizado, asegurando que cada paquete llegue en perfectas condiciones.</p>
           </motion.div>
         </div>
         <motion.h1 className="text-center fw-bolder mb-5 mt-5" style={{ color: "#13103A", fontSize: "60px" }} initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
-          Paqueteria
+          Servicios adicionales
         </motion.h1>
       </motion.div>
 
@@ -330,9 +337,9 @@ export default function HomePage() {
                   </motion.h1>
                   <p
                     className="h3 textoBanner container"
-                    style={{ textAlign: "justify" }}
+                    style={{ textAlign: "left",fontWeight:"bold" }}
                   >
-                    <span className="span-text">En Cargo Premier,</span>  ofrecemos envíos aéreos rápidos y seguros para tus paquetes. Nuestro servicio puerta a puerta es flexible y veloz, ideal para entregas urgentes. Con una red global, llegamos a destinos internacionales y locales, asegurando que tus mercancías lleguen a tiempo y en perfectas condiciones. Confía en Cargo Premier para un transporte aéreo eficiente y confiable.
+                    <span className="span-text">En Cargo Premier,</span>  ofrecemos envíos aéreos rápidos y seguros para tus paquetes. Nuestro servicio puerta a puerta es flexible y veloz, ideal para entregas urgentes. Confía en Cargo Premier para un transporte aéreo eficiente y confiable.
                   </p>
                 </div>
                 <div className="col">
@@ -357,14 +364,13 @@ export default function HomePage() {
                     className="text-center fw-bolder mb-5 mt-5"
                     style={{ color: "#13103A" }}
                   >
-                    Terrestre
+                    Mudanza
                   </motion.h1>
                   <p
                     className="h3 textoBanner container"
-                    style={{ textAlign: "justify" }}
+                    style={{ textAlign: "left", fontWeight:"bold" }}
                   >
-                    <span className="span-text">En Cargo Premier,</span>  ofrecemos envíos terrestres rápidos y seguros para tus paquetes. Nuestro servicio puerta a puerta es flexible y asequible. Llegamos a áreas remotas y urbanas, garantizando entregas eficientes y sostenibles. Confía en Cargo Premier para un transporte confiable y puntual.
-
+                    <span className="span-text">Cargo Premier,</span> ofrece servicios de mudanzas a nivel nacional e internacional desde Florida. Garantizamos el transporte seguro y eficiente de sus pertenencias a cualquier destino, asegurando que lleguen en perfectas condiciones y a tiempo. Confíe en nosotros para una mudanza sin estrés.
                   </p>
                 </div>
                 <div className="col">
@@ -385,13 +391,13 @@ export default function HomePage() {
                     className="text-center fw-bolder mb-5 mt-5"
                     style={{ color: "#13103A" }}
                   >
-                    Maritimo
+                    Envío de Vehiculos
                   </motion.h1>
                   <p
                     className="h3 textoBanner container"
-                    style={{ textAlign: "justify" }}
+                    style={{ textAlign: "left", fontWeight:"bold" }}
                   >
-                    <span className="span-text">En Cargo Premier,</span>  ofrecemos transporte marítimo seguro y eficiente para tus envíos internacionales. Nuestro servicio puerto a puerto se adapta a tus necesidades con una flota moderna y expertos en logística. Garantizamos entregas puntuales y sostenibles. Confía en Cargo Premier para un transporte confiable y eficiente por mar.
+                    <span className="span-text">Cargo Premier,</span> ofrece envíos de vehículos desde Florida a toda Centroamérica. Garantizamos un transporte seguro y puntual de su vehículo, asegurando que llegue en perfectas condiciones. Confíe en nosotros para un servicio de envío eficiente y sin complicaciones.
 
                   </p>
                 </div>
@@ -431,6 +437,7 @@ export default function HomePage() {
           <span className="visually-hidden">Next</span>
         </button>
       </motion.div>
+      
       <svg
         viewBox="0 0 500 80"
         preserveAspectRatio="none"
@@ -442,13 +449,9 @@ export default function HomePage() {
         ></path>
       </svg>
       <div className="container-fluid">
-        <motion.div
+        <div
           className="row text-center pb-5"
           style={{ backgroundColor: "#6BDFFF" }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
         >
           <div className="col-12 col-sm-6 container">
             <h1
@@ -459,7 +462,7 @@ export default function HomePage() {
             </h1>
             <p
               className="container h5"
-              style={{ textAlign: "justify", color: "#414141" }}
+              style={{ textAlign: "left", color: "#414141", fontWeight:"bold" }}
             >
               Ser la compañía líder en servicios de envío de paquetería a Centroamérica, reconocida por nuestra confiabilidad, rapidez y compromiso con la satisfacción del cliente, facilitando la conexión entre personas y negocios a través de soluciones logísticas innovadoras y sostenibles.
             </p>
@@ -471,14 +474,10 @@ export default function HomePage() {
               alt="..."
             />
           </div>
-        </motion.div>
-        <motion.div
+        </div>
+        <div
           className="row text-center pt-5 pb-5 "
           style={{ backgroundColor: "#85FFC8" }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
         >
           <div className="col-12 col-sm-3 text-end container">
             <img src={preloadedImages[Mision]?.src || Mision} className="img-fluid w-80 logoMision" alt="..." />
@@ -492,12 +491,12 @@ export default function HomePage() {
             </h1>
             <p
               className="container h5"
-              style={{ textAlign: "justify", color: "#414141" }}
+              style={{ textAlign: "left", color: "#414141", fontWeight:"bold",}}
             >
               Proveer servicios de envío de paquetería seguros, eficientes y accesibles a Centroamérica, superando las expectativas de nuestros clientes mediante tecnología avanzada, procesos optimizados y un servicio al cliente excepcional. Nos dedicamos a construir puentes entre comunidades, fomentando el crecimiento económico y el intercambio cultural en la región. Estas declaraciones reflejan un compromiso con la excelencia operativa, la innovación y el impacto positivo en las comunidades servidas, estableciendo una base sólida para el crecimiento y el éxito sostenible de la compañía.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
       <svg
         viewBox="0 40 500 100"

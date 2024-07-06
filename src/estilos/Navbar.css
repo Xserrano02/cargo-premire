@@ -1,0 +1,32 @@
+.nav-link {
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #52465e;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link:hover {
+    color: #52465e;
+  }
+  /* Navbar.css */
+
+body {
+  padding-top: 100px; 
+}
+
+.navbar {
+  z-index: 1030;
+}

@@ -1,44 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    
 
-    <meta
-      name="description"
-      content="Cargo Premier Corp. - Líder en envíos de cajas vía marítima, aérea y terrestre desde Miami a toda América Latina. Envíos rápidos y seguros."
-    />
-    
-    <meta property="og:title" content="Cargo Premier Corp. - Envíos Internacionales de Cajas" />
-    <meta property="og:description" content="Cargo Premier Corp. ofrece servicios de envío de cajas a través de medios marítimos, aéreos y terrestres, conectando Miami con toda América Latina. Confíe en nosotros para un servicio seguro y eficiente." />
-    <meta property="og:image" content="%PUBLIC_URL%/banner.jpg" />
-    <meta property="og:url" content="https://www.cargopremier.com" />
-    <meta property="og:type" content="website" />
-    
-    
-    <meta name="keywords" content="envíos internacionales, envíos de cajas, logística, Miami, América Latina, envíos marítimos, envíos aéreos, envíos terrestres" />
-    
-    <!-- Link to manifest and favicon -->
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.svg" />
-    <link rel="manifest" href="%PUBLIC_URL%/logo.svg" />
-    
-    <link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/camion-mexico.svg?alt=media&token=0e155fe9-cb5f-4009-b7cb-68ea19064ac8" as="image">
-    <link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_guatemala.jpg?alt=media&token=aa2977e7-8c8e-443b-8660-afa93798bf25" as="image">
-    <link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/AvionSV.svg?alt=media&token=d33f1617-cd5e-4ab4-bb9c-cca3a7861e28" as="image">
-    <link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco-Honduras.jpg?alt=media&token=2e3fdd3d-4325-4286-acd3-4a4a3952a40c" as="image">
-    <link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_nicaragua.jpg?alt=media&token=5bf0779b-d138-4b72-ab0d-16a0ba4b135c" as="image">
-    <link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco-venezuela.jpg?alt=media&token=ca8e1144-ae80-48e7-b2c2-6e075fd464e9" as="image">
-    <link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_costa%20rica.jpg?alt=media&token=02f4a14d-d8f5-4ef3-a7ea-e0d9b099ee01" as="image">
-    <link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_colombia.jpg?alt=media&token=2654a5e8-22bf-43b0-8819-f5d4a416063f" as="image">
-    <link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Barco-RD.jpg?alt=media&token=3a731fce-942b-48be-b729-8a87b9dc72bc" as="image">
-    
-    <title>Cargo Premier - Envíos Internacionales de Cajas</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+    content="Cargo Premier Corp. - Líder en envíos de cajas vía marítima, aérea y terrestre desde Miami a toda América Latina. Envíos rápidos y seguros." />
+
+  <meta name="theme-color" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Apple mobile web app meta tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
+
+  <!-- Safari meta tags for macOS -->
+ <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Cargo Premier - Envíos Internacionales de Cajas">
+  <link rel="apple-touch-icon" sizes="192x192" href="%PUBLIC_URL%/logo192.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+  
+
+
+  <meta property="og:title" content="Cargo Premier Corp. - Envíos Internacionales de Cajas" />
+  <meta property="og:description"
+    content="Cargo Premier Corp. ofrece servicios de envío de cajas a través de medios marítimos, aéreos y terrestres, conectando Miami con toda América Latina. Confíe en nosotros para un servicio seguro y eficiente." />
+  <meta property="og:image" content="%PUBLIC_URL%/banner.jpg" />
+  <meta property="og:url" content="https://www.cargopremier.com" />
+  <meta property="og:type" content="website" />
+
+
+  <meta name="keywords"
+    content="envíos internacionales, envíos de cajas, logística, Miami, América Latina, envíos marítimos, envíos aéreos, envíos terrestres" />
+
+  <!-- Link to manifest and favicon -->
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.svg" />
+  <link rel="manifest" href="%PUBLIC_URL%/logo.svg" />
+  <link rel="preload"
+  src="../src/estilos/HomeStyles.css">
+  <link rel="preload"
+    href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/zocalo2-mexico%201.png?alt=media&token=c086c6e6-9362-4c8a-bc86-559229d19919"
+    as="image">
+  <link rel="preload"
+    href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/camion-mexico.svg?alt=media&token=0e155fe9-cb5f-4009-b7cb-68ea19064ac8"
+    as="image">
+  <link rel="preload"
+    href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_guatemala.jpg?alt=media&token=aa2977e7-8c8e-443b-8660-afa93798bf25"
+    as="image">
+  <link rel="preload"
+    href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/AvionSV.svg?alt=media&token=d33f1617-cd5e-4ab4-bb9c-cca3a7861e28"
+    as="image">
+  <link rel="preload"
+    href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco-Honduras.jpg?alt=media&token=2e3fdd3d-4325-4286-acd3-4a4a3952a40c"
+    as="image">
+  <link rel="preload"
+    href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_nicaragua.jpg?alt=media&token=5bf0779b-d138-4b72-ab0d-16a0ba4b135c"
+    as="image">
+  <link rel="preload"
+    href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco-venezuela.jpg?alt=media&token=ca8e1144-ae80-48e7-b2c2-6e075fd464e9"
+    as="image">
+  <link rel="preload"
+    href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_costa%20rica.jpg?alt=media&token=02f4a14d-d8f5-4ef3-a7ea-e0d9b099ee01"
+    as="image">
+  <link rel="preload"
+    href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_colombia.jpg?alt=media&token=2654a5e8-22bf-43b0-8819-f5d4a416063f"
+    as="image">
+  <link rel="preload"
+    href="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Barco-RD.jpg?alt=media&token=3a731fce-942b-48be-b729-8a87b9dc72bc"
+    as="image">
+
+  <title>Cargo Premier - Envíos Internacionales de Cajas</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+
 </html>

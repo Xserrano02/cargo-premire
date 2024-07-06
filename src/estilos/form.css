@@ -2,12 +2,16 @@
 .container-formulario{
     display:flex;
     width: 100%;
-    height: 108vh;
+    height: 100vh;
     min-height: 100vh;
 }
 
 .txt-tittle{
-    padding-top: 50px;
+    padding: 12px 0;
+    color: #19364a;
+    font-size: 22px;
+    font-weight: 800;
+
 }
 
 .Containder-logo{
@@ -35,6 +39,14 @@
 .container-person{
     width: 90%;
     margin: 0 auto;
+}
+
+.container-person p {
+  color: #19364a;
+  font-size: 16px;
+  font-weight: 800;
+  padding-bottom: 15px;
+  margin-bottom: 35px;
 }
 
 .container-person p{
@@ -83,7 +95,7 @@
     border-radius: 10px;
 }
 
-.btn-enviar-form {
+.btn-enviar-form2 {
     background-color: #000;
     font-size: 20px;
     color: white;
@@ -98,19 +110,19 @@
     z-index: 1;
   }
   
-  .btn-enviar-form:hover {
+  .btn-enviar-form2:hover {
     background-color: #07c8fe;
     color: #000;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
   }
   
-  .btn-enviar-form:active {
+  .btn-enviar-form2:active {
     background-color: #05a7cb;
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
     transition: background-color 0.1s ease, box-shadow 0.1s ease;
   }
   
-  .btn-enviar-form .spinner {
+  .btn-enviar-form2.spinner {
     display: none;
     position: absolute;
     border: 4px solid #f3f3f3;
@@ -121,15 +133,15 @@
     animation: spin 1s linear infinite;
   }
   
-  .btn-enviar-form.sending {
+  .btn-enviar-form2.sending {
     background-color: #6c757d;
   }
   
-  .btn-enviar-form.sending .button-text {
+  .btn-enviar-form2.sending .button-text {
     display: none;
   }
   
-  .btn-enviar-form.sending .spinner {
+  .btn-enviar-form2.sending .spinner {
     display: block;
   }
   
@@ -138,6 +150,25 @@
     100% { transform: rotate(360deg); }
   }
   
+
+  @media (max-width: 1800px) {
+    .container-formulario{
+      display:flex;
+      width: 100%;
+      height: 100vh;
+      min-height: 100vh;
+    }
+  }
+
+
+  @media (max-width: 1280px) {
+    .container-formulario{
+      display:flex;
+      width: 100%;
+      height: 120vh;
+      min-height: 100vh;
+    }
+  }
 
 
 @media (max-width: 600px) {
@@ -200,4 +231,25 @@
        width: 100%;
        text-align: center;
     }
+  }
+
+
+  @media (max-width: 1024px) {
+    .container-formulario{
+      display:flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      min-height: 100vh;
+  }
+
+  .Containder-logo{
+      background-color: #07c8fe;
+      width: 100%;
+  
+  } 
+  .formulario{
+     width: 100%;
+     text-align: center;
+  }
   }
