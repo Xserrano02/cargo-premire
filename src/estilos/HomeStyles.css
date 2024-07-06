@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 .img-container {
   cursor: pointer;
   transition: transform 0.3s;
@@ -82,7 +85,9 @@
   font-size: 25px;
   padding-top: 40px;
 }
-
+.logoPadding{
+  padding: 8%;
+}
 
 @media (max-width: 844px) {
   .img-container {
@@ -146,6 +151,12 @@
   }
   .textoMovil{
     font-size: calc(1.275rem + -1vw) !important
+  } 
+  .logoPadding{
+    padding: 0%;
+  }
+  .imagenMobile{
+    height: 25vh;
   }
 }
 
@@ -213,6 +224,12 @@
   .textoMovil{
     font-size: calc(1.275rem + -1vw) !important
   }
+  .logoPadding{
+    padding: 0%;
+  }
+  .imagenMobile{
+    height: 25vh;
+  }
 }
 
 @media (max-width: 667px) {
@@ -279,6 +296,12 @@
   .textoMovil{
     font-size: calc(1.275rem + -1vw) !important
   }
+  .logoPadding{
+    padding: 0%;
+  }
+  .imagenMobile{
+    height: 25vh;
+  }
 }
   @media (max-width: 428px) and (max-height: 926px) {
     
@@ -303,6 +326,12 @@
     }
     .textoMovil{
       font-size: calc(1.275rem + -1vw) !important
+    }
+    .logoPadding{
+      padding: 0%;
+    }
+    .imagenMobile{
+      height: 25vh;
     }
 }
 
@@ -329,5 +358,11 @@
   }
   .textoMovil{
     font-size: calc(1.275rem + -1vw) !important
+  }
+  .logoPadding{
+    padding: 0%;
+  }
+  .imagenMobile{
+    height: 25vh;
   }
 }
