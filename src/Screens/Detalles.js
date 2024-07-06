@@ -65,10 +65,10 @@ export default function Detalles() {
       CobroPeso: "No se cobra por Peso",
     },
     {
-      imagen: Guatemala,
-      nombre: "Guatemala",
+      imagen: ElSalvador,
+      nombre: "El Salvador",
       imagenCaja: imagenCaja1,
-      imagenPaisaje: imagenPaisajeGuatemala,
+      imagenPaisaje: imagenPaisajeElSalvador,
       tamanos: [
         "22x22x22",
         "24x24x24",
@@ -82,10 +82,10 @@ export default function Detalles() {
       CobroPeso: "No se cobra por Peso",
     },
     {
-      imagen: ElSalvador,
-      nombre: "El Salvador",
+      imagen: Guatemala,
+      nombre: "Guatemala",
       imagenCaja: imagenCaja1,
-      imagenPaisaje: imagenPaisajeElSalvador,
+      imagenPaisaje: imagenPaisajeGuatemala,
       tamanos: [
         "22x22x22",
         "24x24x24",
