@@ -51,6 +51,7 @@ export default function Detalles() {
       imagenCaja: imagenCaja1,
       imagenPaisaje: imagenPaisajeMexico,
       tamanos: [
+        "14x14x14",
         "16x16x16",
         "18x18x18",
         "20x20x20",
@@ -87,6 +88,7 @@ export default function Detalles() {
       imagenCaja: imagenCaja1,
       imagenPaisaje: imagenPaisajeGuatemala,
       tamanos: [
+        "20x20x20",
         "22x22x22",
         "24x24x24",
         "36x22x22",
@@ -155,8 +157,6 @@ export default function Detalles() {
       imagenCaja: imagenCaja1,
       imagenPaisaje: imagenPaisajeColombia,
       tamanos: [
-        "16x16x16",
-        "18x18x18",
         "20x20x20",
         "18x18x28",
         "22x22x22",
@@ -176,7 +176,7 @@ export default function Detalles() {
       nombre: "Republica Dominicana",
       imagenCaja: imagenCaja1,
       imagenPaisaje: imagenPaisajeRepublicaDominicana,
-      tamanos: ["18x18x18", "22x22x22", "24x24x24", "36x22x22"],
+      tamanos: ["18x18x18","18x18x28", "22x22x22", "24x24x24", "36x22x22"],
       tiempoEntrega: "3 - 4 semanas",
       CobroPeso: "No se cobra por Peso",
     },
@@ -508,16 +508,7 @@ export default function Detalles() {
                       <p className="h5">{tamanoSeleccionado}</p>
                     </div>
                   </div>
-                  <div className="row align-items-center">
-                    <div className="col-12 col-md-4">
-                      <p className="h5">
-                        <b>Peso:</b>
-                      </p>
-                    </div>
-                    <div className="col-12 col-md-8">
-                      <p className="h5">Sin limite de peso</p>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -533,12 +524,6 @@ export default function Detalles() {
             {paisSeleccionado
               ? paisSeleccionado.tiempoEntrega
               : "No seleccionado"}
-          </p>
-          <h5 className="mt-5">
-            <b>Cobro por Peso:</b>
-          </h5>
-          <p>
-            {paisSeleccionado ? paisSeleccionado.CobroPeso : "No seleccionado"}
           </p>
         </div>
       </div>
