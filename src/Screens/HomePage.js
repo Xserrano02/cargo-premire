@@ -307,7 +307,7 @@ export default function HomePage() {
           </motion.div>
         </div>
         <motion.h1 className="text-center fw-bolder mb-5 mt-5" style={{ color: "#13103A", fontSize: "60px" }} initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
-          Paqueteria
+          Servicios adicionales
         </motion.h1>
       </motion.div>
 
@@ -370,8 +370,7 @@ export default function HomePage() {
                     className="h3 textoBanner container"
                     style={{ textAlign: "left", fontWeight:"bold" }}
                   >
-                    <span className="span-text">En Cargo Premier,</span>  ofrecemos envíos terrestres rápidos y seguros para tus paquetes. Nuestro servicio puerta a puerta es flexible y asequible. Llegamos a áreas remotas y urbanas, garantizando entregas eficientes y sostenibles. Confía en Cargo Premier para un transporte confiable y puntual.
-
+                    <span className="span-text">Cargo Premier,</span> ofrece servicios de mudanzas a nivel nacional e internacional desde Florida. Garantizamos el transporte seguro y eficiente de sus pertenencias a cualquier destino, asegurando que lleguen en perfectas condiciones y a tiempo. Confíe en nosotros para una mudanza sin estrés.
                   </p>
                 </div>
                 <div className="col">
@@ -398,7 +397,7 @@ export default function HomePage() {
                     className="h3 textoBanner container"
                     style={{ textAlign: "left", fontWeight:"bold" }}
                   >
-                    <span className="span-text">Cargo Premier,</span>  es una empresa dedicada al envío de vehículos a toda Centroamérica desde Florida. Nos especializamos en ofrecer un servicio de transporte seguro y eficiente, asegurando que su vehículo llegue a su destino en perfecto estado y a tiempo. Con una amplia experiencia en logística y un compromiso con la satisfacción del cliente, Cargo Premier es su mejor opción para el envío de vehículos en la región.
+                    <span className="span-text">Cargo Premier,</span> ofrece envíos de vehículos desde Florida a toda Centroamérica. Garantizamos un transporte seguro y puntual de su vehículo, asegurando que llegue en perfectas condiciones. Confíe en nosotros para un servicio de envío eficiente y sin complicaciones.
 
                   </p>
                 </div>
