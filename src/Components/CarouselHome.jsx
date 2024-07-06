@@ -11,21 +11,56 @@ const CarouselHome = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 imagenMobile"
-            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/zocalo2-mexico%201.png?alt=media&token=c086c6e6-9362-4c8a-bc86-559229d19919"
+            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/zocalo2-mexico%201-min.png?alt=media&token=c94acc87-80cf-41b5-8f1f-31e99ce635b1"
             alt="First slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100 imagenMobile"
-            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco-venezuela.jpg?alt=media&token=ca8e1144-ae80-48e7-b2c2-6e075fd464e9"
+            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/79623-San-Salvador-And-Vicinity%201.png?alt=media&token=e77a274b-ecd1-4876-9649-357c356e6452 "
             alt="Second slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100 imagenMobile"
-            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_costa%20rica.jpg?alt=media&token=02f4a14d-d8f5-4ef3-a7ea-e0d9b099ee01"
+            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Uo2ifkX-venezuela-wallpaper%201.png?alt=media&token=e66f9bf9-8c7a-4fcf-8429-4b5c641e88a2"
+            alt="Third slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 imagenMobile"
+            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/wp1879057-costa-rica-wallpapers%201.png?alt=media&token=82708b0a-ef74-410c-b098-ef8976bba239"
+            alt="Third slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 imagenMobile"
+            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/paisajes-bonitos-de-playas-del-caribe%201.png?alt=media&token=7d682322-cdb2-4a37-a83d-add26a9859db"
+            alt="Third slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 imagenMobile"
+            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/69293-Leon%201.png?alt=media&token=d2992744-0433-4f67-b1bb-a5c2606497d0"
+            alt="Third slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 imagenMobile"
+            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/cartagena%201.png?alt=media&token=9650434a-b309-48da-ac5a-7a0fe018c931"
+            alt="Third slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 imagenMobile"
+            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/AntiguaGuatemala%201.png?alt=media&token=fa24ca00-bc72-4c4a-a3e7-809178ae925f"
             alt="Third slide"
           />
         </Carousel.Item>

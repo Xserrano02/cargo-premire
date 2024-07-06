@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavBar from "../Components/NavBar.jsx";
 import Banner from "../Resources/Banner.svg";
 import Mexico from "../Resources/Mexico.svg";
@@ -33,7 +33,7 @@ export default function HomePage() {
     descripcion: "Paquetería puerta a puerta en toda la República de El Salvador.",
     TipoTransporte: "Aereo"
   });
-
+  const destinationRef = useRef(null);
   const [preloadedImages, setPreloadedImages] = useState({});
   const [animationPlayed, setAnimationPlayed] = useState({
     top: false,
@@ -50,20 +50,20 @@ export default function HomePage() {
       tiempo:"10 a 15 dias",
     },
     {
+      nombre: "El Salvador",
+      imagen: ElSalvador,
+      descripcion: "Paqueteria puerta a puerta en toda la Republica de El Salvador",
+      TipoTransporte: "Aereo y Maritimo",
+      cobro: "No se cobra por peso",
+      tiempo:"3 a 4 semanas",
+    },
+    {
       nombre: "Guatemala",
       imagen: Guatemala,
       descripcion: "Paqueteria puerta a puerta en toda la Republica de Guatemala",
       TipoTransporte: "Maritimo",
       tiempo:"3 a 4 semanas",
       cobro: "No se cobra por peso"
-    },
-    {
-      nombre: "El Salvador",
-      imagen: ElSalvador,
-      descripcion: "Paqueteria puerta a puerta en toda la Republica de El Salvador",
-      TipoTransporte: "Aereo",
-      cobro: "No se cobra por peso",
-      tiempo:"3 a 4 semanas",
     },
     {
       nombre: "Honduras",
@@ -143,6 +143,11 @@ export default function HomePage() {
 
   const handleClickPais = (pais) => {
     setPaisSeleccionado(pais);
+
+     // Desplazarse al div de destino
+     if (destinationRef.current) {
+      destinationRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   };
 
   const preloadImages = (imageArray) => {
@@ -246,6 +251,7 @@ export default function HomePage() {
       </div>
 
       <motion.div
+        ref={destinationRef}
         className={`container-fluid infoCountries ${selectedCountryClass}`}
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -286,7 +292,7 @@ export default function HomePage() {
                 type="button"
                 className="buttonSizes fw-bold btn bg-white btn-lg position-absolute top-50 start-50 translate-middle"
               >
-                Cotizar tamaños <img className="ms-3" alt="icono" src={preloadedImages[RowIcon]?.src || RowIcon} />
+                Cotizar envío <img className="ms-3" alt="icono" src={preloadedImages[RowIcon]?.src || RowIcon} />
               </button>
             </Link>
           </div>
