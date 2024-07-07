@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useCallback, useMemo,useRef  } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../Components/NavBar.jsx";
 import Mexico from "../Resources/Mexico.svg";
@@ -31,6 +31,10 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "../estilos/Detalles.css";
 import Footer from "./helpers/Footer.js";
 
+import paqueteexpress from "../Resources/paqueteexpress.png";
+import estafeta from "../Resources/Estafeta.jpg";
+import fedex from "../Resources/fedex.png";
+
 export default function Detalles() {
   const imagenesPorTamano = useMemo(
     () => ({
@@ -44,6 +48,7 @@ export default function Detalles() {
     []
   );
   const [imagenActual, setImagenActual] = useState(imagenCaja1); // Estado para almacenar la imagen actual
+  const [mostrarAliados, setMostrarAliados] = useState(false);
   const paises = [
     {
       imagen: Mexico,
@@ -176,7 +181,7 @@ export default function Detalles() {
       nombre: "Republica Dominicana",
       imagenCaja: imagenCaja1,
       imagenPaisaje: imagenPaisajeRepublicaDominicana,
-      tamanos: ["18x18x18","18x18x28", "22x22x22", "24x24x24", "36x22x22"],
+      tamanos: ["18x18x18", "18x18x28", "22x22x22", "24x24x24", "36x22x22"],
       tiempoEntrega: "3 - 4 semanas",
       CobroPeso: "No se cobra por Peso",
     },
@@ -194,6 +199,8 @@ export default function Detalles() {
   );
   const [paisSeleccionado, setPaisSeleccionado] = useState(paises[0]);
 
+  const seccionRef = useRef(null);
+
   const cambiarImagenPorTamano = useCallback(
     (tamano) => {
       setImagenActual(imagenesPorTamano[tamano] || imagenCaja1);
@@ -204,8 +211,16 @@ export default function Detalles() {
   useEffect(() => {
     setTamanoSeleccionado(paisSeleccionado.tamanos[0]);
     cambiarImagenPorTamano(paisSeleccionado.tamanos[0]);
-    window.scrollTo(0, 0);
+    setMostrarAliados(paisSeleccionado.nombre === "Mexico");
+    if (seccionRef.current) {
+      seccionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   }, [paisSeleccionado, paisSeleccionado.tamanos, cambiarImagenPorTamano]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [previousPais, setPreviousPais] = useState(paises[0]);
 
   const [, setIsChanging] = useState(false);
@@ -323,7 +338,7 @@ export default function Detalles() {
       </div>
 
       <div className="d-flex justify-content-center align-items-center">
-        <h1 className="pais-titulo">
+        <h1 className="pais-titulo"   ref={seccionRef}>
           {paisSeleccionado.nombre.toUpperCase() === "EL SALVADOR" ? (
             <>
               <span style={{ color: "#0047AB" }}>
@@ -508,7 +523,6 @@ export default function Detalles() {
                       <p className="h5">{tamanoSeleccionado}</p>
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </div>
@@ -527,7 +541,43 @@ export default function Detalles() {
           </p>
         </div>
       </div>
+
       <div className="row justify-content-center">
+        {mostrarAliados && (
+          <div className="row justify-content-center mt-4">
+            <div className="col-12 text-center">
+              <h5 className="mt-0">
+                <b>Aliados:</b>
+              </h5>
+            </div>
+            <div className="col-12 d-flex justify-content-center">
+              <div className="row justify-content-center">
+                <div className="col-4 col-md-2 mb-3 mb-md-0 me-5 ms-4">
+                  <img
+                    src={estafeta}
+                    alt="Aliado 1"
+                    className="img-fluid"
+                  />
+                </div>
+                <div className="col-4 col-md-2 mb-3 mb-md-0 me-5">
+                  <img
+                    src={fedex}
+                    alt="Aliado 2"
+                    className="img-fluid"
+                  />
+                </div>
+                <div className="col-4 col-md-2 mb-3 mb-md-0 me-5">
+                  <img
+                    src={paqueteexpress}
+                    alt="Aliado 3"
+                    className="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="col-auto">
           <Link
             to="/contacto"
@@ -550,9 +600,14 @@ export default function Detalles() {
         </div>
       </div>
       <div className="row mt-5 justify-content-center">
-        
         <div className="col-md-5 d-flex justify-content-center align-items-center">
-          <img src={"https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Cajita.svg?alt=media&token=f1683d28-46e6-45a9-96c3-812b8bf58fb9"} alt="Logo" className="logoCajita" />
+          <img
+            src={
+              "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Cajita.svg?alt=media&token=f1683d28-46e6-45a9-96c3-812b8bf58fb9"
+            }
+            alt="Logo"
+            className="logoCajita"
+          />
         </div>
       </div>
       <Footer />
