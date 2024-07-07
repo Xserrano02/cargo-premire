@@ -1,6 +1,21 @@
-body{
-  overflow-x: hidden;
+
+
+#estilo-lema{
+  color: "#13103A" !important;;
+  background-Color: "#fff" !important;;
+  font-Weight: "bold" !important;;
+  width: "70%";
+  margin: "0 auto";
+  border-Radius: "10px";
+  opacity: "60%"
 }
+
+.img-carousel{
+  height: 100%;
+
+}
+
+
 .img-container {
   cursor: pointer;
   transition: transform 0.3s;
@@ -12,20 +27,21 @@ body{
 
 .textoBanner {
   margin-right: 0%;
-  justify-content:start;
+  justify-content: start;
 
 }
 
-.span-text{
+.span-text {
   font-weight: bolder;
   color: #e5943a;
   font-size: 35px;
-  
+
 }
 
-.margenSVG{
+.margenSVG {
   margin-bottom: -10rem;
 }
+
 .imagenBanner {
   margin-left: 40px;
 }
@@ -35,42 +51,52 @@ body{
   height: 100%;
   background-size: cover;
 }
-.imagenMex{
+
+.imagenMex {
   transition: background-image 0.5s ease-in-out;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/zocalo2-mexico.jpg?alt=media&token=c226a5d7-2139-4759-84d9-92918524e0af');
 }
-.imagenGuat{
+
+.imagenGuat {
   transition: background-image 0.5s ease-in-out;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/AntiguaGuatemala.jpg?alt=media&token=b97faf46-881e-4d94-942e-d9e53546dcd0');
 }
-.imagenSv{
+
+.imagenSv {
   transition: background-image 0.5s ease-in-out;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Monumento_al_Salvador_del_Mundo_1.jpg?alt=media&token=26cbfb93-6ac5-4a90-9f9e-e7e37b3ce4f1');
 }
-.imagenHond{
+
+.imagenHond {
   transition: background-image 0.5s ease-in-out;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/roatan2-honduras.jpg?alt=media&token=e0ba8c78-3ab9-41ac-8d19-dd91e24c4db3');
 }
-.imagenNic{
+
+.imagenNic {
   transition: background-image 0.5s ease-in-out;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/69293-Leon.webp?alt=media&token=2fcbcb4c-d410-4642-b0b4-ffa38dfd5910');
 }
-.imagenColm{
+
+.imagenColm {
   transition: background-image 0.5s ease-in-out;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/cartagena.jpg?alt=media&token=8f501309-969e-43fe-a50f-07d4fcfd5f77');
 }
-.imagenCosta{
+
+.imagenCosta {
   transition: background-image 0.5s ease-in-out;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/wp1879064-costa-rica-wallpapers.jpg?alt=media&token=da4ad1c3-ae05-4959-92ae-ff9aac8a36f0');
 }
-.imagenVenez{
+
+.imagenVenez {
   transition: background-image 0.5s ease-in-out;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Uo2ifkX-venezuela-wallpaper.jpg?alt=media&token=baebadc1-bfe9-49f4-827a-a0d004533991');
 }
-.imagenRep{
+
+.imagenRep {
   transition: background-image 0.5s ease-in-out;
   background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Dominican-Republic-travel-guide-Travel-S-helper.jpg?alt=media&token=88c302c3-3ce3-42b1-814e-6f8b78883313');
 }
+
 .circulo {
   background-color: white;
   border-radius: 50%;
@@ -78,17 +104,36 @@ body{
   height: 500px;
   margin: 20px;
 }
-.country{
+
+.country {
   padding-left: 30%;
   width: 70%;
 }
-.textoRep{
+
+.textoRep {
   font-size: 25px;
   padding-top: 40px;
 }
-.logoPadding{
+
+.logoPadding {
   padding: 8%;
 }
+
+#estilo-lema{
+  color: "#13103A" !important;;
+  background-Color: "#fff" !important;;
+  font-Weight: "bold" !important;;
+  width: "70%";
+  margin: "0 auto";
+  border-Radius: "10px";
+  opacity: "60%"
+}
+
+.img-carousel{
+  height: 100%;
+
+}
+
 
 @media (max-width: 844px) {
   .img-container {
@@ -111,13 +156,15 @@ body{
   .imagenBanner {
     margin-left: 0px;
   }
+
   .circulo {
     background-color: white;
     border-radius: 50%;
     width: 10vh !important;
     height: 10vh;
   }
-  .country{
+
+  .country {
     padding-left: 30%;
     width: 70%;
   }
@@ -126,37 +173,47 @@ body{
     width: 100%;
     height: 60vh;
   }
-  .buttonSizes{
-    --bs-btn-padding-y: 0.1rem !important;
+
+  .buttonSizes {
+    --bs-btn-padding-y: 0.1rem ç
     --bs-btn-padding-x: 0.8rem !important;
     width: 30vh;
     margin-top: 20px;
   }
-  .logoMision{
-    display: none ;
-  }
-  .logoVision{
+
+  .logoMision {
     display: none;
   }
-  .txt-Vision{
+
+  .logoVision {
+    display: none;
+  }
+
+  .txt-Vision {
     text-align: center !important;
   }
-  .txt-Mision{
+
+  .txt-Mision {
     text-align: center !important;
   }
-  .descript{
+
+  .descript {
     padding: 0px 10px !important;
-  } 
-  .margenSVG{
+  }
+
+  .margenSVG {
     margin-bottom: 0rem;
   }
-  .textoMovil{
+
+  .textoMovil {
     font-size: calc(1.275rem + -1vw) !important
-  } 
-  .logoPadding{
+  }
+
+  .logoPadding {
     padding: 0%;
   }
-  .imagenMobile{
+
+  .imagenMobile {
     height: 25vh;
   }
 }
@@ -183,13 +240,15 @@ body{
   .imagenBanner {
     margin-left: 0px;
   }
+
   .circulo {
     background-color: white;
     border-radius: 50%;
     width: 40vh !important;
     height: 40vh;
   }
-  .country{
+
+  .country {
     padding-left: 30%;
     width: 70%;
   }
@@ -198,37 +257,47 @@ body{
     width: 100%;
     height: 60vh;
   }
-  .buttonSizes{
+
+  .buttonSizes {
     --bs-btn-padding-y: 0.1rem !important;
     --bs-btn-padding-x: 0.8rem !important;
     width: 30vh;
     margin-top: 20px;
   }
-  .logoMision{
-    display: none ;
-  }
-  .logoVision{
+
+  .logoMision {
     display: none;
   }
-  .txt-Vision{
+
+  .logoVision {
+    display: none;
+  }
+
+  .txt-Vision {
     text-align: center !important;
   }
-  .txt-Mision{
+
+  .txt-Mision {
     text-align: center !important;
   }
-  .descript{
+
+  .descript {
     padding: 0px 10px !important;
-  } 
-  .margenSVG{
+  }
+
+  .margenSVG {
     margin-bottom: 0rem;
   }
-  .textoMovil{
+
+  .textoMovil {
     font-size: calc(1.275rem + -1vw) !important
   }
-  .logoPadding{
+
+  .logoPadding {
     padding: 0%;
   }
-  .imagenMobile{
+
+  .imagenMobile {
     height: 25vh;
   }
 }
@@ -254,6 +323,7 @@ body{
   .imagenBanner {
     margin-left: 0px;
   }
+
   .circulo {
     background-color: white;
     border-radius: 50%;
@@ -261,7 +331,8 @@ body{
     height: 50vh;
     margin: 0;
   }
-  .country{
+
+  .country {
     padding-left: 30%;
     width: 70%;
   }
@@ -270,74 +341,91 @@ body{
     width: 100%;
     height: 75vh;
   }
-  .buttonSizes{
+
+  .buttonSizes {
     --bs-btn-padding-y: 0.1rem !important;
     --bs-btn-padding-x: 0.8rem !important;
     width: 40vh;
     margin-top: 25px;
   }
-  .logoMision{
-    display: none ;
-  }
-  .logoVision{
+
+  .logoMision {
     display: none;
   }
-  .txt-Vision{
+
+  .logoVision {
+    display: none;
+  }
+
+  .txt-Vision {
     text-align: center !important;
   }
-  .txt-Mision{
+
+  .txt-Mision {
     text-align: center !important;
   }
-  .descript{
+
+  .descript {
     padding: 0px 10px !important;
   }
-  .margenSVG{
+
+  .margenSVG {
     margin-bottom: 0rem;
   }
-  .textoMovil{
+
+  .textoMovil {
     font-size: calc(1.275rem + -1vw) !important
   }
-  .logoPadding{
+
+  .logoPadding {
     padding: 0%;
   }
-  .imagenMobile{
+
+  .imagenMobile {
     height: 25vh;
   }
 }
-  @media (max-width: 428px) and (max-height: 926px) {
-    
-    .circulo {
-      background-color: white;
-      border-radius: 50%;
-      width: 100% !important;
-      height: 50vh;
-      margin: 0;
-    }
-    .infoCountries {
-      width: 100%;
-      height: 65vh;
-    }
-    .textoRep{
-      padding-top: 30px;
-      font-size: 20px;
 
-    }
-    .margenSVG{
-      margin-bottom: 0rem;
-    }
-    .textoMovil{
-      font-size: calc(1.275rem + -1vw) !important
-    }
-    .logoPadding{
-      padding: 0%;
-    }
-    .imagenMobile{
-      height: 25vh;
-    }
+@media (max-width: 428px) and (max-height: 926px) {
+
+  .circulo {
+    background-color: white;
+    border-radius: 50%;
+    width: 100% !important;
+    height: 50vh;
+    margin: 0;
+  }
+
+  .infoCountries {
+    width: 100%;
+    height: 65vh;
+  }
+
+  .textoRep {
+    padding-top: 30px;
+    font-size: 20px;
+
+  }
+
+  .margenSVG {
+    margin-bottom: 0rem;
+  }
+
+  .textoMovil {
+    font-size: calc(1.275rem + -1vw) !important
+  }
+
+  .logoPadding {
+    padding: 0%;
+  }
+
+  .imagenMobile {
+    height: 25vh;
+  }
 }
 
 @media (max-width: 414px) {
-    
+
   .circulo {
     background-color: white;
     border-radius: 50%;
@@ -345,25 +433,31 @@ body{
     height: 45vh;
     margin: 0;
   }
+
   .infoCountries {
     width: 100%;
     height: 65vh;
   }
-  .textoRep{
+
+  .textoRep {
     padding-top: 30px;
     font-size: 20px;
 
   }
-  .margenSVG{
+
+  .margenSVG {
     margin-bottom: 0rem;
   }
-  .textoMovil{
+
+  .textoMovil {
     font-size: calc(1.275rem + -1vw) !important
   }
-  .logoPadding{
+
+  .logoPadding {
     padding: 0%;
   }
-  .imagenMobile{
+
+  .imagenMobile {
     height: 25vh;
   }
 }

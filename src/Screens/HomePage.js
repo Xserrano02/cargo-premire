@@ -190,17 +190,8 @@ export default function HomePage() {
   return (
     <>
         <NavBar />
-        <div className="container-fluid">
-        <motion.div
-          className="row justify-content-center align-items-center mb-5"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true, amount: 0.5 }}
-          onAnimationComplete={() => setAnimationPlayed((prev) => ({ ...prev, top: true }))}
-        >
+        <div className="">
           <CarouselHome/>
-        </motion.div>
         </div>
       <div className="container">
         <div className="container mt-5">
@@ -311,10 +302,10 @@ export default function HomePage() {
           <motion.div className="col" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
             <img src={"https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Cajita.svg?alt=media&token=f1683d28-46e6-45a9-96c3-812b8bf58fb9"} className="img-fluid w-100" alt="..." />
           </motion.div>
-          <motion.div className="col" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
+          <div className="col" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
             <p className="h3 p-2" style={{ textAlign: "left", fontWeight:"bold", }}>
               <span className="span-text">En Cargo Premier,</span> somos una empresa familiar con <span className="span-text2">15 años de experiencia </span>en paquetería aérea, terrestre y maritima, ofreciendo envíos rápidos, seguros y eficientes. Conectamos personas y negocios mediante un servicio de transporte confiable y puntual. Nuestro equipo de profesionales brinda un servicio personalizado, asegurando que cada paquete llegue en perfectas condiciones.</p>
-          </motion.div>
+          </div>
         </div>
         <motion.h1 className="text-center fw-bolder mb-5 mt-5" style={{ color: "#13103A", fontSize: "60px" }} initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
           Servicios adicionales
