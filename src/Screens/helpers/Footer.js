@@ -3,7 +3,7 @@ import '../../estilos/Footer.css';
 import logoFooter from '../../Resources/Banner.svg';
 import logoFoo from '../../Resources/LogoFo.png';
 
-const Footer = () => {
+const Footer = ({scrollToSection }) => {
   useEffect(() => {
     const bootstrapLink = document.createElement('link');
     bootstrapLink.rel = 'stylesheet';
@@ -51,11 +51,13 @@ const Footer = () => {
           <div className="container text-center text-md-start mt-5">
             <div className="row mt-3">
               <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
-                <h6 className="fw-bold" id="Titulos">Nuestros Servicios</h6><br />
-                <p className="Servi">Paqueteria maritima puerta a puerta</p>
-                <p className="Servi">Paqueteria aerea</p>
-                <p className="Servi">Mudanzas nacionales e internacionales</p>
-                <p className="Servi">Envio de Vehiculos</p>
+              <h6 className="fw-bold" id="Titulos">Nuestros Servicios</h6>
+              <ul className="list-unstyled">
+                <li className="Servi" onClick={() => scrollToSection('serviciosAdd')} style={{ cursor: 'pointer' }}><span className="bullet">&#8226;</span> Paqueteria maritima puerta a puerta</li>
+                <li className="Servi" onClick={() => scrollToSection('serviciosAdd')} style={{ cursor: 'pointer' }}><span className="bullet">&#8226;</span> Paqueteria aerea</li>
+                <li className="Servi" onClick={() => scrollToSection('serviciosAdd')} style={{ cursor: 'pointer' }}><span className="bullet">&#8226;</span> Mudanzas nacionales e internacionales</li>
+                <li className="Servi" onClick={() => scrollToSection('serviciosAdd')} style={{ cursor: 'pointer' }}><span className="bullet">&#8226;</span> Envio de Vehiculos</li>
+             </ul>
               </div>
               <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
                 <h6 className="fw-bold" id="Titulos">Contacto</h6><br />

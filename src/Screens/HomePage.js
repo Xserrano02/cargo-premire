@@ -133,16 +133,16 @@ export default function HomePage() {
   };
 
   const imageUrls = [
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew1.png?alt=media&token=7522a213-043e-4708-9c80-295acfa31d2f",
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew2.png?alt=media&token=1449fb00-cfff-44c1-90b7-437ec5fe3b04",
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew3.png?alt=media&token=903cb674-9650-4fa0-b5cb-e4e2d5f0441a",
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew4.png?alt=media&token=8694134f-1493-4473-b774-45d01802a008",
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew5.png?alt=media&token=4f539cb5-a83c-42c2-ab7d-a6534168cefa",
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew6.png?alt=media&token=426eff55-7c75-42cd-9742-74bf2906edc5",
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña8.png?alt=media&token=9e18e7d1-65c6-4a9f-b784-ed8c9e55d4de",
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña9.jpeg?alt=media&token=872d3437-bd94-461c-9022-9eb9de74cb05",
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña7.png?alt=media&token=43688115-dc50-40e2-bafb-53655416d2a1",
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña10.jpeg?alt=media&token=0a50a1c8-6e08-47b2-b7ee-79544c28b3e2"
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Resena1.png?alt=media&token=fc8ca5bb-b5eb-4251-a29a-e62206eaa473",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/resena2.png?alt=media&token=0650d378-36ec-41d2-b359-490fe934e068",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Resena3.png?alt=media&token=d0d9e838-f623-4ccd-a230-f6be001a0551",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Resena4.png?alt=media&token=15121e3e-219d-42c5-b6b0-7f5135a5b328",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/resena5.png?alt=media&token=8da291e0-5d28-46d8-83d0-5cbf574b6c65",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/resena6.png?alt=media&token=97896329-1b2c-4e70-a326-3fd995265f84",
+    // "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña8.png?alt=media&token=9e18e7d1-65c6-4a9f-b784-ed8c9e55d4de",
+    // "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña9.jpeg?alt=media&token=872d3437-bd94-461c-9022-9eb9de74cb05",
+    // "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña7.png?alt=media&token=43688115-dc50-40e2-bafb-53655416d2a1",
+    // "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña10.jpeg?alt=media&token=0a50a1c8-6e08-47b2-b7ee-79544c28b3e2"
   ];
 
   const selectedCountryClass = countryClasses[paisSeleccionado.nombre];
@@ -153,6 +153,13 @@ export default function HomePage() {
      // Desplazarse al div de destino
      if (destinationRef.current) {
       destinationRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -309,7 +316,7 @@ export default function HomePage() {
               <span className="span-text">En Cargo Premier,</span> somos una empresa familiar con <span className="span-text2">15 años de experiencia </span>en paquetería aérea, terrestre y maritima, ofreciendo envíos rápidos, seguros y eficientes. Conectamos personas y negocios mediante un servicio de transporte confiable y puntual. Nuestro equipo de profesionales brinda un servicio personalizado, asegurando que cada paquete llegue en perfectas condiciones.</p>
           </div>
         </div>
-        <motion.h1 className="text-center fw-bolder mb-5 mt-5" style={{ color: "#13103A", fontSize: "60px" }} initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
+        <motion.h1 className="text-center fw-bolder mb-5 mt-5" id="serviciosAdd" style={{ color: "#13103A", fontSize: "60px" }} initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
           Servicios adicionales
         </motion.h1>
       </motion.div>
@@ -480,7 +487,7 @@ export default function HomePage() {
         </div>
         <div
           className="row text-center pt-5 pb-5 "
-          style={{ backgroundColor: "#85FFC8" }}
+          style={{ backgroundColor: "#b5fffe" }}
         >
           <div className="col-12 col-sm-3 text-end container">
             <img src={preloadedImages[Mision]?.src || Mision} className="img-fluid w-80 logoMision" alt="..." />
@@ -509,7 +516,7 @@ export default function HomePage() {
       >
         <path
           d="M0.00,49.98 C156.04,122.88 283.01,9.39 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
-          style={{ stroke: "none", fill: "#85FFC8" }}
+          style={{ stroke: "none", fill: "#b5fffe" }}
         ></path>
       </svg>
 
@@ -601,7 +608,7 @@ export default function HomePage() {
   </button>
 </motion.div>
 
-      <Footer />
+      <Footer scrollToSection={scrollToSection}/>
     </>
   );
 }
