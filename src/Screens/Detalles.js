@@ -18,7 +18,7 @@ import imagenCaja36x22x22 from "../Resources/36x22x22.jpeg";
 import imagenCaja36x24x24 from "../Resources/36x24x24.jpeg";
 import imagenCaja42x29x25 from "../Resources/42x29x25.png";
 
-import logoCajita1 from "../Resources/logo cajita 1.svg";
+//import logoCajita1 from "../Resources/logo cajita 1.svg";
 import imagenPaisajeMexico from "../Resources/imagenPaisajeMexico.jpg";
 import imagenPaisajeGuatemala from "../Resources/imagenPaisajeGuatemala.jpg";
 import imagenPaisajeElSalvador from "../Resources/imagenPaisajeElSalvador.jpg";
@@ -552,7 +552,7 @@ export default function Detalles() {
       <div className="row mt-5 justify-content-center">
         
         <div className="col-md-5 d-flex justify-content-center align-items-center">
-          <img src={logoCajita1} alt="Logo" className="logoCajita" />
+          <img src={"https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Cajita.svg?alt=media&token=f1683d28-46e6-45a9-96c3-812b8bf58fb9"} alt="Logo" className="logoCajita" />
         </div>
       </div>
       <Footer />

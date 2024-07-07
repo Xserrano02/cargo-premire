@@ -309,7 +309,7 @@ export default function HomePage() {
         </h1>
         <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
           <motion.div className="col" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
-            <img src={preloadedImages[LogoCaja]?.src || LogoCaja} className="img-fluid w-100" alt="..." />
+            <img src={"https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Cajita.svg?alt=media&token=f1683d28-46e6-45a9-96c3-812b8bf58fb9"} className="img-fluid w-100" alt="..." />
           </motion.div>
           <motion.div className="col" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, amount: 0.5 }}>
             <p className="h3 p-2" style={{ textAlign: "left", fontWeight:"bold", }}>
