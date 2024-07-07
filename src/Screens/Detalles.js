@@ -547,7 +547,7 @@ export default function Detalles() {
           <div className="row justify-content-center mt-4">
             <div className="col-12 text-center">
               <h5 className="mt-0">
-                <b>Aliados:</b>
+                <b>Aliados comerciales:</b>
               </h5>
             </div>
             <div className="col-12 d-flex justify-content-center">
