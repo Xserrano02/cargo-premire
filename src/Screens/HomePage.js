@@ -31,7 +31,9 @@ export default function HomePage() {
     nombre: "El Salvador",
     imagen: SvCountry,
     descripcion: "Paquetería puerta a puerta en toda la República de El Salvador.",
-    TipoTransporte: "Aereo"
+    TipoTransporte: "Aereo y Maritimo",
+    tiempo:"3 a 4 semanas",
+    cobro: "No se cobra por peso",
   });
   const destinationRef = useRef(null);
   const [preloadedImages, setPreloadedImages] = useState({});
