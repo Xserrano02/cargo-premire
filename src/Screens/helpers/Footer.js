@@ -43,15 +43,16 @@ const Footer = () => {
             <div className="row mt-3">
               <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
                 <h6 className="fw-bold" id="Titulos">Nuestros Servicios</h6><br />
-                <p className="Servi">Envíos Aéreos</p>
-                <p className="Servi">Envíos Marítimos</p>
-                <p className="Servi">Envíos Terrestres</p>
+                <p className="Servi">Paqueteria maritima puerta a puerta</p>
+                <p className="Servi">Paqueteria aerea</p>
+                <p className="Servi">Mudanzas nacionales e internacionales</p>
+                <p className="Servi">Envio de Vehiculos</p>
               </div>
               <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
                 <h6 className="fw-bold" id="Titulos">Contacto</h6><br />
                 <p className="Servi">4797 NW 72nd Ave. Miami, FL 33166</p><br />
                 <p className="Servi">Teléfono: +1 (305) 735-8577 / (407) 728 - 1902</p>
-                <p className="Servi">E-mail: cargopremier@yahoo.com</p>
+                <p> E-mail: <strong> <a href="mailto:cargopremier@yahoo.com">cargopremier@yahoo.com</a> </strong></p>
               </div>
               <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
                 <iframe

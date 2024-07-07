@@ -37,39 +37,39 @@ body{
 }
 .imagenMex{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/camion-mexico.svg?alt=media&token=0e155fe9-cb5f-4009-b7cb-68ea19064ac8');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/zocalo2-mexico.jpg?alt=media&token=c226a5d7-2139-4759-84d9-92918524e0af');
 }
 .imagenGuat{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_guatemala.jpg?alt=media&token=aa2977e7-8c8e-443b-8660-afa93798bf25');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/AntiguaGuatemala.jpg?alt=media&token=b97faf46-881e-4d94-942e-d9e53546dcd0');
 }
 .imagenSv{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/AvionSV.svg?alt=media&token=d33f1617-cd5e-4ab4-bb9c-cca3a7861e28');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Monumento_al_Salvador_del_Mundo_1.jpg?alt=media&token=26cbfb93-6ac5-4a90-9f9e-e7e37b3ce4f1');
 }
 .imagenHond{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco-Honduras.jpg?alt=media&token=2e3fdd3d-4325-4286-acd3-4a4a3952a40c');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/roatan2-honduras.jpg?alt=media&token=e0ba8c78-3ab9-41ac-8d19-dd91e24c4db3');
 }
 .imagenNic{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_nicaragua.jpg?alt=media&token=5bf0779b-d138-4b72-ab0d-16a0ba4b135c');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/69293-Leon.webp?alt=media&token=2fcbcb4c-d410-4642-b0b4-ffa38dfd5910');
 }
 .imagenColm{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_colombia.jpg?alt=media&token=2654a5e8-22bf-43b0-8819-f5d4a416063f');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/cartagena.jpg?alt=media&token=8f501309-969e-43fe-a50f-07d4fcfd5f77');
 }
 .imagenCosta{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco_costa%20rica.jpg?alt=media&token=02f4a14d-d8f5-4ef3-a7ea-e0d9b099ee01');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/wp1879064-costa-rica-wallpapers.jpg?alt=media&token=da4ad1c3-ae05-4959-92ae-ff9aac8a36f0');
 }
 .imagenVenez{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/barco-venezuela.jpg?alt=media&token=ca8e1144-ae80-48e7-b2c2-6e075fd464e9');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Uo2ifkX-venezuela-wallpaper.jpg?alt=media&token=baebadc1-bfe9-49f4-827a-a0d004533991');
 }
 .imagenRep{
   transition: background-image 0.5s ease-in-out;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Barco-RD.jpg?alt=media&token=3a731fce-942b-48be-b729-8a87b9dc72bc');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Dominican-Republic-travel-guide-Travel-S-helper.jpg?alt=media&token=88c302c3-3ce3-42b1-814e-6f8b78883313');
 }
 .circulo {
   background-color: white;

@@ -136,7 +136,11 @@ export default function HomePage() {
     "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew3.png?alt=media&token=903cb674-9650-4fa0-b5cb-e4e2d5f0441a",
     "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew4.png?alt=media&token=8694134f-1493-4473-b774-45d01802a008",
     "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew5.png?alt=media&token=4f539cb5-a83c-42c2-ab7d-a6534168cefa",
-    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew6.png?alt=media&token=426eff55-7c75-42cd-9742-74bf2906edc5"
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseñanew6.png?alt=media&token=426eff55-7c75-42cd-9742-74bf2906edc5",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña8.png?alt=media&token=9e18e7d1-65c6-4a9f-b784-ed8c9e55d4de",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña9.jpeg?alt=media&token=872d3437-bd94-461c-9022-9eb9de74cb05",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña7.png?alt=media&token=43688115-dc50-40e2-bafb-53655416d2a1",
+    "https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/reseña10.jpeg?alt=media&token=0a50a1c8-6e08-47b2-b7ee-79544c28b3e2"
   ];
 
   const selectedCountryClass = countryClasses[paisSeleccionado.nombre];
@@ -516,98 +520,93 @@ export default function HomePage() {
         ></path>
       </svg>
 
-      <motion.h1 className="text-center fw-bolder mb-5 mt-5" 
-      style={{ color: "#13103A", fontSize: "60px", marginTop: "0px"}} 
-      initial={{ opacity: 0, y: -50 }} 
-      whileInView={{ opacity: 1, y: 0 }} 
-      transition={{ duration: 0.5 }} 
-      viewport={{ once: true, amount: 0.5 }}>
-          Reseñas
-        </motion.h1>
-      <motion.div
-        id="carouselExample2"
-        className="carousel carousel-dark slide"
-        data-bs-ride="carousel"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-      >
-        <div className="carousel-inner">
-          <div className="carousel-item active" data-bs-interval="3000">
+      <motion.h1
+  className="text-center fw-bolder mb-5 mt-5"
+  style={{ color: "#13103A", fontSize: "60px", marginTop: "0px" }}
+  initial={{ opacity: 0, y: -50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  viewport={{ once: true, amount: 0.5 }}
+>
+  Reseñas
+</motion.h1>
+<motion.div
+  id="carouselExample2"
+  className="carousel carousel-dark slide"
+  data-bs-ride="carousel"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+  viewport={{ once: true, amount: 0.5 }}
+>
+  <div className="carousel-inner">
+    {imageUrls.reduce((acc, url, index, array) => {
+      if (index % 2 === 0) {
+        const nextUrl = array[index + 1];
+        acc.push(
+          <div
+            key={index}
+            className={`carousel-item ${index === 0 ? 'active' : ''}`}
+            data-bs-interval="3000"
+          >
             <div className="container">
               <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
                 <div className="col">
-                <motion.img
-                    src={preloadedImages[imageUrls[0]]?.src || imageUrls[0]}
-                    className="img-fluid w-100 imagenBanner"
-                    alt="..."
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                  />
+                  <a href="https://g.co/kgs/zSqoxEy" target="_blank" rel="noopener noreferrer">
+                    <motion.img
+                      src={preloadedImages[url]?.src || url}
+                      className="img-fluid w-100 imagenBanner"
+                      alt={`Reseña ${index + 1}`}
+                      initial={{ opacity: 0, x: 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                    />
+                  </a>
                 </div>
-                <div className="col">
-                  <motion.img
-                    src={preloadedImages[imageUrls[1]]?.src || imageUrls[1]}
-                    className="img-fluid w-100 imagenBanner"
-                    alt="..."
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                  />
-                </div>
+                {nextUrl && (
+                  <div className="col">
+                    <a href="https://g.co/kgs/zSqoxEy" target="_blank" rel="noopener noreferrer">
+                      <motion.img
+                        src={preloadedImages[nextUrl]?.src || nextUrl}
+                        className="img-fluid w-100 imagenBanner"
+                        alt={`Reseña ${index + 2}`}
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                      />
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </div>
-          <div className="carousel-item" data-bs-interval="3000">
-            <div className="container">
-              <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mt-5">
-                <div className="col">
-                <img
-                    src={preloadedImages[imageUrls[2]]?.src || imageUrls[2]}
-                    className="img-fluid w-100 imagenBanner"
-                    alt="..."
-                  />
-                </div>
-                <div className="col">
-                  <img
-                    src={preloadedImages[imageUrls[3]]?.src || imageUrls[3]}
-                    className="img-fluid w-100 imagenBanner"
-                    alt="..."
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExample2"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExample2"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </motion.div>
+        );
+      }
+      return acc;
+    }, [])}
+  </div>
+
+  <button
+    className="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExample2"
+    data-bs-slide="prev"
+  >
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button
+    className="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExample2"
+    data-bs-slide="next"
+  >
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+</motion.div>
 
       <Footer />
     </>
