@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel } from 'react-bootstrap';
 import "../estilos/Carousel.css";
-import Banner from "../Resources/Banner.svg";
+import Banner from "../Resources/logoNuevo.png";
 
 const CarouselHome = () => {
   return (
@@ -18,14 +18,14 @@ const CarouselHome = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 imagenMobile img-carousel"
-            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/79623-San-Salvador-And-Vicinity%201.png?alt=media&token=e77a274b-ecd1-4876-9649-357c356e6452 "
+            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/79623-San-Salvador-And-Vicinity%201.png?alt=media&token=e77a274b-ecd1-4876-9649-357c356e6452"
             alt="Second slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100 imagenMobile img-carousel"
-            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Uo2ifkX-venezuela-wallpaper%201.png?alt=media&token=e66f9bf9-8c7a-4fcf-8429-4b5c641e88a2"
+            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Uo2ifkX-venezuela-wallpaper%201%20(1).png?alt=media&token=7f9c61f8-f17c-42fb-9d61-d15760fdd643"
             alt="Third slide"
           />
         </Carousel.Item>
