@@ -19,7 +19,15 @@ footer #LogoFoo img {
     max-width: 100%; /* Hace que la imagen sea responsive */
     height: auto; /* Mantiene la proporción de la imagen */
     display: block; /* Asegura que la imagen se centre correctamente */
-    margin: 0 125%; /* Centra la imagen horizontalmente */
+    margin: 0 90%; /* Centra la imagen horizontalmente */
+    max-height: 500px; /* Establece una altura máxima para la imagen */
+}
+
+footer #LogoFooCaja img {
+    max-width: 100%; /* Hace que la imagen sea responsive */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que la imagen se centre correctamente */
+    margin: 0 60%; /* Centra la imagen horizontalmente */
     max-height: 500px; /* Establece una altura máxima para la imagen */
 }
 
@@ -62,9 +70,13 @@ footer{
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
     footer #LogoFoo img {
         margin-left: 40%; /* Cambia el margen izquierdo si el ancho de la pantalla es menor a 1070px */
+    } 
+
+    footer #LogoFooCaja img {
+        margin-left: 10%; /* Cambia el margen izquierdo si el ancho de la pantalla es menor a 1070px */
     } 
 
     footer .fab{
@@ -78,6 +90,10 @@ footer{
 
 @media (max-width: 650px){
     footer #LogoFoo img {
+        margin-left: 0%; /* Cambia el margen izquierdo si el ancho de la pantalla es menor a 1070px */
+    }
+
+    footer #LogoFooCaja img {
         margin-left: 0%; /* Cambia el margen izquierdo si el ancho de la pantalla es menor a 1070px */
     }
 

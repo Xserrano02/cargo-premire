@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import '../../estilos/Footer.css';
 import logoFooter from '../../Resources/Banner.svg';
+import logoFoo from '../../Resources/LogoFo.png';
 
 const Footer = () => {
   useEffect(() => {
@@ -33,9 +34,17 @@ const Footer = () => {
     <footer>
       <div className="container__footer">
       <section className="d-flex justify-content-between flex-column flex-lg-row p-4 text-white" >
-          <div className="me-lg-auto mb-3 mb-lg-0 mx-auto text-center" id="LogoFoo">
+        
+          
+
+          <div className="me-lg-auto mb-3 mb-lg-0 mx-auto text-center" id="LogoFooCaja">
             <img src={logoFooter} alt="" className="img-fluid" style={{ width: '400px', height: 'auto' }} />
           </div>
+
+          <div className="me-lg-auto mb-3 mb-lg-0 mx-auto text-center" id="LogoFoo">
+            <img src={logoFoo} alt="" className="img-fluid" style={{ width: '400px', height: 'auto' }} />
+          </div>
+
         </section>
         <hr id="hrDiv" />
         <section className="container">
