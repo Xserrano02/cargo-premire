@@ -67,7 +67,7 @@ export default function Detalles() {
         "36x24x24",
         "35x30x24",
       ],
-      tiempoEntrega: "3 - 4 semanas",
+      tiempoEntrega: "10 a 15 días",
       CobroPeso: "No se cobra por Peso",
     },
     {
@@ -119,7 +119,7 @@ export default function Detalles() {
         "30x30x30",
         "42x29x25",
       ],
-      tiempoEntrega: "3 - 4 semanas",
+      tiempoEntrega: "2 - 3 semanas",
       CobroPeso: "No se cobra por Peso",
     },
     {
@@ -136,7 +136,7 @@ export default function Detalles() {
         "30x30x30",
         "42x29x25",
       ],
-      tiempoEntrega: "3 - 4 semanas",
+      tiempoEntrega: "4 - 6 semanas",
       CobroPeso: "No se cobra por Peso",
     },
     {
