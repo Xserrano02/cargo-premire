@@ -18,7 +18,11 @@ const NavBar = ({ backgroundColor = "white" }) => {
     >
       <div className="container-fluid d-flex justify-content-between">
         <div className="navbar-brand">
-          <img src={"https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Logo_cargo-removebg.png?alt=media&token=8fc61d80-4c9b-4f81-a964-5a4a3c24b6f6"} alt="Logo" style={{ height: "60px"}} />
+          <Link
+            to="/"
+          >
+            <img src={"https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/Logo_cargo-removebg.png?alt=media&token=8fc61d80-4c9b-4f81-a964-5a4a3c24b6f6"} alt="Logo" style={{ height: "60px" }} />
+          </Link>
         </div>
         <button
           className="navbar-toggler"
