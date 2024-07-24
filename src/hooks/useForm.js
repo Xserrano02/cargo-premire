@@ -6,13 +6,13 @@ import { Paises } from '../db/Paises.js';
 const useForm = () => {
   const form = useRef();
   const [formState, setFormState] = useState({
-    nombreCompleto: '',
-    direccion: '',
-    correoElectronico: '',
-    telefono: '',
-    paisDestino: '',
-    tamanoSeleccionado: '',
-    infoAdicional: ''
+    name: '',
+    address: '',
+    email: '',
+    phone: '',
+    destination_country: '',
+    box_type: '',
+    additional_info: ''
   });
   const [tamanosDisponibles, setTamanosDisponibles] = useState([]);
   const [errors, setErrors] = useState({});
@@ -29,7 +29,7 @@ const useForm = () => {
     const paisSeleccionado = e.target.value;
     setFormState((prevState) => ({
       ...prevState,
-      paisDestino: paisSeleccionado,
+      destination_country: paisSeleccionado,
     }));
     const pais = Paises.find(pais => pais.nombre === paisSeleccionado);
     if (pais) {
@@ -39,18 +39,18 @@ const useForm = () => {
     }
     setFormState((prevState) => ({
       ...prevState,
-      tamanoSeleccionado: '',
+      box_type: '',
     }));
   };
 
   const validateForm = () => {
     let formErrors = {};
-    if (!formState.nombreCompleto) formErrors.nombreCompleto = 'Este campo no puede estar vacío';
-    if (!formState.direccion) formErrors.direccion = 'Este campo no puede estar vacío';
-    if (!formState.correoElectronico) formErrors.correoElectronico = 'Este campo no puede estar vacío';
-    if (!formState.telefono) formErrors.telefono = 'Este campo no puede estar vacío';
-    if (!formState.paisDestino) formErrors.paisDestino = 'Este campo no puede estar vacío';
-    if (!formState.tamanoSeleccionado) formErrors.tamanoSeleccionado = 'Este campo no puede estar vacío';
+    if (!formState.name) formErrors.name = 'Este campo no puede estar vacío';
+    if (!formState.address) formErrors.address = 'Este campo no puede estar vacío';
+    if (!formState.email) formErrors.email = 'Este campo no puede estar vacío';
+    if (!formState.phone) formErrors.phone = 'Este campo no puede estar vacío';
+    if (!formState.destination_country) formErrors.destination_country = 'Este campo no puede estar vacío';
+    if (!formState.box_type) formErrors.box_type = 'Este campo no puede estar vacío';
     setErrors(formErrors);
     return Object.keys(formErrors).length === 0;
   };
@@ -72,13 +72,13 @@ const useForm = () => {
 
   const resetForm = () => {
     setFormState({
-      nombreCompleto: '',
-      direccion: '',
-      correoElectronico: '',
-      telefono: '',
-      paisDestino: '',
-      tamanoSeleccionado: '',
-      infoAdicional: ''
+      name: '',
+      address: '',
+      email: '',
+      phone: '',
+      destination_country: '',
+      box_type: '',
+      additional_info: ''
     });
     setErrors({});
   };
