@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaTruck, FaCalculator, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaTruck, FaCalculator, FaEnvelope, FaBuilding } from "react-icons/fa";
 import '../estilos/Navbar.css';
 
 const NavBar = ({ backgroundColor = "white" }) => {
@@ -99,6 +99,22 @@ const NavBar = ({ backgroundColor = "white" }) => {
               >
                 <FaEnvelope className="me-2" />
                 CONTACTO
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link h1 mx-3 d-flex align-items-center"
+                to="/Inicio-sesion"
+                style={{
+                  color: "#52465e",
+                  fontSize: "15px",
+                  fontWeight: "600",
+                  lineHeight: 1,
+                  position: "relative"
+                }}
+              >
+                <FaBuilding className="me-2" />
+                AGENCIAS
               </Link>
             </li>
           </ul>

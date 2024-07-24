@@ -8,6 +8,7 @@ import HomePage from "./Screens/HomePage";
 import FormContact from "./Screens/FormContact";
 import Detalles from "./Screens/Detalles";
 import Rastreo from "./Screens/Rastreo";
+import Agencias from "./Screens/Agencias";
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/contacto" element={<FormContact />} />
         <Route path="/detalles" element={<Detalles />} />
         <Route path="/rastreo" element={<Rastreo />} />
+        <Route path="/Inicio-sesion" element={<Agencias />} />
         <Route path="*" element={<h2>Pagina no encontrada</h2>} />
         
       </Routes>
