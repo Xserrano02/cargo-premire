@@ -205,7 +205,7 @@ export default function HomePage() {
       <div className="container">
         <div className="container mt-5">
           <motion.h1
-            className="text-center fw-bolder mb-5"
+            className="text-center fw-bolder mb-5 font-class"
             style={{ color: "#13103A", fontSize: "60px" }}
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -303,7 +303,7 @@ export default function HomePage() {
         </div>
       </motion.div>
       
-      <motion.div className="container" id="Quienes-somos" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: true, amount: 0.5 }}>
+      <motion.div className="container font-class" id="Quienes-somos" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: true, amount: 0.5 }}>
         <h1 className="text-center fw-bolder mb-5 mt-5" style={{ color: "#13103A", fontSize: "60px" }}>
           Quienes Somos
         </h1>
@@ -521,7 +521,7 @@ export default function HomePage() {
       </svg>
 
       <motion.h1
-  className="text-center fw-bolder mb-5 mt-5"
+  className="text-center fw-bolder mb-5 mt-5 font-class"
   style={{ color: "#13103A", fontSize: "60px", marginTop: "0px" }}
   initial={{ opacity: 0, y: -50 }}
   whileInView={{ opacity: 1, y: 0 }}
