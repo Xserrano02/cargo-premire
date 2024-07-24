@@ -30,61 +30,61 @@ export default function FormContact() {
             <div className="container-person">
               <FormField
                 label="Nombre completo"
-                name="nombreCompleto"
-                value={formState.nombreCompleto}
+                name="name"
+                value={formState.name}
                 onChange={handleChange}
-                error={errors.nombreCompleto}
+                error={errors.name}
               />
               <FormField
-                label="Direccion"
-                name="direccion"
-                value={formState.direccion}
+                label="Dirección"
+                name="address"
+                value={formState.address}
                 onChange={handleChange}
-                error={errors.direccion}
+                error={errors.address}
               />
               <div className="container-mail-phone">
                 <FormField
-                  label="Correo electronico"
-                  name="correoElectronico"
-                  value={formState.correoElectronico}
+                  label="Correo Electrónico"
+                  name="email"
+                  value={formState.email}
                   onChange={handleChange}
-                  error={errors.correoElectronico}
+                  error={errors.email}
                 />
                 <FormField
-                  label="Telefono"
-                  name="telefono"
-                  value={formState.telefono}
+                  label="Teléfono"
+                  name="phone"
+                  value={formState.phone}
                   onChange={handleChange}
-                  error={errors.telefono}
+                  error={errors.phone}
                 />
               </div>
               <h5 className="txt-tittle">Información de la caja</h5>
               <div className="container-mail-phone">
                 <SelectField
-                  label="Pais destino"
-                  name="paisDestino"
-                  value={formState.paisDestino}
+                  label="País destino"
+                  name="destination_country"
+                  value={formState.destination_country}
                   onChange={handleCountryChange}
                   options={Paises.map((pais) => pais.nombre)}
-                  error={errors.paisDestino}
+                  error={errors.destination_country}
                 />
                 <SelectField
                   label="Tamaño"
-                  name="tamanoSeleccionado"
-                  value={formState.tamanoSeleccionado}
+                  name="box_type"
+                  value={formState.box_type}
                   onChange={handleChange}
                   options={tamanosDisponibles.map(([key, value]) => value)}
-                  error={errors.tamanoSeleccionado}
+                  error={errors.box_type}
                 />
               </div>
               <h5 className="txt-tittle">Información adicional</h5>
               <textarea
-                name="infoAdicional"
-                value={formState.infoAdicional}
+                name="additional_info"
+                value={formState.additional_info}
                 onChange={handleChange}
-                className={`input-adicional ${getErrorClass('infoAdicional')}`}
+                className={`input-adicional ${getErrorClass('additional_info')}`}
               />
-              {errors.infoAdicional && <div className="error-message">{errors.infoAdicional}</div>}
+              {errors.additional_info && <div className="error-message">{errors.additional_info}</div>}
               <div className="container-person">
                 <input type="submit" value="Enviar" className="btn-enviar-form2" />
               </div>
