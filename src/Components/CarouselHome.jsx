@@ -53,13 +53,6 @@ const CarouselHome = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 imagenMobile img-carousel"
-            src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/cartagena%201.png?alt=media&token=9650434a-b309-48da-ac5a-7a0fe018c931"
-            alt="Third slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 imagenMobile img-carousel"
             src="https://firebasestorage.googleapis.com/v0/b/cargo-pre.appspot.com/o/AntiguaGuatemala%201.png?alt=media&token=fa24ca00-bc72-4c4a-a3e7-809178ae925f"
             alt="Third slide"
           />
