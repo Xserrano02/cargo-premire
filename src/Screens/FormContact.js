@@ -23,7 +23,10 @@ export default function FormContact() {
     <>
       <NavBar />
       <div className="container-formulario">
-        <img className="Containder-logo" src={Banner} alt="Logo" />
+        <section className='container-side-logo'>       
+          <img className="Containder-logo" src={Banner} alt="Logo" />
+          <h3 style={{paddingTop:'10px', fontWeight:'bolder'}}>+1 (305) 735-8577, (407) 728 - 1902</h3>
+        </section>
         <div className="formulario">
           <form className="form-submit" ref={form} onSubmit={sendEmail}>
             <h5 className="txt-tittle">CONTACTANOS</h5>

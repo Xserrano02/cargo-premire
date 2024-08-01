@@ -41,9 +41,15 @@ footer #LogoFooCaja img {
     border-width: 3px;
 }
 
+.style-redd{
+    text-decoration: none !important;
+    color: green;
+}
+
 .Servi {
     margin-bottom: 0px; /* Establece el margen inferior de los párrafos a 5px */
     color: black;
+    
 }
 
 footer{
