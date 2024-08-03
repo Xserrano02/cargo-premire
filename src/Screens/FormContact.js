@@ -6,6 +6,9 @@ import useForm from '../hooks/useForm';
 import FormField from '../Components/FormfField';
 import SelectField from '../Components/SelectField';
 import { Paises } from '../db/Paises';
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { IoLogoWhatsapp } from "react-icons/io";
+
 
 export default function FormContact() {
   const {
@@ -25,7 +28,10 @@ export default function FormContact() {
       <div className="container-formulario">
         <section className='container-side-logo'>       
           <img className="Containder-logo" src={Banner} alt="Logo" />
-          <h3 style={{paddingTop:'10px', fontWeight:'bolder'}}>+1 (305) 735-8577, (407) 728 - 1902</h3>
+          <h3 style={{paddingTop:'10px', fontWeight:'bolder'}}><BsFillTelephoneFill />+1 (305) 735-8577</h3>
+
+
+          <h3 style={{paddingTop:'10px', fontWeight:'bolder'}}><IoLogoWhatsapp /> +1 (407) 728 - 1902</h3>
         </section>
         <div className="formulario">
           <form className="form-submit" ref={form} onSubmit={sendEmail}>

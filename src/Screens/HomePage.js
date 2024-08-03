@@ -25,6 +25,7 @@ import "../estilos/HomeStyles.css";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import CarouselHome from "../Components/CarouselHome.jsx";
+import  IconFloat  from "../Components/IconFloat.js";
 
 export default function HomePage() {
   const [paisSeleccionado, setPaisSeleccionado] = useState({
@@ -607,7 +608,7 @@ export default function HomePage() {
     <span className="visually-hidden">Next</span>
   </button>
 </motion.div>
-
+     <IconFloat className="Float-icon"/>
       <Footer scrollToSection={scrollToSection}/>
     </>
   );

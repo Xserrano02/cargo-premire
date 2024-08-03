@@ -134,7 +134,6 @@
 
 }
 
-
 /* Estilos para dispositivos móviles pequeños */
 @media (max-width: 414px) {
   .font-class{
@@ -175,7 +174,6 @@
   }
 }
 
-/* Estilos para dispositivos móviles grandes y tablets pequeñas */
 
 @media (max-width: 667px) {
   .img-container {
