@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback, useMemo,useRef  } from "react";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  useRef,
+} from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../Components/NavBar.jsx";
 import Mexico from "../Resources/Mexico.svg";
@@ -8,6 +14,7 @@ import Honduras from "../Resources/Honduras.png";
 import Nicaragua from "../Resources/Nicaragua.png";
 import CostaRica from "../Resources/CostaRica.png";
 import Colombia from "../Resources/Colombia.png";
+import Venezuela from "../Resources/Venezuela.png";
 import Republic from "../Resources/RepublicaDom.png";
 // Importa las imágenes de las cajas
 import imagenCaja1 from "../Resources/ImagenNoEncontrada.png";
@@ -26,6 +33,7 @@ import imagenPaisajeHonduras from "../Resources/imagenPaisajeHonduras.jpg";
 import imagenPaisajeNicaragua from "../Resources/imagenPaisajeNicaragua.jpg";
 import imagenPaisajeCostaRica from "../Resources/imagenPaisajeCostaRica.jpg";
 import imagenPaisajeColombia from "../Resources/imagenPaisajeColombia.jpg";
+import imagenPaisajeVenezuela from "../Resources/imagenPaisajeVenezuela.jpg";
 import imagenPaisajeRepublicaDominicana from "../Resources/imagenPaisajeRepublicaDominicana.jpg";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "../estilos/Detalles.css";
@@ -175,7 +183,22 @@ export default function Detalles() {
       tiempoEntrega: "3 - 4 semanas",
       CobroPeso: "No se cobra por Peso",
     },
-    //{ imagen: Venezuela, nombre: "Venezuela", tamanos: ['22x22x22', '24x24x24'] },
+    {
+      imagen: Venezuela,
+      nombre: "Venezuela",
+      imagenCaja: imagenCaja1,
+      imagenPaisaje: imagenPaisajeVenezuela,
+      tamanos: [
+        "16x16x16",
+        "18x18x18",
+        "20x20x20",
+        "18x18x28",
+        "22x22x22",
+        "24x24x24",
+      ],
+      tiempoEntrega: "3 - 4 semanas",
+      CobroPeso: "No se cobra por Peso",
+    },
     {
       imagen: Republic,
       nombre: "Republica Dominicana",
@@ -338,7 +361,7 @@ export default function Detalles() {
       </div>
 
       <div className="d-flex justify-content-center align-items-center">
-        <h1 className="pais-titulo"   ref={seccionRef}>
+        <h1 className="pais-titulo" ref={seccionRef}>
           {paisSeleccionado.nombre.toUpperCase() === "EL SALVADOR" ? (
             <>
               <span style={{ color: "#0047AB" }}>
@@ -429,7 +452,20 @@ export default function Detalles() {
                 {paisSeleccionado.nombre.slice(7).toUpperCase()}
               </span>
             </>
-          ) : paisSeleccionado.nombre.toUpperCase() ===
+          ) : paisSeleccionado.nombre.toUpperCase() === "VENEZUELA" ? (
+            <>
+              <span style={{ color: "#FFCD00" }}>
+                {paisSeleccionado.nombre.slice(0, 3).toUpperCase()}
+              </span>
+              <span style={{ color: "#003087" }}>
+                {paisSeleccionado.nombre.slice(3, 6).toUpperCase()}
+              </span>
+              <span style={{ color: "#C8102E" }}>
+                {paisSeleccionado.nombre.slice(6,9).toUpperCase()}
+              </span>
+            </>
+          )
+          : paisSeleccionado.nombre.toUpperCase() ===
             "REPUBLICA DOMINICANA" ? (
             <>
               <span style={{ color: "#CE1126" }}>
@@ -553,18 +589,10 @@ export default function Detalles() {
             <div className="col-12 d-flex justify-content-center">
               <div className="row justify-content-center">
                 <div className="col-4 col-md-2 mb-3 mb-md-0 me-5 ms-4">
-                  <img
-                    src={estafeta}
-                    alt="Aliado 1"
-                    className="img-fluid"
-                  />
+                  <img src={estafeta} alt="Aliado 1" className="img-fluid" />
                 </div>
                 <div className="col-4 col-md-2 mb-3 mb-md-0 me-5">
-                  <img
-                    src={fedex}
-                    alt="Aliado 2"
-                    className="img-fluid"
-                  />
+                  <img src={fedex} alt="Aliado 2" className="img-fluid" />
                 </div>
                 <div className="col-4 col-md-2 mb-3 mb-md-0 me-5">
                   <img
