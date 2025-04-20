@@ -7,7 +7,7 @@ export default function Rastreo() {
             <NavBar/>
             <header className="App-header">
                 <iframe
-                    src="http://cargopremier.managercargo.com/public/status/indexstatus/indexstatusacc/wi/si"
+                    src="https://cargopremier.managercargo.com/public/status/indexstatus/indexstatusacc/wi/si"
                     title="Rastreo Cargo Premier"
                     width="100%"
                     height="900px"
