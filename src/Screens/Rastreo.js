@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../Components/NavBar";
 
-export default function Rastreo({url}) {
+export default function Rastreo() {
     return (
         <div >
             <NavBar/>
