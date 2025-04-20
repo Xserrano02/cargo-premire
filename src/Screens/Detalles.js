@@ -461,38 +461,38 @@ export default function Detalles() {
                 {paisSeleccionado.nombre.slice(3, 6).toUpperCase()}
               </span>
               <span style={{ color: "#C8102E" }}>
-                {paisSeleccionado.nombre.slice(6,9).toUpperCase()}
+                {paisSeleccionado.nombre.slice(6, 9).toUpperCase()}
               </span>
             </>
           )
-          : paisSeleccionado.nombre.toUpperCase() ===
-            "REPUBLICA DOMINICANA" ? (
-            <>
-              <span style={{ color: "#CE1126" }}>
-                {paisSeleccionado.nombre.slice(0, 3).toUpperCase()}
-              </span>
+            : paisSeleccionado.nombre.toUpperCase() ===
+              "REPUBLICA DOMINICANA" ? (
+              <>
+                <span style={{ color: "#CE1126" }}>
+                  {paisSeleccionado.nombre.slice(0, 3).toUpperCase()}
+                </span>
+                <span style={{ color: "white" }}>
+                  {paisSeleccionado.nombre.slice(3, 6).toUpperCase()}
+                </span>
+                <span style={{ color: "#002D62" }}>
+                  {paisSeleccionado.nombre.slice(6, 9).toUpperCase()}
+                </span>
+                <ResponsiveBreak />
+                <span style={{ color: "#CE1126" }}>
+                  {paisSeleccionado.nombre.slice(9, 12).toUpperCase()}
+                </span>
+                <span style={{ color: "white" }}>
+                  {paisSeleccionado.nombre.slice(12, 16).toUpperCase()}
+                </span>
+                <span style={{ color: "#002D62" }}>
+                  {paisSeleccionado.nombre.slice(16).toUpperCase()}
+                </span>
+              </>
+            ) : (
               <span style={{ color: "white" }}>
-                {paisSeleccionado.nombre.slice(3, 6).toUpperCase()}
+                {paisSeleccionado.nombre.toUpperCase()}
               </span>
-              <span style={{ color: "#002D62" }}>
-                {paisSeleccionado.nombre.slice(6, 9).toUpperCase()}
-              </span>
-              <ResponsiveBreak />
-              <span style={{ color: "#CE1126" }}>
-                {paisSeleccionado.nombre.slice(9, 12).toUpperCase()}
-              </span>
-              <span style={{ color: "white" }}>
-                {paisSeleccionado.nombre.slice(12, 16).toUpperCase()}
-              </span>
-              <span style={{ color: "#002D62" }}>
-                {paisSeleccionado.nombre.slice(16).toUpperCase()}
-              </span>
-            </>
-          ) : (
-            <span style={{ color: "white" }}>
-              {paisSeleccionado.nombre.toUpperCase()}
-            </span>
-          )}
+            )}
         </h1>
       </div>
 
@@ -611,9 +611,9 @@ export default function Detalles() {
             to="/contacto"
             className="btn btn-primary btn-lg mt-4"
             style={{
-              backgroundColor: hoverIndex === "contact" ? "#05C8FE" : "white",
-              color: "#13103A",
-              borderColor: "#13103A",
+              backgroundColor: hoverIndex === "contact" ? "black" : "white",
+              color: hoverIndex === "contact" ? "white" : "black",
+              borderColor: "black",
               borderRadius: "20px",
               padding: "20px 40px",
               borderWidth: "3px",
@@ -624,6 +624,28 @@ export default function Detalles() {
             onMouseOut={() => toggleHover(null)}
           >
             Contactar
+          </Link>
+        </div>
+
+
+        <div className="col-auto">
+          <Link
+            to="/cotizar"
+            className="btn btn-primary btn-lg mt-4"
+            style={{
+              backgroundColor: hoverIndex === "cotizar" ? "white" : "black",
+              color: hoverIndex === "cotizar" ? "black" : "white",
+              borderColor: "black",
+              borderRadius: "20px",
+              padding: "20px 40px",
+              borderWidth: "3px",
+              fontWeight: "bold",
+              fontSize: "25px",
+            }}
+            onMouseOver={() => toggleHover("cotizar")}
+            onMouseOut={() => toggleHover(null)}
+          >
+            Cotizar
           </Link>
         </div>
       </div>

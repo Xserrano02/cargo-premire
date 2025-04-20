@@ -9,6 +9,7 @@ import FormContact from "./Screens/FormContact";
 import Detalles from "./Screens/Detalles";
 import Rastreo from "./Screens/Rastreo";
 import Agencias from "./Screens/Agencias";
+import Cotizar from "./Screens/Cotizar";
 
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/detalles" element={<Detalles />} />
         <Route path="/rastreo" element={<Rastreo />} />
         <Route path="/Inicio-sesion" element={<Agencias />} />
+        <Route path="/cotizar" element={<Cotizar />} />
         <Route path="*" element={<h2>Pagina no encontrada</h2>} />
         
       </Routes>

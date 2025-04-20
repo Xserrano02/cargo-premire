@@ -105,7 +105,7 @@ const NavBar = ({ backgroundColor = "white" }) => {
               <Link
                 className="nav-link h1 mx-3 d-flex align-items-center"
                 target="_blank" 
-                to="https://cbone.controlbox.net/CargoPremier/cbone/app/index.asp?err=cbone.controlbox.net"
+                to="http://cargopremier.managercargo.com"
                 style={{
                   color: "#52465e",
                   fontSize: "15px",
